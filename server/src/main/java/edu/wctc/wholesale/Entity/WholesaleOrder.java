@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -31,8 +31,8 @@ public class WholesaleOrder {
 	private Product product;
 
 	@Column(name = "purchase_date")
-	private LocalDate purchaseDate;
+	private LocalDateTime purchaseDate;
 	@Column(name = "shipped_date")
-	private LocalDate shippedDate;
+	private LocalDateTime shippedDate;
 
 }

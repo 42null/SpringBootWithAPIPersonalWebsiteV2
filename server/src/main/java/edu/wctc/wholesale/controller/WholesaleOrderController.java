@@ -1,14 +1,20 @@
 package edu.wctc.wholesale.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.github.fge.jsonpatch.JsonPatch;
+import com.github.fge.jsonpatch.JsonPatchException;
 import edu.wctc.wholesale.Entity.WholesaleOrder;
+import edu.wctc.wholesale.Service.CustomerServiceImpl;
+import edu.wctc.wholesale.Service.ProductServiceImpl;
 import edu.wctc.wholesale.Service.WholesaleOrderService;
 import edu.wctc.wholesale.dto.DtoOrder;
+import edu.wctc.wholesale.exception.ResourceNotFoundException;
 import edu.wctc.wholesale.repo.WholesaleOrderRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/orders")
-@CrossOrigin(origins="http://localhost:63343")
+@CrossOrigin(origins="http://localhost:63342")
 public class WholesaleOrderController {
 
     @Autowired
@@ -24,6 +30,15 @@ public class WholesaleOrderController {
 
     @Autowired
     private WholesaleOrderRepository orderRepository;
+
+    @Autowired
+    private CustomerServiceImpl customerService;
+
+    @Autowired
+    private ProductServiceImpl productService;
+
+    @Autowired
+    private ModelMapper modelMapper;
 
     private DtoOrder convertToDto(WholesaleOrder wholesaleOrder) {
         DtoOrder dtoOrder = new DtoOrder();
@@ -46,7 +61,20 @@ public class WholesaleOrderController {
         return dtoOrder;
     }
 
-//    private WholesaleOrder convertToEntity
+//    private WholesaleOrder convertToEntity(DtoOrder dtoOrder){
+//        WholesaleOrder wholesaleOrder = new WholesaleOrder();
+//        wholesaleOrder.setTerms(dtoOrder.getTerms());
+//        wholesaleOrder.setCustomer(dtoOrder.getCustomerName());
+//        wholesaleOrder.setProduct(dtoOrder.getProductName());
+//        wholesaleOrder.setPurchaseDate(dtoOrder.getPurchaseDate());
+//        wholesaleOrder.setShippedDate(dtoOrder.getShippedDate());
+//        return wholesaleOrder;
+//    }
+    private WholesaleOrder convertToEntity(DtoOrder dtoOrder) throws ResourceNotFoundException {
+        WholesaleOrder wholesaleOrder = modelMapper.map(dtoOrder, WholesaleOrder.class);
+        wholesaleOrder.setCustomer(customerService.getCustomerByName(dtoOrder.getCustomerName()));
+        return wholesaleOrder;
+    }
 
 
     @GetMapping
@@ -62,16 +90,69 @@ public class WholesaleOrderController {
         return list;
     }
 
-//    @GetMapping("/{productId}")
-//    public Product getOneOrder(@PathVariable String orderIndex){
+    @GetMapping("/{orderId}")
+    public DtoOrder getOneOrderById(@PathVariable String orderId){
+        try {
+            int id = Integer.parseInt(orderId);
+            DtoOrder order = convertToDto(wholesaleOrderService.getOrderById(id));
+            return order;
+        } catch (NumberFormatException ex) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "ID must be numeric");
+        } catch (ResourceNotFoundException ex) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage());
+        }
+    }
+
+    @DeleteMapping("/{orderId}")
+    public boolean deleteOrderById(@PathVariable String orderId){
+        try {
+            int id = Integer.parseInt(orderId);
+            wholesaleOrderService.deleteOrder(id);
+            return true;
+        } catch (NumberFormatException ex) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "ID must be numeric");
+        } catch (ResourceNotFoundException ex) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage());
+        }
+    }
+
+    @PostMapping
+    public DtoOrder createOrder(@RequestBody DtoOrder newOrder) {
+        try {
+            wholesaleOrderService.addOrder(convertToEntity(newOrder));
+        } catch (NumberFormatException ex) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "ID must be numeric");
+        } catch (ResourceNotFoundException ex) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage());
+        }
+        return newOrder;
+    }
+
+    @PatchMapping("/{orderId}")
+    public DtoOrder patchOrder(@PathVariable String orderId,
+                                @RequestBody JsonPatch patch) {
+        try {
+            int id = Integer.parseInt(orderId);
+            return convertToDto(wholesaleOrderService.patch(id, patch));
+        } catch (NumberFormatException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Order ID must be a number", e);
+        } catch (ResourceNotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    e.getMessage(), e);
+        } catch (JsonPatchException | JsonProcessingException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Invalid patch format: " + e.getMessage(), e);
+        }
+    }
+
+//    @PutMapping
+//    public StockPurchase updateStockPurchase(@RequestBody StockPurchase order) {
 //        try {
-//            int id = Integer.parseInt(orderIndex);
-//            Product product = service.getOrderB(id);
-//            return product;
-//        } catch (NumberFormatException ex) {
-//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "ID must be numeric");
-//        } catch (ResourceNotFoundException ex) {
-//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, ex.getMessage());
+//            return service.update(order);
+//        } catch (ResourceNotFoundException e) {
+//            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+//                    e.getMessage(), e);
 //        }
 //    }
 }

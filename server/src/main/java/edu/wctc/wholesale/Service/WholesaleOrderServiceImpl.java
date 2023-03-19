@@ -1,5 +1,10 @@
 package edu.wctc.wholesale.Service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.fge.jsonpatch.JsonPatch;
+import com.github.fge.jsonpatch.JsonPatchException;
 import edu.wctc.wholesale.Entity.WholesaleOrder;
 import edu.wctc.wholesale.exception.ResourceNotFoundException;
 import edu.wctc.wholesale.repo.WholesaleOrderRepository;
@@ -15,6 +20,8 @@ public class WholesaleOrderServiceImpl implements WholesaleOrderService {
 
     @Autowired
     private WholesaleOrderRepository wholesaleOrderRepo;
+
+    private ObjectMapper objectMapper;
 
     @Override
     public List<WholesaleOrder> getAllOrders() {
@@ -33,12 +40,13 @@ public class WholesaleOrderServiceImpl implements WholesaleOrderService {
     }
 
     @Override
-    public boolean deleteOrder(int customerId) {//TODO: Make error if it already exists
-        if(wholesaleOrderRepo.findById(customerId).isPresent()){
-            wholesaleOrderRepo.deleteById(customerId);
+    public boolean deleteOrder(int orderId) throws ResourceNotFoundException {
+        if(wholesaleOrderRepo.findById(orderId).isPresent()){
+            wholesaleOrderRepo.deleteById(orderId);
             return true;
+        }else{
+            throw new ResourceNotFoundException("Order", "id", Integer.toString(orderId));
         }
-        return false;
     }
 
     @Override
@@ -46,5 +54,14 @@ public class WholesaleOrderServiceImpl implements WholesaleOrderService {
         Optional<WholesaleOrder> optional = wholesaleOrderRepo.findById(orderId);
 
         return optional.orElseThrow(() -> new ResourceNotFoundException("Order", "id", Integer.toString(orderId)));
+    }
+
+    public WholesaleOrder patch(int id, JsonPatch patch) throws ResourceNotFoundException, JsonPatchException, JsonProcessingException {
+        WholesaleOrder existingStudent = getOrderById(id);
+        JsonNode patched = patch.apply(objectMapper
+                                               .convertValue(existingStudent, JsonNode.class));
+        WholesaleOrder wholesaleOrder = objectMapper.treeToValue(patched, WholesaleOrder.class);
+        wholesaleOrderRepo.save(wholesaleOrder);
+        return wholesaleOrder;
     }
 }

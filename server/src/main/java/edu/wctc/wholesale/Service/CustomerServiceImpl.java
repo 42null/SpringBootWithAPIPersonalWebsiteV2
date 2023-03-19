@@ -13,12 +13,6 @@ import java.util.Optional;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-
-    public Customer getCustomerByID(int id) throws ResourceNotFoundException {
-        Optional<Customer> optional = customerRepo.findById(id);
-        return optional.orElseThrow(
-                () -> new ResourceNotFoundException("Customer", "id", Integer.toString(id)));
-    }
     @Autowired
     private CustomerRepository customerRepo;
 
@@ -53,6 +47,33 @@ public class CustomerServiceImpl implements CustomerService {
         Optional<Customer> optional = customerRepo.findById(customerId);
 
         return optional.orElseThrow(() -> new ResourceNotFoundException("Customer", "id", Integer.toString(customerId)));
+    }
+
+    public Customer getCustomerByName(String name) throws ResourceNotFoundException{
+        Optional<Customer> optional = customerRepo.findByName(name);
+
+        return optional.orElseThrow(() -> new ResourceNotFoundException("Customer", "id", (name)));
+    }
+
+//    public Customer getCustomerByName(String name) throws ResourceNotFoundException{
+////        List<WholesaleOrder> list = new ArrayList<>();
+//        cus.findAll().forEach(order -> {
+//            if(order.getCustomer()){
+//
+//            }
+//        });
+
+//        List<WholesaleOrder> wholesaleOrderList = wholesaleOrderService.getAllOrders();
+//        for(WholesaleOrder wholesaleOrder: wholesaleOrderList){
+//            list.add(convertToDto(wholesaleOrder));
+//        }
+
+//        throw new  ResourceNotFoundException("Order", "id", name);
+//    }
+
+    @Override
+    public void save(Customer customer) {
+        customerRepo.save(customer);
     }
 
 }

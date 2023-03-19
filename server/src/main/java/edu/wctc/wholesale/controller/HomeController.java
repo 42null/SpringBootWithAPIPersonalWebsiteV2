@@ -15,7 +15,7 @@ import java.util.List;
 
 
 @Controller
-@CrossOrigin(origins="http://localhost:63343")
+@CrossOrigin(origins="http://localhost:63342")
 public class HomeController {
 
 
@@ -52,8 +52,6 @@ public class HomeController {
 
         return dtoOrder;
     }
-
-//    private WholesaleOrder convertToEntity
 
 
     @GetMapping

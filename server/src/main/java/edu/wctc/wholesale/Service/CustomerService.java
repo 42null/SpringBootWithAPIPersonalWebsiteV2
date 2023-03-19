@@ -13,4 +13,7 @@ public interface CustomerService {
     boolean deleteCustomer(int customerId);
 
     Customer getCustomerById(int customerId) throws ResourceNotFoundException;
+
+    void save(Customer customer);
+
 }
