@@ -1,0 +1,64 @@
+body {
+    background-image: url("/img/croquet.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+nav {
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 26px;
+    text-decoration: none;
+}
+
+#content {
+    background-color: rgba(244, 244, 244, 0.5);
+    margin-right: 20%;
+    margin-left: 20%;
+    padding: 20px;
+    font-size: 24px;
+}
+
+#croquet-yard {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: #333333;
+}
+
+header {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+header h1 {
+    color: #222;
+    font-size: 50px;
+}
+
+header h1 a {
+    text-decoration: none;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:replace="fragments/_head :: head">
+<body>
+<div th:insert="fragments/_header :: header"></div>
+
+<table id="order-table">
+    <thead>
+    <tr>
+        <th>Customer</th>
+        <th>Purchase Date</th>
+        <th>Purchase Order Number</th>
+        <th>Product Name</th>
+        <th>Terms</th>
+        <th>Shipped</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody id="order-table-body">
+    <tr th:each="order : ${orderList}">
+        <td th:text="${order.customer.name}">CUSTOMER NAME</td>
+        <td th:text="${#temporals.format(order.purchaseDate, 'MMM dd yyyy')}">PURCHASE DATE</td>
+        <td th:text="${order.purchaseOrderNumber}">PURCHASE ORDER</td>
+        <td th:text="${order.product.name}">PRODUCT NAME</td>
+        <td th:text="${order.terms}">TERMS</td>
+        <td th:text="${#temporals.format(order.shippedDate, 'MMM dd yyyy')}">SHIPPED DATE</td>
+        <td th:text="${order.product.cost}">PRODUCT COST</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
