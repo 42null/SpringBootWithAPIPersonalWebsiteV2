@@ -1,15 +1,15 @@
-package edu.wctc.wholesale.controller;
+package net.the42null.personalwebsite.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.fge.jsonpatch.JsonPatch;
 import com.github.fge.jsonpatch.JsonPatchException;
-import edu.wctc.wholesale.Entity.WholesaleOrder;
-import edu.wctc.wholesale.Service.CustomerServiceImpl;
-import edu.wctc.wholesale.Service.ProductServiceImpl;
-import edu.wctc.wholesale.Service.WholesaleOrderService;
-import edu.wctc.wholesale.dto.DtoOrder;
-import edu.wctc.wholesale.exception.ResourceNotFoundException;
-import edu.wctc.wholesale.repo.WholesaleOrderRepository;
+import net.the42null.personalwebsite.Entity.WholesaleOrder;
+import net.the42null.personalwebsite.Service.CustomerServiceImpl;
+import net.the42null.personalwebsite.Service.ProductServiceImpl;
+import net.the42null.personalwebsite.Service.WholesaleOrderService;
+import net.the42null.personalwebsite.dto.DtoOrder;
+import net.the42null.personalwebsite.exception.ResourceNotFoundException;
+import net.the42null.personalwebsite.repo.WholesaleOrderRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

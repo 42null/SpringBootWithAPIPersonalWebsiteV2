@@ -1,4 +1,4 @@
-package edu.wctc.wholesale.exception;
+package net.the42null.personalwebsite.exception;
 
 public class ResourceNotFoundException extends Exception {
 

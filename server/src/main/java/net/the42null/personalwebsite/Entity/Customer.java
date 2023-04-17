@@ -1,4 +1,4 @@
-package edu.wctc.wholesale.Entity;
+package net.the42null.personalwebsite.Entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,16 +1,25 @@
-package edu.wctc.wholesale.controller;
+package net.the42null.personalwebsite.controller;
 
-import edu.wctc.wholesale.Entity.WholesaleOrder;
-import edu.wctc.wholesale.Service.WholesaleOrderService;
-import edu.wctc.wholesale.dto.DtoOrder;
-import edu.wctc.wholesale.repo.WholesaleOrderRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import net.the42null.personalwebsite.Entity.GithubRepository;
+import net.the42null.personalwebsite.Entity.WholesaleOrder;
+import net.the42null.personalwebsite.Service.WholesaleOrderService;
+import net.the42null.personalwebsite.dto.DtoOrder;
+import net.the42null.personalwebsite.repo.WholesaleOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.PostConstruct;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -18,13 +27,77 @@ import java.util.List;
 @CrossOrigin(origins="http://localhost:63342")
 public class HomeController {
 
+    private String[] rules;
+    private GithubRepository[] pageRepositories = new GithubRepository[1];
 
+//    TODO: Move
+    public String getDaysSinceUpdatedAt(GithubRepository repository) {
+        LocalDateTime updatedAt = repository.getUpdatedAt();
+        LocalDateTime now = LocalDateTime.now();
+        long days = ChronoUnit.DAYS.between(updatedAt, now);
+        if(days >= 182){
+            return "date_old";
+        }else if(days > 7){
+            return "date_older";
+        }else{
+            return "date_recent";
+        }
+    }
+
+    @PostConstruct
+    private void initData() {
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            rules = mapper.readValue(Paths.get("server/src/main/resources/static/content/croquetRules.json").toFile(), String[].class);
+        } catch (IOException e) {
+            e.printStackTrace();
+            rules = new String[0];
+        }
+
+
+        RestTemplate restTemplate = new RestTemplate();
+        pageRepositories = restTemplate.getForObject("https://api.github.com/users/42null/repos", GithubRepository[].class);
+        Arrays.sort(pageRepositories, (r1, r2) -> r2.getUpdatedAt().compareTo(r1.getUpdatedAt()));
+
+
+    }
+
+
+//NAV (START)
     @GetMapping("/")
     public String showHome(Model model){
-        model.addAttribute("orderList", wholesaleOrderService.getAllOrders());
-//        model.addAttribute("orderList", getAllOrders());
+//        model.addAttribute("orderList", wholesaleOrderService.getAllOrders());
+
         return "index";
     }
+//--- About Me
+    @GetMapping("/about/aboutMe")
+    public String showAboutMe(Model model) {
+        model.addAttribute("pageTitle", "Rules of Golf Croquet");
+
+        /**
+         * Add the array of Strings to the model
+         */
+
+        return "about/aboutme";
+    }
+    //--- Platforms
+    @GetMapping("/platforms")
+    public String showPlatformsHubPage(Model model) {
+        model.addAttribute("pageTitle", "platforms");
+        return "platforms/platformsHub";
+    }
+    @GetMapping("/platforms/github")
+    public String showGithubPage(Model model) {
+        model.addAttribute("pageTitle", "GitHub");
+        model.addAttribute("pageRepositories", pageRepositories);
+        return "platforms/github";
+    }
+
+//NAV (END)
+
+
 
     @Autowired
     private WholesaleOrderService wholesaleOrderService;

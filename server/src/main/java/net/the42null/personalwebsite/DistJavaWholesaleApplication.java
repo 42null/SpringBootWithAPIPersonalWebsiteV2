@@ -1,4 +1,4 @@
-package edu.wctc.wholesale;
+package net.the42null.personalwebsite;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;

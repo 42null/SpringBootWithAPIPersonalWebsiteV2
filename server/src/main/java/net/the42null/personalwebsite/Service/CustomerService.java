@@ -1,7 +1,7 @@
-package edu.wctc.wholesale.Service;
+package net.the42null.personalwebsite.Service;
 
-import edu.wctc.wholesale.Entity.Customer;
-import edu.wctc.wholesale.exception.ResourceNotFoundException;
+import net.the42null.personalwebsite.Entity.Customer;
+import net.the42null.personalwebsite.exception.ResourceNotFoundException;
 
 import java.util.List;
 

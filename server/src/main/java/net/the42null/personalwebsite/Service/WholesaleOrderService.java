@@ -1,10 +1,10 @@
-package edu.wctc.wholesale.Service;
+package net.the42null.personalwebsite.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.fge.jsonpatch.JsonPatch;
 import com.github.fge.jsonpatch.JsonPatchException;
-import edu.wctc.wholesale.Entity.WholesaleOrder;
-import edu.wctc.wholesale.exception.ResourceNotFoundException;
+import net.the42null.personalwebsite.Entity.WholesaleOrder;
+import net.the42null.personalwebsite.exception.ResourceNotFoundException;
 
 import java.util.List;
 

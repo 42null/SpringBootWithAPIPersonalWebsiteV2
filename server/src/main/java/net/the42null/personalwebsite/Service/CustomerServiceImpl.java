@@ -1,8 +1,8 @@
-package edu.wctc.wholesale.Service;
+package net.the42null.personalwebsite.Service;
 
-import edu.wctc.wholesale.Entity.Customer;
-import edu.wctc.wholesale.exception.ResourceNotFoundException;
-import edu.wctc.wholesale.repo.CustomerRepository;
+import net.the42null.personalwebsite.Entity.Customer;
+import net.the42null.personalwebsite.exception.ResourceNotFoundException;
+import net.the42null.personalwebsite.repo.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

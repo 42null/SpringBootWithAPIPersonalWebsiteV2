@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head th:replace="fragments/_head :: head">
+<body>
+<div th:insert="fragments/_header :: header"></div>
+
+<div id="content">
+    <h2>List of My Public Repositories (Pulled Via API at Server Initialisation)</h2>
+
+    <div class="centered">
+        <p>Pushed within...</p>
+        <ul class="flatList" style="margin-right: 50px;">
+            <li><span class="date_conditional date_recent"><6 Months</span></li>
+<!--            <li><span class="date_conditional date_older"><6 Months</span></li>-->
+            <li><span class="date_conditional date_old">>6 Months</span></li>
+        </ul>
+    </div>
+
+    <div th:each="repository : ${pageRepositories}" class="repositoryBoxes" >
+<!--        TODO: GET TO WORK-->
+<!--        <th:block th:each="content : ${contents}">-->
+<!--            <span th:replace="|[[${content}]]|"></span>-->
+<!--        </th:block>-->
+        <ul>
+            <li><span><a th:text="${repository.name}" th:href="${repository.htmlUrl}" target="_blank">Name w/ Link</a></span></li>
+            <!--        <li th:text="${repository.url}">URL</li>-->
+            <li><span class="indent">Last commit:
+                <span th:text="${#temporals.format(repository.updatedAt, 'MMM dd, yyyy')}"
+                      th:class="date_conditional"
+                      th:classappend="${repository.updatedAt.isAfter(#temporals.createNow().minusDays(182))} ? 'date_recent' : 'date_old'">
+                    Updated_at
+                </span></span>
+            </li>
+            <li><code th:text="${repository.description}" class="indent">Description</code></li>
+<!--            <span th:text="${#temporals.format(repository.updatedAt, 'MMM dd, yyyy')}"-->
+<!--                  th:classappend="|${getDaysSinceUpdatedAt(repository)}|">-->
+</span>
+
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
+

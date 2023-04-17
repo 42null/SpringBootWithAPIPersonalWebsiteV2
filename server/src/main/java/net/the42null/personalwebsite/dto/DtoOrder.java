@@ -1,4 +1,4 @@
-package edu.wctc.wholesale.dto;
+package net.the42null.personalwebsite.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

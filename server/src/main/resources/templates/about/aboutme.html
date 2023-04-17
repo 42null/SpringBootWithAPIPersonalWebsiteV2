@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head th:replace="fragments/_head :: head">
+<body>
+<div th:insert="fragments/_header :: header"></div>
+
+<div id="content">
+    <h2>About Me <e</h2>
+
+
+    <ul class="rulesList">
+        <li th:each="rule : ${pageRules}">
+            <p th:text="${rule}"></p>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

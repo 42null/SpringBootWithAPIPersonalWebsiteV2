@@ -1,6 +1,6 @@
-package edu.wctc.wholesale.repo;
+package net.the42null.personalwebsite.repo;
 
-import edu.wctc.wholesale.Entity.Product;
+import net.the42null.personalwebsite.Entity.Product;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

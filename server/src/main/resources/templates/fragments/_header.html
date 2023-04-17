@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="https://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>$Title$</title>
 </head>
 <body>
 <header th:fragment="header">
-    <h1><a th:href="@{/}">Pewaukee Golf Croquet Association</a></h1>
     <nav>
         <ul>
             <li><a th:href="@{/}">Home</a></li>
-            <li><a th:href="@{/rules}">Rules of Golf Croquet</a></li>
-            <li><a th:href="@{/terms}">Golf Croquet Glossary</a></li>
+            <li><a th:href="@{/about/aboutMe}">About Me</a></li>
+            <li><a th:href="@{/contact/contact}">Contact</a></li>
+            <li class="dropdown-head"><a th:href="@{/platforms}">Platforms</a>
+                <ul class="dropdown-content">
+                    <li><a th:href="@{/platforms/github}">GitHub</a></li>
+                </ul>
+            </li>
+
+            <li><a th:href="@{/games/games}">Games</a></li>
+            <li><a th:href="@{/apps/apps}">Apps</a></li>
+            <li><a th:href="@{/extensions/extensions}">Extensions</a></li>
+            <li><a th:href="@{/web/web}">Web</a></li>
+
         </ul>
     </nav>
 </header>

@@ -1,8 +1,8 @@
-package edu.wctc.wholesale.controller;
+package net.the42null.personalwebsite.controller;
 
-import edu.wctc.wholesale.Entity.Product;
-import edu.wctc.wholesale.Service.ProductService;
-import edu.wctc.wholesale.exception.ResourceNotFoundException;
+import net.the42null.personalwebsite.Entity.Product;
+import net.the42null.personalwebsite.Service.ProductService;
+import net.the42null.personalwebsite.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;

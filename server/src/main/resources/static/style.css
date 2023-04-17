@@ -1,3 +1,48 @@
+:root {
+
+    --hero_opacity: 0.35;
+    --indent_space_alpha: 1em;
+
+    /* #0d669f */
+    /*--primary_light: #83ecff;*/
+    /*--primary_light_light: #bfe6ff;*/
+    /*--primary_dark: #5f9ea0;*/
+    --primary_light: #83ecff;
+    --primary_light_light: #bfe6ff;
+    --primary_dark: #5f9ea0;
+    --primary_dark_dark: #004547;
+    --primary_darkest: #002424;
+    --white: #fff;
+
+    /*--testa: #800000;*/
+    /*--testb: #CC6600;*/
+    /*--testc: #FFD700;*/
+    /*--testd: #228B22;*/
+    /*--teste: #000080;*/
+    /*--testf: #4B0082;*/
+    /*--testg: #C19A6B;*/
+
+
+    --clear_grey_overlay: #595959aa;
+
+
+    --instructions_background: #cfcfcff6;/*changed for light mode to secondary_background*/
+
+
+
+    --header_background: var(--primary_dark);
+    --header_text: var(--primary_light);
+
+    /* APPS */
+    --app_chalkboard_white: #FFF;
+    --app_chalkboard_background: #b1b1b1;
+
+    --app_guessing_normal: #1da389;
+    --app_guessing_light: #24ffd5;
+    --app_guessing_dark: #094e40;
+}
+
+
 body {
     background-image: url("/img/croquet.jpg");
     background-size: 100%;
@@ -7,9 +52,31 @@ body {
     color: #333;
 }
 
+.centered{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*START NAVIGATION*/
+header {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+header h1 {
+    color: #222;
+    font-size: 50px;
+}
+
+header h1 a {
+    text-decoration: none;
+}
+
 nav {
     margin-bottom: 50px;
-    font-size: 30px;
+    font-size: 1.8em;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 2;
 }
 
 nav ul {
@@ -18,19 +85,53 @@ nav ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    z-index: inherit;
 }
 
 nav li {
     float: left;
+    z-index: inherit;
+}
+
+nav .dropdown-head:hover .dropdown-content {
+    display: block;
+    z-index: inherit;
+}
+
+nav li .dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: inherit;
+    filter: brightness(150%); /* make the child lighter than inherited */
+    z-index: inherit;
+}
+
+nav li .dropdown-content li{
+    /*padding: -10% 3%;*/
+    display: block;
+    z-index: inherit;
+    font-size: 1em;
+}
+nav li .dropdown-content li:hover{
+    filter: brightness(150%); /* make the child lighter than inherited */
+}
+
+nav li:hover {
+    color: var(--primary_light);
+    background-color: var(--primary_dark_dark);
+    z-index: inherit;
 }
 
 nav li a {
     display: block;
-    color: white;
+    color: var(--header_text);
     text-align: center;
     padding: 14px 26px;
     text-decoration: none;
+    z-index: inherit;
 }
+/*END NAVIGATION*/
+
 
 #content {
     background-color: rgba(244, 244, 244, 0.5);
@@ -50,15 +151,104 @@ a {
     color: #333333;
 }
 
-header {
-    font-family: 'Shadows Into Light', cursive;
+
+h2{
+    text-align: center;
 }
 
-header h1 {
-    color: #222;
-    font-size: 50px;
+
+/*START GITHUB GENERATION*/
+.repositoryBoxes{
+    background-color: var(--primary_light_light);
+    margin: 4%;
+    padding: 2%;
 }
 
-header h1 a {
-    text-decoration: none;
+.repositoryBoxes > ul{/*Only target direct list*/
+    list-style: none;
 }
+
+.repositoryBoxes > ul > li >span.indent{
+    text-indent: var(--indent_space_alpha);
+    display:block;/*To allow the text-indent*/
+}
+.repositoryBoxes > ul > li >code.indent{
+    margin-left: var(--indent_space_alpha);
+}
+
+code {
+    font-family: monospace;
+    display: block;
+    background-color: #f9f9f9;
+    padding: 0.2em 0.4em;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+
+/*END GITHUB GENERATION*/
+
+.image_banner {
+    height: 70vh;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, var(--hero_opacity))), url("/img/pageImages/CoverImage.jpg");
+}
+
+.image_banner_message_section {
+    text-align: center;
+    display: inline-block;
+    background-color: var(--clear_grey_overlay);
+    color: var(--white);
+    position: absolute;
+    transform: translate(-50%, 0);
+}
+
+
+
+
+.image_banner > .image_banner_message_section > h1{
+    font-size: 9vh;
+}
+/*END HEADING W/IMAGE SECTION*/
+
+/*START DATE CONDITIONAL*/
+.date_conditional{
+    --padding: 5px;
+    border-radius: max(100vw, 100vh);
+    border: thin solid var(--primary_darkest);
+    padding: calc(var(--padding) - 1px) var(--padding);
+    font-size: calc(100% - (2 * var(--padding)));
+    vertical-align: middle;
+    /*transform: translateY();*/
+}
+
+.flatList{
+    list-style: none;
+}
+.flatList li{
+    display: inline;
+}
+
+
+
+.date_conditional.date_recent{
+    background-color: #00ff00;
+}
+.date_conditional.date_older{
+    background-color: orange;
+}
+.date_conditional.date_old{
+    background-color: orange;
+    /*background-color: red;*/
+    color: white;
+}
+/*END DATE CONDITIONAL*/
+
+
+
+
+

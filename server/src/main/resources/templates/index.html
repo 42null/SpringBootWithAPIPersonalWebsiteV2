@@ -1,42 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Wholesale Orders (Thymeleaf)</title>
-</head>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head th:replace="fragments/_head :: head">
 <body>
-<!--
+<div th:insert="fragments/_header :: header"></div>
 
- DO NOT MODIFY ANYTHING IN THIS FILE!!
 
- CREATE ENTITY OBJECTS TO SATISFY THE STRUCTURE BELOW
 
- DO NOT MODIFY ANYTHING IN THIS FILE!!
+<div class="image_banner">
+<!--    <div class="image_banner_text_email" id="image_banner_text" style="background-color: var(&#45;&#45;clearGreyImageOverlay);">-->
+        <div class="image_banner_message_section" style="bottom: 1%">
+                <h1>I am AJ Memmel</h1>
+                <p style="font-size: 4vh">And I'm a Software Engineer (among other things)</p>
+<!--        &lt;!&ndash;         <button style="font-size: 3vh" title="Email Me!" onclick=" window.open('https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=memmjos@kmsd.edu&body=[Directed from repl.co]%0d%0a', '_blank'); return true;">Contact me</button>-->
+<!--         &ndash;&gt;    <button style="font-size: 3vh" title="Email Me!" <span><a href="mailto:averyparanoiduser@gmail.com?&subject=Response From 42Null Website" target="_blank">Contact me</a></span>-->
+<!--        </button>-->
+                <!--        <p style="background-color:#595959cc;">This site is currently under development, while much of it is compleate, new sections are still being added, click <a href="./NavPages/Projects/Servers/42Nulls/all42nulls.html" target="" style="background-color:#696969;"><b>here</b></a> to see and change what souce you are on.</p>-->
+        </div>
+</div>
 
--->
-<table id="order-table">
-    <thead>
-    <tr>
-        <th>Customer</th>
-        <th>Purchase Date</th>
-        <th>Purchase Order Number</th>
-        <th>Product Name</th>
-        <th>Terms</th>
-        <th>Shipped</th>
-        <th>Total</th>
-    </tr>
-    </thead>
-    <tbody id="order-table-body">
-    <tr th:each="order : ${orderList}">
-        <td th:text="${order.customer.name}">CUSTOMER NAME</td>
-        <td th:text="${#temporals.format(order.purchaseDate, 'MMM dd yyyy')}">PURCHASE DATE</td>
-        <td th:text="${order.purchaseOrderNumber}">PURCHASE ORDER</td>
-        <td th:text="${order.product.name}">PRODUCT NAME</td>
-        <td th:text="${order.terms}">TERMS</td>
-        <td th:text="${#temporals.format(order.shippedDate, 'MMM dd yyyy')}">SHIPPED DATE</td>
-        <td th:text="${order.product.cost}">PRODUCT COST</td>
-    </tr>
-    </tbody>
-</table>
+<!--<center><div class="recents">-->
+<!--    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Dancing+Script"/>-->
+<!--    <blockquote style="color:primary_darkest;"><h1 id="Font_Danceing" style="font-size: 10vh">· <u>Recents</u> ·</h1></blockquote></h1></center>-->
+
 </body>
 </html>
