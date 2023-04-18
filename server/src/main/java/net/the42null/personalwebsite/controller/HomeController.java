@@ -5,8 +5,11 @@ import net.the42null.personalwebsite.Entity.GithubRepository;
 import net.the42null.personalwebsite.Entity.WholesaleOrder;
 import net.the42null.personalwebsite.Service.WholesaleOrderService;
 import net.the42null.personalwebsite.dto.DtoOrder;
+import net.the42null.personalwebsite.helpers.AgeFormatter;
 import net.the42null.personalwebsite.repo.WholesaleOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -30,20 +33,6 @@ public class HomeController {
     private String[] rules;
     private GithubRepository[] pageRepositories = new GithubRepository[1];
 
-//    TODO: Move
-    public String getDaysSinceUpdatedAt(GithubRepository repository) {
-        LocalDateTime updatedAt = repository.getUpdatedAt();
-        LocalDateTime now = LocalDateTime.now();
-        long days = ChronoUnit.DAYS.between(updatedAt, now);
-        if(days >= 182){
-            return "date_old";
-        }else if(days > 7){
-            return "date_older";
-        }else{
-            return "date_recent";
-        }
-    }
-
     @PostConstruct
     private void initData() {
         ObjectMapper mapper = new ObjectMapper();
@@ -58,7 +47,7 @@ public class HomeController {
 
         RestTemplate restTemplate = new RestTemplate();
         pageRepositories = restTemplate.getForObject("https://api.github.com/users/42null/repos", GithubRepository[].class);
-        Arrays.sort(pageRepositories, (r1, r2) -> r2.getUpdatedAt().compareTo(r1.getUpdatedAt()));
+        Arrays.sort(pageRepositories, (r1, r2) -> r2.getPushedAt().compareTo(r1.getPushedAt()));
 
 
     }
@@ -75,7 +64,6 @@ public class HomeController {
     @GetMapping("/about/aboutMe")
     public String showAboutMe(Model model) {
         model.addAttribute("pageTitle", "Rules of Golf Croquet");
-
         /**
          * Add the array of Strings to the model
          */
@@ -92,6 +80,12 @@ public class HomeController {
     public String showGithubPage(Model model) {
         model.addAttribute("pageTitle", "GitHub");
         model.addAttribute("pageRepositories", pageRepositories);
+
+        AgeFormatter ageFormatter = new AgeFormatter();
+        model.addAttribute("ageFormatter", ageFormatter);
+
+//        String message = "Hello, world!";
+//        model.addAttribute("message", message);
         return "platforms/github";
     }
 

@@ -19,7 +19,11 @@
 
             <li><a th:href="@{/games/games}">Games</a></li>
             <li><a th:href="@{/apps/apps}">Apps</a></li>
-            <li><a th:href="@{/extensions/extensions}">Extensions</a></li>
+            <li class="dropdown-head"><a th:href="@{/extensions/extension}">Extensions</a>
+                <ul class="dropdown-content">
+                    <li><a th:href="@{/extensions/return-youtube-ui}">Return YouTube UI</a></li>
+                </ul>
+            </li>
             <li><a th:href="@{/web/web}">Web</a></li>
 
         </ul>

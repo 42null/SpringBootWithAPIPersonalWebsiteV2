@@ -11,9 +11,9 @@
     <div class="centered">
         <p>Pushed within...</p>
         <ul class="flatList" style="margin-right: 50px;">
-            <li><span class="date_conditional date_recent"><6 Months</span></li>
-<!--            <li><span class="date_conditional date_older"><6 Months</span></li>-->
-            <li><span class="date_conditional date_old">>6 Months</span></li>
+            <li><span class="date_conditional date_recent">1 Month</span></li>
+            <li><span class="date_conditional date_older">6 Months</span></li>
+            <li><span class="date_conditional date_old">6+ Months</span></li>
         </ul>
     </div>
 
@@ -23,24 +23,21 @@
 <!--            <span th:replace="|[[${content}]]|"></span>-->
 <!--        </th:block>-->
         <ul>
-            <li><span><a th:text="${repository.name}" th:href="${repository.htmlUrl}" target="_blank">Name w/ Link</a></span></li>
+            <li><a th:text="${repository.name}" th:href="${repository.htmlUrl}" target="_blank">Name w/ Link</a></li>
             <!--        <li th:text="${repository.url}">URL</li>-->
-            <li><span class="indent">Last commit:
-                <span th:text="${#temporals.format(repository.updatedAt, 'MMM dd, yyyy')}"
-                      th:class="date_conditional"
-                      th:classappend="${repository.updatedAt.isAfter(#temporals.createNow().minusDays(182))} ? 'date_recent' : 'date_old'">
+            <li><span  class="indent">Last Pushed: <span class="date_conditional" th:classappend="${ageFormatter.daysToClassColor(ageFormatter.getFullDaysSince(repository.pushedAt))}">
+                <span th:text="${#temporals.format(repository.pushedAt, 'MMM dd, yyyy')}">
                     Updated_at
-                </span></span>
+                </span>
+                <!--(--><span th:text="${ageFormatter.getTimeSince(repository.pushedAt)}"># of days
+                </span><!--)--></span></span>
+                <!--                      th:classappend="${repository.pushedAt.isAfter(#temporals.createNow().minusDays(182))} ? 'date_recent' : 'date_old'">-->
             </li>
             <li><code th:text="${repository.description}" class="indent">Description</code></li>
-<!--            <span th:text="${#temporals.format(repository.updatedAt, 'MMM dd, yyyy')}"-->
-<!--                  th:classappend="|${getDaysSinceUpdatedAt(repository)}|">-->
-</span>
-
+            <li></li>
         </ul>
     </div>
 </div>
-
 </body>
 </html>
 

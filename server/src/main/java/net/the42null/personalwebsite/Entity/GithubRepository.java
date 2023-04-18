@@ -54,7 +54,7 @@ public class GithubRepository {
 	private final String deploymentsUrl;
 	private final String createdAt;
 	private final LocalDateTime updatedAt;
-	private final String pushedAt;
+	private final LocalDateTime pushedAt;
 	private final String gitUrl;
 	private final String sshUrl;
 	private final String cloneUrl;
@@ -147,7 +147,7 @@ public GithubRepository(@JsonProperty("id") long id,
 						@JsonProperty("deploymentsUrl") String deploymentsUrl,
 						@JsonProperty("created_at") String createdAt,
 						@JsonProperty("updated_at") LocalDateTime updatedAt,
-						@JsonProperty("pushed_at") String pushedAt,
+						@JsonProperty("pushed_at") LocalDateTime pushedAt,
 						@JsonProperty("git_url") String gitUrl,
 						@JsonProperty("ssh_url") String sshUrl,
 						@JsonProperty("clone_url") String cloneUrl,
@@ -450,7 +450,7 @@ public GithubRepository(@JsonProperty("id") long id,
 		return updatedAt;
 	}
 
-	public String getPushedAt() {
+	public LocalDateTime getPushedAt() {
 		return pushedAt;
 	}
 

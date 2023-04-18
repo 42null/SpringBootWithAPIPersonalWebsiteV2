@@ -242,13 +242,22 @@ code {
     background-color: orange;
 }
 .date_conditional.date_old{
-    background-color: orange;
-    /*background-color: red;*/
+    background-color: red;
     color: white;
 }
 /*END DATE CONDITIONAL*/
 
 
+
+/*START ABOUT ME SECTION*/
+
+/*.AboutMes{*/
+/*    background-color: var(--secondary_background);*/
+/*    padding: 0px -20px 2px 0px;*/
+/*    font-size: clamp(16px, 2.75vh, 32px);*/
+/*}*/
+
+/*END ABOUT ME SECTION*/
 
 
 
