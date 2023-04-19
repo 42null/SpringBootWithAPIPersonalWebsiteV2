@@ -10,14 +10,21 @@
         background-position-y: 11%;
     }
     .image_banner_message_section{
-        bottom: 25%; left: 25%
+        bottom: 25%; left: 25%;
+        width: 50%;
+    }
+    .image_banner_message_section p{
+        /*width: 50%;*/
+    }
+    .image_banner_message_section a{
+        color: var(--primary_darkest);
     }
 </style>
 
 <div class="image_banner" th:attr="style='background-image: url(' + ${heroImgSrc} + ')'">
     <div class="image_banner_message_section">
         <h1>About Me</h1>
-        <p>Add some text here and possibly italicize it</p>
+        <p><i>Page currently in migration from V1, see the <a alt="Original website" target="_blank" href="https://42null.github.io/index.html">42null.github.io</a></i>.</p>
     </div>
 </div>
 
