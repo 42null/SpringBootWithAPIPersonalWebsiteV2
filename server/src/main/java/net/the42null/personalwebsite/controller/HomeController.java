@@ -3,6 +3,7 @@ package net.the42null.personalwebsite.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.the42null.personalwebsite.Entity.AboutMeContainer;
 import net.the42null.personalwebsite.Entity.GithubRepository;
+import net.the42null.personalwebsite.Entity.PageUpdateBar;
 import net.the42null.personalwebsite.Entity.WholesaleOrder;
 import net.the42null.personalwebsite.Service.WholesaleOrderService;
 import net.the42null.personalwebsite.dto.DtoOrder;
@@ -34,6 +35,7 @@ public class HomeController {
     private String[] rules;
     private GithubRepository[] pageRepositories;
     private AboutMeContainer[] aboutMeContainers;
+    private PageUpdateBar[] pageUpdateBars;
 
     @PostConstruct
     private void initData() {
@@ -58,8 +60,13 @@ public class HomeController {
             e.printStackTrace();
             aboutMeContainers = new AboutMeContainer[0];
         }
-//        aboutMeContainers = restTemplate.getForObject("", AboutMeContainer[].class);
 
+        try {
+            pageUpdateBars = mapper.readValue(Paths.get("server/src/main/resources/static/content/pageUpdateBars.json").toFile(), PageUpdateBar[].class);
+        } catch (IOException e) {
+            e.printStackTrace();
+            pageUpdateBars = new PageUpdateBar[0];
+        }
     }
 
 
@@ -69,14 +76,16 @@ public class HomeController {
 //        model.addAttribute("orderList", wholesaleOrderService.getAllOrders());
         model.addAttribute("pageTitle", "AJ Memmel");
         model.addAttribute("heroImgSrc", "/img/pageImages/CoverImage.jpg");
+//        model.addAttribute("heroImgSrc", "https://avatars.githubusercontent.com/u/67847710");
+        model.addAttribute("updateBars", pageUpdateBars);
         return "index";
     }
 
-    //--- About Me        model.addAttribute("pageTitle", "Rules of Golf Croquet");
     @GetMapping("/about/aboutMe")
     public String showAboutMe(Model model) {
+        model.addAttribute("imageUrl", "/img/pageImages/OfMe/KMGraduation2.JPG");
         model.addAttribute("pageTitle", "About Me");
-        model.addAttribute("heroImgSrc", "https://avatars.githubusercontent.com/u/67847710");
+//        model.addAttribute("heroImgSrc", "https://avatars.githubusercontent.com/u/67847710");
         model.addAttribute("contentBoxes", aboutMeContainers);
         return "about/aboutme";
     }

@@ -21,13 +21,24 @@
             <li><a th:href="@{/apps/apps}">Apps</a></li>
             <li class="dropdown-head"><a th:href="@{/extensions/extension}">Extensions</a>
                 <ul class="dropdown-content">
-                    <li><a th:href="@{/extensions/return-youtube-ui}">Return YouTube UI</a></li>
+<!--                    <li><a th:href="@{/extensions/return-youtube-ui}">Return YouTube UI</a></li>-->
+                    <li><a th:href="@{https://addons.mozilla.org/en-US/firefox/addon/return-youtube-ui/}" target="_blank">Return YouTube UI</a></li>
                 </ul>
             </li>
             <li><a th:href="@{/web/web}">Web</a></li>
 
         </ul>
     </nav>
+<!--    STYLING    -->
+    <style th:inline="css">
+        :root {
+            --background-image: url("[[${imageUrl}]]");
+        }
+        body {
+            background-image: var(--background-image);
+        }
+    </style>
+
 </header>
 </body>
 </html>

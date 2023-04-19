@@ -44,7 +44,10 @@
 
 
 body {
-    background-image: url("/img/croquet.jpg");
+    /*Background-image set though _header.html*/
+    /*background-image: url("/img/croquet.jpg");*/
+    /*background-image: url("https://avatars.githubusercontent.com/u/67847710");*/
+    background-color: var(--primary_light_light);
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -196,7 +199,7 @@ code {
     background-size: cover;
     position: relative;
     z-index: 1;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, var(--hero_opacity))), url("/img/pageImages/CoverImage.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, var(--hero_opacity))), url("");
 }
 
 .image_banner_message_section {
@@ -207,7 +210,9 @@ code {
     position: absolute;
     transform: translate(-50%, 0);
 }
-
+.image_banner_message_section p{
+    font-size: 4vh;
+}
 
 
 
@@ -292,6 +297,28 @@ code {
     max-width:80%;
     height: auto;
 }
+
+
+.recents {
+    width: 50%;
+    background-color: var(--primary_light_light);
+}
+.updateBar {
+    width: 100%;
+    background-color: var(--primary_dark);
+}
+.updateBar :hover {
+    transition: transform .1s;
+    transform: scale(1.1);
+    box-shadow: 12px 12px 2px 1px var(--primary_darkest);
+    background-color: var(--primary_dark);
+    margin: 20px;
+    /*width: 94vw;*/
+    /*height: max(10vh, fit-content);*/
+}
+
+
+
 
 @media (max-width: 768px) {
     .item {

@@ -18,6 +18,17 @@
         </div>
 </div>
 
+<div>
+        <h1 class="centered">Page Migration Status</h1>
+        <div class="recents centered">
+                <div th:each="bar : ${updateBars}" class="updateBar">
+        <!--                <h2><a th:text="${bar.title}" class="indent" href="@{${'/about/aboutMe'}}">Title</a></h2>-->
+                        <h2><a th:href="@{${bar.url}}">Title</a></h2>
+                        <p>Page Status: <a th:text="@{${bar.status}}">status</a></p>
+                </div>
+        </div>
+</div>
+
 <!--<center><div class="recents">-->
 <!--    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Dancing+Script"/>-->
 <!--    <blockquote style="color:primary_darkest;"><h1 id="Font_Danceing" style="font-size: 10vh">· <u>Recents</u> ·</h1></blockquote></h1></center>-->

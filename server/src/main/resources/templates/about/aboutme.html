@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://thymeleaf.org">
 <head th:replace="fragments/_head :: head">
-<body>
+<body th:fragment="fragments/">
 <div th:insert="fragments/_header :: header"></div>
 
+<style>
+/*   Page specific overrides   */
+    body{
+        background-position-y: 11%;
+    }
+    .image_banner_message_section{
+        bottom: 25%; left: 25%
+    }
+</style>
+
 <div class="image_banner" th:attr="style='background-image: url(' + ${heroImgSrc} + ')'">
-    <div class="image_banner_message_section" style="bottom: 1%">
+    <div class="image_banner_message_section">
         <h1>About Me</h1>
-        <p style="font-size: 4vh">Add some text here and possibly italicize it</p>
+        <p>Add some text here and possibly italicize it</p>
     </div>
 </div>
 
@@ -18,7 +28,7 @@
         <br>
         <br>
         <hr>
-        <p th:text="${contentBox.text}"></p>
+        <p th:utext="${contentBox.text}"></p>
     </div>
 </div>
 
