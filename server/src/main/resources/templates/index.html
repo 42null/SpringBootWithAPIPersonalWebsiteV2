@@ -19,11 +19,11 @@
 </div>
 
 <div>
-        <h1 class="centered">Page Migration Status</h1>
+        <h1 class="centered">Page Migration Status Updates</h1>
         <div class="recents centered">
                 <div th:each="bar : ${updateBars}" class="updateBar">
         <!--                <h2><a th:text="${bar.title}" class="indent" href="@{${'/about/aboutMe'}}">Title</a></h2>-->
-                        <h2><a th:href="@{${bar.url}}">Title</a></h2>
+                        <h2><a th:text="@{${bar.url}}" th:href="@{${bar.url}}">Title</a></h2>
                         <p>Page Status: <a th:text="@{${bar.status}}">status</a></p>
                 </div>
         </div>

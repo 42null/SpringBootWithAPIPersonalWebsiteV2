@@ -3,22 +3,43 @@
     "id": 0,
     "title": "Wisconsin-Dairyland Programming Competition",
     "subtitle": "",
-    "imageUrl": "https://42null.github.io/Images/AboutMe/ProgrammingComp2021.jpg",
-    "imageAlt": "My team, 2021",
-    "text": "2021 was my first programming competition and I enjoyed it thoroughly. I participated for Kettle Moraine High under team \"<i>Error: \"Team name not found\"</i>\" we placed third in the blue division (Java) which was the highest position KM had in the six years participating up until that point. I was overjoyed to do it again and while as part of the team \"Byte My Bits\" in 2022 and while we didn't place in the top, it was nice to participate in person and see the campus. You can see the list of standings here."
+    "images": [
+      {
+        "src": "https://42null.github.io/Images/Marquette_ACM.png",
+        "alt": "Marquette ACM Logo",
+        "title": "Marquette ACM"
+      },
+      {
+        "src": "https://42null.github.io/Images/AboutMe/ProgrammingComp2021.jpg",
+        "alt": "",
+        "title": "Our team, 2021"
+      }
+    ],
+    "text": "2021 was my first programming competition and I enjoyed it thoroughly. I participated for Kettle Moraine High under team \"<i>Error: \"Team name not found\"</i>\" we placed third in the blue division (Java) which was the highest position KM had in the six years participating up until that point. I was overjoyed to do it again and while as part of the team \"Byte My Bits\" in 2022 and while we didn't place in the top, it was nice to participate in person and see the campus. You can see the list of standings <a href=\"https://codeabac.us/blue/standings\" target=\"_blank\" style=\"color:var(--primary_dark);\">here</a>."
   },{
-    "id": 1,
-    "title": "FIRST Robotics",
-    "subtitle": "",
-    "imageUrl": "https://42null.github.io/Images/FIRST/Robotics_Logo_Cut-Out-01.svg",
-    "imageAlt": "Team #2077 year 2022 logo",
-    "text": "<h3>Organisation-wide</h3><ul class=\"square\"><li><a href=\"https://www.firstinspires.org/resource-library/frc/deans-list-winners\"target=\"_blank\">Dean's List</a> Nominee (2020)</li><li><a href=\"https://www.firstinspires.org/resource-library/frc/deans-list-winners\" target=\"_blank\">Dean's List</a> Nominee (2021)</li></ul><h3>Team-wide</h3><p>(For more about experience see <a href=\"#FIRST_SECTION\" target=\"\">work experience</a>.</p>\""
-  },{
-    "id": 2,
-    "title": "HS Honors Diploma",
-    "subtitle": "",
-    "imageUrl": "https://www.kmsd.edu/cms/lib/WI01919005/Centricity/Template/GlobalAssets/images///logos/shield.png",
-    "imageAlt": "Kettle Moraine High School KM logo",
-    "text": "I graduated with an honors diploma from KMHS as part of the class of 2022. During my time at KM I made the honers role every year and was a Dick Ohm recipient all 4 years at the High School. Over my time at KMHS I was on the Robotics Team, the Boys Cross Country team, the Chess club, the ECO club, and the Honors Society. I graduated with a weighted GPA of 4.117 (w/bonus points 4.542)."
-  }
+      "id": 1,
+      "title": "FIRST Robotics",
+      "subtitle": "",
+      "images": [
+        {
+          "src": "https://42null.github.io/Images/FIRST/Robotics_Logo_Cut-Out-01.svg",
+          "alt": "Team #2077 Laser robotics gear logo",
+          "title": "Team 2022 Logo"
+        }
+      ],
+      "text": "TEST",
+      "text": "<h3>Organisation-wide</h3><ul class=\"square\"><li><a href=\"https://www.firstinspires.org/resource-library/frc/deans-list-winners\"target=\"_blank\">Dean's List</a> Nominee (2020)</li><li><a href=\"https://www.firstinspires.org/resource-library/frc/deans-list-winners\" target=\"_blank\">Dean's List</a> Nominee (2021)</li></ul><h3>Team-wide</h3><p>(For more about experience see <a href=\"#FIRST_SECTION\" target=\"\">work experience</a>.</p>\""
+    },{
+      "id": 2,
+      "title": "HS Honors Diploma",
+      "subtitle": "",
+      "images": [
+        {
+          "src": "https://www.kmsd.edu/cms/lib/WI01919005/Centricity/Template/GlobalAssets/images///logos/shield.png",
+          "alt": "Kettle Moraine High School KM logo",
+          "title": "KM Logo"
+        }
+      ],
+  "text": "I graduated with an honors diploma from KMHS as part of the class of 2022. During my time at KM I made the honers role every year and was a Dick Ohm recipient all 4 years at the High School. Over my time at KMHS I was on the Robotics Team, the Boys Cross Country team, the Chess club, the ECO club, and the Honors Society. I graduated with a weighted GPA of 4.117 (w/bonus points 4.542)."
+    }
 ]

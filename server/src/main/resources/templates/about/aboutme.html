@@ -30,14 +30,35 @@
     </div>
 </div>
 
-<div class="container about-mes">
-    <div th:each="contentBox : ${contentBoxes}" class="item">
-        <h1 th:text="${contentBox.title}" class="indent">Title</h1>
-        <img th:src="${contentBox.imageUrl}" alt="${contentBox.imageAlt}" class="centered">
-        <br>
-        <br>
-        <hr>
-        <p th:utext="${contentBox.text}"></p>
+<!--<div class="about-mes">-->
+<!--    <div class="container">-->
+<!--    <div th:each="contentBox : ${contentBoxes}">-->
+<!--        <div class="item">-->
+<!--            <h1 th:text="${contentBox.title}">Title</h1>-->
+<!--            <div class="jsonImage centered">-->
+<!--                <img th:each="image : ${contentBox.images}" th:src="${image.src}" alt="${image.alt}" title="${image.title}">-->
+<!--            </div>-->
+<!--            <br>-->
+<!--            <br>-->
+<!--            <hr>-->
+<!--            <p th:utext="${contentBox.text}"></p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="about-mes">
+    <div class="container">
+        <div th:each="contentBox : ${contentBoxes}" class="item">
+            <h1 th:text="${contentBox.title}">Title</h1>
+                <div class="jsonImage centered">
+                    <img th:each="image : ${contentBox.images}" th:src="${image.src}" alt="${image.alt}" title="${image.title}">
+                </div>
+            <br>
+            <br>
+            <hr>
+            <p th:utext="${contentBox.text}"></p>
+        </div>
     </div>
 </div>
 

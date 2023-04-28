@@ -1,5 +1,6 @@
 package net.the42null.personalwebsite.controller;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.the42null.personalwebsite.Entity.AboutMeContainer;
 import net.the42null.personalwebsite.Entity.GithubRepository;
@@ -55,6 +56,7 @@ public class HomeController {
 
 
         try {
+            mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
             aboutMeContainers = mapper.readValue(Paths.get("server/src/main/resources/static/content/aboutMes.json").toFile(), AboutMeContainer[].class);
         } catch (IOException e) {
             e.printStackTrace();
