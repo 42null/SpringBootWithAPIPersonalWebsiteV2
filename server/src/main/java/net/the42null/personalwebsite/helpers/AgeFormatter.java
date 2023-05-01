@@ -23,7 +23,9 @@ public final class AgeFormatter {
 							   ChronoUnit.MONTHS,
 							   ChronoUnit.DAYS,
 							   ChronoUnit.HOURS,
-							   ChronoUnit.MINUTES};
+							   ChronoUnit.MINUTES,
+							   ChronoUnit.SECONDS
+							};
 		Function<ChronoUnit, Long> calculateDifference = unit -> unit.between(compareDate, now);
 		for (ChronoUnit unit : units) {
 			long difference = calculateDifference.apply(unit);

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head th:replace="fragments/_head :: head">
+<body>
+<div th:insert="fragments/_header :: header"></div>
+
+<style th:inline="css">
+  /*Page Overrides*/
+  .image_banner {
+    height: 40vh;/*TODO: Make more dynamic*/
+  }
+</style>
+
+<div id="content">
+  <div class="image_banner" th:attr="style='background-image: url(' + ${heroImgSrc} + ')'">
+    <div class="image_banner_message_section">
+
+      <h1 th:text="${header}"></h1>
+      <p  th:text="${subheader}"></p>
+    </div>
+  </div>
+  <p th:text="${furtherText}"></p>
+</div>
+</body>
+</html>

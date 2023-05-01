@@ -11,19 +11,17 @@ import net.the42null.personalwebsite.dto.DtoOrder;
 import net.the42null.personalwebsite.helpers.AgeFormatter;
 import net.the42null.personalwebsite.repo.WholesaleOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -83,13 +81,13 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/about/aboutMe")
+    @GetMapping("/about")
     public String showAboutMe(Model model) {
         model.addAttribute("imageUrl", "/img/pageImages/OfMe/KMGraduation2.JPG");
         model.addAttribute("pageTitle", "About Me");
 //        model.addAttribute("heroImgSrc", "https://avatars.githubusercontent.com/u/67847710");
         model.addAttribute("contentBoxes", aboutMeContainers);
-        return "about/aboutme";
+        return "about/aboutMe";
     }
     //--- Platforms
     @GetMapping("/platforms")
@@ -112,7 +110,19 @@ public class HomeController {
 
 //NAV (END)
 
+//CONTACT (START)
+    @GetMapping("/contact")
+    public String showContactPage(Model model) {
+    //    model.addAttribute("pageTitle", "Contact Me");
+        return "/contact/contact";
+    }
+    @GetMapping("/contactForm")
+    public String showContactFormPage(Model model) {
+        return "/contact/contact";
+    }
+    //generics
 
+//CONTACT (END)
 
     @Autowired
     private WholesaleOrderService wholesaleOrderService;
