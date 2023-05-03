@@ -6,9 +6,13 @@
 
 <style th:inline="css">
         /*Page Overrides*/
-        .image_banner {
-                height: 40vh;/*TODO: Make more dynamic*/
-        }
+        /*td > button{*/
+        /*        background-color: orange;*/
+        /*}*/
+        /*button.material-symbols-outlined {*/
+        /*        border: none;*/
+        /*        background-color: red;*/
+        /*}*/
 </style>
 
 <div id="content">
@@ -22,25 +26,31 @@
         <div class="centered">
                 <h1>Contact</h1>
                 <div class="centered">
-                        <table class="">
+                        <table class="material-copy">
                                 <tr>
                                         <th>Description</th>
-                                        <th>Type</th>
                                         <th>Link</th>
                                 </tr>
                                 <tr>
-                                        <td>Email</td>
-                                        <td>todo</td>
-                                        <td>todo</td>
+                                        <td>Personal Email</td>
+                                        <td><a href="mailto:josephmemmel42null@duck.com" title="Email me!">josephmemmel42null@duck.com</a></td>
+<!--                                        <td class="material-symbols-outlined"><button class="material-symbols-outlined">content_paste</button></td>-->
+                                        <td onclick="copyTextToClipboard('josephmemmel42null@duck.com')" class="material-symbols-outlined"><span class="clipboard-wrap"><span class="material-icons clipboard-copy"></span></span></td>
                                 </tr>
                                 <tr>
-                                        <td>Todo</td>
-                                        <td>Todo</td>
-                                        <td>Todo</td>
+                                        <td>Personal Email</td>
+                                        <td><a href="mailto:averyparanoiduser@gmail.com" title="Email me!">averyparanoiduser@gmail.com</a></td>
+                                </tr>
+                                <tr>
+                                        <td>Cell Number</td>
+                                        <td><a href="tel:+12622269337" title="Call/text me!">+1 (262)-226-9337</a></td>
                                 </tr>
                         </table>
                 </div>
                 <p>Paragrpah</p>
+                <p><span class="material-symbols-outlined">inventory</span></p>
+                <p><span class="material-symbols-outlined">&#xe14f;</span></p>
+
         </div>
 </div>
 </body>

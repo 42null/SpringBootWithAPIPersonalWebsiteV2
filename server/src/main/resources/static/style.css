@@ -23,6 +23,7 @@
     /*--testg: #C19A6B;*/
 
 
+    --content_backgorund: rgba(244, 244, 244, 0.5);
     --clear_grey_overlay: #595959aa;
 
 
@@ -140,7 +141,7 @@ nav li a {
 
 
 #content {
-    background-color: rgba(244, 244, 244, 0.5);
+    background-color: var(--content_background);
     margin-right: 20%;
     margin-left: 20%;
     padding: 20px;
@@ -160,10 +161,31 @@ nav li a {
 #content table th, #content table td{
     border: solid 2px black;
 }
-#content tr:nth-child(even){
+#content tr:nth-child(even) td{
     background-color: var(--primary_light);
 }
+
+#content td > button.material-symbols-outlined{
+    background-color: var(--content_backgorund);/*TODO: Make it use "transparent"*/
+    height: 100%;
+    width:  100%;
+    background: none;
+    border: none;
+    /*content: "content_paste";*/
+}
+
 /*CONTENT TABLES END*/
+
+/*CHANGINGS START*/
+/* https://stackoverflow.com/a/44463146/16041898 */
+.material-icons.clipboard-copy::before{
+    content:"content_paste";
+}
+.clipboard-wrap:hover .material-icons.clipboard-copy::before{
+    content:"inventory";
+}
+/*CHANGINGS END*/
+
 
 
 #croquet-yard {

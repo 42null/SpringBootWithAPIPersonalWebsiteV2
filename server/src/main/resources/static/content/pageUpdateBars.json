@@ -1,13 +1,18 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "title": "Github",
     "url": "/platforms/github",
     "status": "Mostly Completed!"
   },{
-  "id": 0,
-  "title": "About Me",
-  "url": "/about/aboutMe",
-  "status": "Migrating"
-}
+    "id": 1,
+    "title": "About Me",
+    "url": "/about",
+    "status": "Migrating"
+  },{
+    "id": 2,
+    "title": "Contact",
+    "url": "/contact",
+    "status": "Migrating"
+  }
 ]
