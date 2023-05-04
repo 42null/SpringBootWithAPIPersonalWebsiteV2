@@ -181,8 +181,11 @@ nav li a {
 .material-icons.clipboard-copy::before{
     content:"content_paste";
 }
-.clipboard-wrap:hover .material-icons.clipboard-copy::before{
+.clipboard-wrap:hover .material-icons.clipboard-copy::before, .lastCopiedToClipboard::before{
     content:"inventory";
+}
+.clipboard-wrap{
+    background-color: var(--primary_light);
 }
 /*CHANGINGS END*/
 
@@ -341,27 +344,27 @@ code {
 }
 
 
-.about-mes .item{
+.primary-container-section .item{
     color: var(--primary_dark);
     border-radius: 40px;
     background: var(--primary_dark_dark);
 }
-.about-mes .item h1{
+.primary-container-section .item h1{
     background-color: var(--primary_dark);
     color: var(--primary_dark_dark);
     text-align: center;
 }
-.about-mes .item{
+.primary-container-section .item{
     /*display: grid;*/
     /*grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));*/
     /*grid-gap: 5px;*/
 }
 
-.about-mes .item img{
+.primary-container-section .item img{
     max-width: 80%;
     height: auto;
 }
-.about-mes .jsonImage img{
+.primary-container-section .jsonImage img{
     width: 45%;
     height: auto;
     margin: 5px;

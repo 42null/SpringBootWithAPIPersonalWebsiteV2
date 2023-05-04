@@ -2,10 +2,7 @@ package net.the42null.personalwebsite.controller;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.the42null.personalwebsite.Entity.AboutMeContainer;
-import net.the42null.personalwebsite.Entity.GithubRepository;
-import net.the42null.personalwebsite.Entity.PageUpdateBar;
-import net.the42null.personalwebsite.Entity.WholesaleOrder;
+import net.the42null.personalwebsite.Entity.*;
 import net.the42null.personalwebsite.Service.WholesaleOrderService;
 import net.the42null.personalwebsite.dto.DtoOrder;
 import net.the42null.personalwebsite.helpers.AgeFormatter;
@@ -15,8 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
@@ -33,12 +28,20 @@ public class HomeController {
 
     private String[] rules;
     private GithubRepository[] pageRepositories;
-    private AboutMeContainer[] aboutMeContainers;
     private PageUpdateBar[] pageUpdateBars;
+    private Contact[] contacts;
+
+/*Containers*/
+    private ItemContainer[] aboutMeContainers;
+
+    private ItemContainer[] websiteContainers;
 
     @PostConstruct
     private void initData() {
         ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+
+
 
         try {
             rules = mapper.readValue(Paths.get("server/src/main/resources/static/content/croquetRules.json").toFile(), String[].class);
@@ -50,15 +53,15 @@ public class HomeController {
 
         RestTemplate restTemplate = new RestTemplate();
         pageRepositories = restTemplate.getForObject("https://api.github.com/users/42null/repos", GithubRepository[].class);
+        assert pageRepositories != null;
         Arrays.sort(pageRepositories, (r1, r2) -> r2.getPushedAt().compareTo(r1.getPushedAt()));
 
 
         try {
-            mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
-            aboutMeContainers = mapper.readValue(Paths.get("server/src/main/resources/static/content/aboutMes.json").toFile(), AboutMeContainer[].class);
+            aboutMeContainers = mapper.readValue(Paths.get("server/src/main/resources/static/content/aboutMes.json").toFile(), ItemContainer[].class);
         } catch (IOException e) {
             e.printStackTrace();
-            aboutMeContainers = new AboutMeContainer[0];
+            aboutMeContainers = new ItemContainer[0];
         }
 
         try {
@@ -66,6 +69,20 @@ public class HomeController {
         } catch (IOException e) {
             e.printStackTrace();
             pageUpdateBars = new PageUpdateBar[0];
+        }
+        /*Contacts*/
+        try {
+            contacts = mapper.readValue(Paths.get("server/src/main/resources/static/content/contacts.json").toFile(), Contact[].class);
+        } catch (IOException e) {
+            e.printStackTrace();
+            contacts = new Contact[0];
+        }
+        /*Websites*/
+        try {
+            websiteContainers = mapper.readValue(Paths.get("server/src/main/resources/static/content/websites.json").toFile(), ItemContainer[].class);
+        } catch (IOException e) {
+            e.printStackTrace();
+            websiteContainers = new ItemContainer[0];
         }
     }
 
@@ -107,13 +124,20 @@ public class HomeController {
 //        model.addAttribute("message", message);
         return "platforms/github";
     }
-
+    @GetMapping("/websites")
+    public String showWebPage(Model model) {
+        model.addAttribute("pageTitle", "Websites");
+        model.addAttribute("contentBoxes", websiteContainers);
+        return "/web/web";
+    }
 //NAV (END)
 
 //CONTACT (START)
     @GetMapping("/contact")
     public String showContactPage(Model model) {
-    //    model.addAttribute("pageTitle", "Contact Me");
+        model.addAttribute("pageTitle", "Contact Me");
+        model.addAttribute("contacts", contacts);
+
         return "/contact/contact";
     }
     @GetMapping("/contactForm")

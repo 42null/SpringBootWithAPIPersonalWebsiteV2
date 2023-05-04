@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head th:replace="fragments/_head :: head">
+<body>
+<div th:insert="fragments/_header :: header"></div>
+
+<style th:inline="css">
+        /*Page Overrides*/
+        .image_banner_message_section {
+                width: 70%;
+        }
+        #content{
+                clear: both;
+                width: 92%;
+                margin-left: auto;
+                margin-right: auto;
+                padding-bottom: 0;
+        }
+        .primary-container-section{
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+        }
+        .jsonImage{
+                background-color: var(--primary_dark);
+                filter: brightness(1.1);
+        }
+</style>
+
+<div class="image_banner" th:attr="style='background-image: url(' + ${heroImgSrc} + ')'">
+        <div class="image_banner_message_section">
+                <h1>Recent Website Portfolio</h1>
+                <p><i>I host a copy of this website in multiple locations for practice, version deployment, and accessibility. Because I push updates regularly, the functionality of some of these installations may be hampered, 42null.github.io will host the most stable version.</i></p>
+        </div>
+</div>
+
+
+<div id="content">
+<!--        <div class="image_banner" th:attr="style='background-image: url(' + ${heroImgSrc} + ')'">-->
+<!--                <div class="image_banner_message_section">-->
+<!--                        <h1></h1>-->
+<!--                        <p  th:text="${subheader}"></p>-->
+<!--                </div>-->
+<!--        </div>-->
+<!--        <p th:text="${furtherText}"></p>-->
+
+        <div class="primary-container-section">
+                <div class="container">
+                        <div th:each="contentBox : ${contentBoxes}" class="item">
+                                <h1 th:text="${contentBox.title}">Title</h1>
+                                <div class="centered">
+                                        <div class="jsonImage">
+                                                <img th:each="image : ${contentBox.images}" th:src="${image.src}" alt="${image.alt}" title="${image.title}">
+                                        </div>
+                                </div>
+                                <br>
+                                <br>
+                                <hr>
+                                <p th:utext="${contentBox.text}"></p>
+                        </div>
+                </div>
+        </div>
+</div>
+</body>
+</html>

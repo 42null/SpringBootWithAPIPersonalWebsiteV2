@@ -1,0 +1,15 @@
+[
+  {
+    "id": 0,
+    "title": "repl.it",
+    "subtitle": "",
+    "images": [
+      {
+        "src": "https://42null.github.io/Images/Replit/replit-logo-png-transparent.png",
+        "alt": "repl.it logo",
+        "title": "repl.it's logo"
+      }
+    ],
+    "text": "\nDevelopment version, this version can be expected to be edited live and therefore will contain the most up to date information but often the site may not be functional."
+  }
+]

@@ -6,13 +6,12 @@
 
 <style th:inline="css">
         /*Page Overrides*/
-        /*td > button{*/
-        /*        background-color: orange;*/
-        /*}*/
-        /*button.material-symbols-outlined {*/
-        /*        border: none;*/
-        /*        background-color: red;*/
-        /*}*/
+        .hiddenClipboard {
+                display: none;
+        }
+        .lastCopiedToClipboard{
+                /*background-color: red;*/
+        }
 </style>
 
 <div id="content">
@@ -24,32 +23,21 @@
 <!--        </div>-->
 <!--        <p th:text="${furtherText}"></p>-->
         <div class="centered">
-                <h1>Contact</h1>
+                <h1>Contact Information</h1>
                 <div class="centered">
                         <table class="material-copy">
                                 <tr>
-                                        <th>Description</th>
+                                        <th>Type</th>
                                         <th>Link</th>
                                 </tr>
-                                <tr>
-                                        <td>Personal Email</td>
-                                        <td><a href="mailto:josephmemmel42null@duck.com" title="Email me!">josephmemmel42null@duck.com</a></td>
-<!--                                        <td class="material-symbols-outlined"><button class="material-symbols-outlined">content_paste</button></td>-->
-                                        <td onclick="copyTextToClipboard('josephmemmel42null@duck.com')" class="material-symbols-outlined"><span class="clipboard-wrap"><span class="material-icons clipboard-copy"></span></span></td>
-                                </tr>
-                                <tr>
-                                        <td>Personal Email</td>
-                                        <td><a href="mailto:averyparanoiduser@gmail.com" title="Email me!">averyparanoiduser@gmail.com</a></td>
-                                </tr>
-                                <tr>
-                                        <td>Cell Number</td>
-                                        <td><a href="tel:+12622269337" title="Call/text me!">+1 (262)-226-9337</a></td>
+                                <tr th:each="contact : ${contacts}" class="">
+                                        <td th:text="@{${contact.description}}"> Type</td>
+                                        <td><a th:text="${contact.showLink}" th:href="@{${contact.copyStart} + ${contact.showLink}}">Clickable Link</a></td>
+                                        <td th:attr="onclick=|copyTextToClipboard('${contact.showLink}')|" class="material-symbols-outlined"><span class="clipboard-wrap"><span class="material-icons clipboard-copy"></span></span></td>
                                 </tr>
                         </table>
                 </div>
-                <p>Paragrpah</p>
-                <p><span class="material-symbols-outlined">inventory</span></p>
-                <p><span class="material-symbols-outlined">&#xe14f;</span></p>
+                <p>Feel free to reach out! If you do try to call me, I may have my phone on silent mode, leave me a text or voicemail and I will get back to you as soon as possible.</p>
 
         </div>
 </div>

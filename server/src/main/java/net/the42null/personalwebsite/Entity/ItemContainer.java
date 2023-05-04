@@ -3,7 +3,7 @@ package net.the42null.personalwebsite.Entity;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class AboutMeContainer {
+public class ItemContainer {
 	private final Long id;
 	private final String title;
 	private final String subtitle;
@@ -38,11 +38,11 @@ public class AboutMeContainer {
 
 
 @JsonCreator
-public AboutMeContainer(@JsonProperty("id") long id,
-						@JsonProperty("title") String title,
-						@JsonProperty("subtitle") String subtitle,
-						@JsonProperty("images") Image[] images,
-						@JsonProperty("text") String text
+public ItemContainer(@JsonProperty("id") long id,
+					 @JsonProperty("title") String title,
+					 @JsonProperty("subtitle") String subtitle,
+					 @JsonProperty("images") Image[] images,
+					 @JsonProperty("text") String text
 						){
 		this.id = id;
 		this.title = title;
