@@ -36,7 +36,7 @@
             <h1 th:text="${contentBox.title}">Title</h1>
             <div class="centered">
                 <div class="jsonImage">
-                    <img th:each="image : ${contentBox.images}" th:src="${image.src}" alt="${image.alt}" title="${image.title}">
+                    <img th:each="image : ${contentBox.images}" th:src="${image.src}" th:alt="${image.alt}" th:title="${image.title}">
                 </div>
             </div>
             <br>

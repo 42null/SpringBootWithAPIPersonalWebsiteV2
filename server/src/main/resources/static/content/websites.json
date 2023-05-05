@@ -2,14 +2,38 @@
   {
     "id": 0,
     "title": "repl.it",
-    "subtitle": "",
+    "subtitle": "Original Portfolio",
     "images": [
       {
         "src": "https://42null.github.io/Images/Replit/replit-logo-png-transparent.png",
         "alt": "repl.it logo",
-        "title": "repl.it's logo"
+        "title": "It's hosted on repl.it"
       }
     ],
-    "text": "\nDevelopment version, this version can be expected to be edited live and therefore will contain the most up to date information but often the site may not be functional."
+    "text": "This site has been deprecated. It was my first portfolio website and everything was built from scratch. I learned a lot but would definitely employ more dynamic construction now."
+  },{
+    "id": 1,
+    "title": "github.io",
+    "subtitle": "Portfolio Mirror Site",
+    "images": [
+      {
+        "src": "https://42null.github.io/Images/Github/GitHub_Logo.png",
+        "alt": "Github's logo",
+        "title": "It's hosted on GitHub"
+      }
+    ],
+    "text": "This mirror currently hosts the last pushed version of the repl.it portfolio site. It will be changed to host this site once it is ready."
+  },{
+    "id": 2,
+    "title": "Personally Hosted",
+    "subtitle": "Running from ",
+    "images": [
+      {
+        "src": "https://42null.github.io/Images/favicons/favicon-32x32.png",
+        "alt": "My logo",
+        "title": "I host it on a Raspberry Pi"
+      }
+    ],
+    "text": "This is a server I run from my house, I use a subdomain from FreeDNS. I use it for multiple projects such as as a remote camera, as a website host, and as a domain redirect."
   }
 ]

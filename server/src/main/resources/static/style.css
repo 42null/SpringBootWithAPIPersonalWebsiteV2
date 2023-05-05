@@ -262,7 +262,7 @@ code {
 
 
 
-.image_banner > .image_banner_message_section > h1{
+.image_banner > .image_banner_message_section > h2{
     font-size: 9vh;
 }
 /*END HEADING W/IMAGE SECTION*/
@@ -329,7 +329,7 @@ code {
     background-color: #ccc;
 }
 
-.item h1{
+.item h2{
     border-radius: 35px;
     padding:10px;"
 }
@@ -343,13 +343,16 @@ code {
     background-color: var(--default_br_color);
 }
 
+.subtitle{
+    font-size: smaller;
+}
 
 .primary-container-section .item{
     color: var(--primary_dark);
     border-radius: 40px;
     background: var(--primary_dark_dark);
 }
-.primary-container-section .item h1{
+.primary-container-section .item h2{
     background-color: var(--primary_dark);
     color: var(--primary_dark_dark);
     text-align: center;

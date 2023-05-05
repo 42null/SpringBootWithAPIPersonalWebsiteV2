@@ -4,24 +4,24 @@
     "description": "Personal Email",
     "showLink": "josephmemmel42null@duck.com",
     "copyStart": "mailto:",
-    "title": "Email Me!"
+    "title": "Email Me"
   },{
     "id": 1,
     "description": "Personal Email",
     "showLink": "averyparanoiduser@gmail.com",
     "copyStart": "mailto:",
-    "title": "Email Me!"
+    "title": "Email Me"
   },{
     "id": 2,
     "description": "School Email",
     "showLink": "jmemmel2@my.wctc.edu",
     "copyStart": "mailto:",
-    "title": "Email Me!"
+    "title": "Email Me"
   },{
     "id": 3,
     "description": "Cell Number",
     "showLink": "+1(262)-226-9337",
     "copyStart": "mailto:",
-    "title": "Call / Text Me!"
+    "title": "Call / Text Me"
   }
 ]
