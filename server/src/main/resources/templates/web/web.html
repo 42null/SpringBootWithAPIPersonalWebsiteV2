@@ -42,21 +42,23 @@
 
 
 <div id="content">
-
         <div class="primary-container-section">
                 <div class="container">
-                        <div th:each="contentBox : ${contentBoxes}" class="item">
-                                <h2 th:text="${contentBox.title}">Title</h2>
+                        <div th:each="contentBox : ${contentBoxes}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
+                                <h2 th:text="${contentBox.header}">Header</h2>
                                 <h4 th:text="${contentBox.subtitle}" class="centered subtitle">Subtitle</h4>
                                 <div class="centered">
                                         <div class="jsonImage">
-                                                <img th:each="image : ${contentBox.images}" th:src="${image.src}" th:alt="${image.alt}" th:title="${image.title}">
+                                                <img th:each="image : ${contentBox.images}"
+                                                     th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "
+                                                     th:src="${image.src}"
+                                                     th:alt="${image.alt}"
+                                                     th:title="${image.title}" />
                                         </div>
                                 </div>
                                 <br>
-                                <br>
                                 <hr>
-                                <p th:utext="${contentBox.text}"></p>
+                                <p th:utext="${contentBox.text}" class="text"></p>
                         </div>
                 </div>
         </div>

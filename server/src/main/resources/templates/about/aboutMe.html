@@ -12,11 +12,11 @@
     .image_banner_message_section{
         bottom: 25%; left: 25%;
         width: 50%;
+        padding-bottom: 15px;
     }
     .image_banner_message_section p{
         padding-left: 10px;
         padding-right: 10px;
-        /*width: 50%;*/
     }
     .image_banner_message_section a{
         color: var(--primary_darkest);
@@ -27,22 +27,70 @@
     <div class="image_banner_message_section">
         <h1>About Me</h1>
         <p><i>Page currently in migration from V1, see the original at <a alt="Original website" target="_blank" href="https://42null.github.io/index.html">42null.github.io</a></i>.</p>
+
+        <div class="centered">
+            <div class="page-jump-selector">
+                <ul>
+                    <li><a href="#accomplishments">Accomplishments</a></li>
+                    <li><a href="#work-experience">Work Experience</a></li>
+                    <li><a href="#relevant-coursework">Relevant Coursework</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 
+
 <div class="primary-container-section">
+    <h2 class="centered" id="accomplishments">accomplishments</h2>
     <div class="container">
-        <div th:each="contentBox : ${contentBoxes}" class="item">
-            <h1 th:text="${contentBox.title}">Title</h1>
+        <div th:each="contentBox : ${contentBoxesAchievements}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
+            <h2 th:text="${contentBox.header}">Header</h2>
             <div class="centered">
                 <div class="jsonImage">
-                    <img th:each="image : ${contentBox.images}" th:src="${image.src}" th:alt="${image.alt}" th:title="${image.title}">
+                    <img th:each="image : ${contentBox.images}"
+                         th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "
+                         th:src="${image.src}"
+                         th:alt="${image.alt}"
+                         th:title="${image.title}" />
                 </div>
             </div>
-            <br>
-            <br>
             <hr>
-            <p th:utext="${contentBox.text}"></p>
+            <p th:utext="${contentBox.text}" class="text"></p>
+        </div>
+    </div>
+    <h2 class="centered" id="work-experience">Work Experience</h2>
+    <div class="container">
+        <div th:each="contentBox : ${contentBoxesWorkExperience}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
+            <h2 th:text="${contentBox.header}">Header</h2>
+            <div class="centered">
+                <div class="jsonImage">
+                    <img th:each="image : ${contentBox.images}"
+                         th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "
+                         th:src="${image.src}"
+                         th:alt="${image.alt}"
+                         th:title="${image.title}" />
+                </div>
+            </div>
+            <hr>
+            <p th:utext="${contentBox.text}" class="text"></p>
+        </div>
+    </div>
+    <h2 class="centered" id="relevant-coursework">Relevant Coursework</h2>
+    <div class="container">
+        <div th:each="contentBox : ${contentBoxesRelevantCoursework}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
+            <h2 th:text="${contentBox.header}">Header</h2>
+            <div class="centered">
+                <div class="jsonImage">
+                    <img th:each="image : ${contentBox.images}"
+                         th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "
+                         th:src="${image.src}"
+                         th:alt="${image.alt}"
+                         th:title="${image.title}" />
+                </div>
+            </div>
+            <hr>
+            <p th:utext="${contentBox.text}" class="text"></p>
         </div>
     </div>
 </div>

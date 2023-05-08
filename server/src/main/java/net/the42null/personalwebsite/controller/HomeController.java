@@ -20,6 +20,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -32,9 +33,9 @@ public class HomeController {
     private Contact[] contacts;
 
 /*Containers*/
-    private ItemContainer[] aboutMeContainers;
+    private List<ItemContainer> aboutMeContainers;
+    private List<ItemContainer> websiteContainers;
 
-    private ItemContainer[] websiteContainers;
 
     @PostConstruct
     private void initData() {
@@ -58,10 +59,10 @@ public class HomeController {
 
 
         try {
-            aboutMeContainers = mapper.readValue(Paths.get("server/src/main/resources/static/content/aboutMes.json").toFile(), ItemContainer[].class);
+            aboutMeContainers = List.of(mapper.readValue(Paths.get("server/src/main/resources/static/content/aboutMes.json").toFile(), ItemContainer[].class));
         } catch (IOException e) {
             e.printStackTrace();
-            aboutMeContainers = new ItemContainer[0];
+            aboutMeContainers = List.of(new ItemContainer[0]);
         }
 
         try {
@@ -79,10 +80,10 @@ public class HomeController {
         }
         /*Websites*/
         try {
-            websiteContainers = mapper.readValue(Paths.get("server/src/main/resources/static/content/websites.json").toFile(), ItemContainer[].class);
+            websiteContainers = List.of(mapper.readValue(Paths.get("server/src/main/resources/static/content/websites.json").toFile(), ItemContainer[].class));
         } catch (IOException e) {
             e.printStackTrace();
-            websiteContainers = new ItemContainer[0];
+            websiteContainers = List.of(new ItemContainer[0]);
         }
     }
 
@@ -103,7 +104,20 @@ public class HomeController {
         model.addAttribute("imageUrl", "/img/pageImages/OfMe/KMGraduation2.JPG");
         model.addAttribute("pageTitle", "About Me");
 //        model.addAttribute("heroImgSrc", "https://avatars.githubusercontent.com/u/67847710");
-        model.addAttribute("contentBoxes", aboutMeContainers);
+
+//        TODO: Optimise filtering
+        List<ItemContainer> achievements = aboutMeContainers.stream()
+                                                            .filter(a -> (a.getId() >= 1000 && a.getId() < 2000))
+                                                            .collect(Collectors.toList());
+        List<ItemContainer> workExperience = aboutMeContainers.stream()
+                                                            .filter(a -> (a.getId() >= 2000 && a.getId() < 3000))
+                                                            .collect(Collectors.toList());
+        List<ItemContainer> relevantCoursework = aboutMeContainers.stream()
+                                                            .filter(a -> (a.getId() >= 2000 && a.getId() < 3000))
+                                                            .collect(Collectors.toList());
+        model.addAttribute("contentBoxesAchievements", achievements);
+        model.addAttribute("contentBoxesWorkExperience", workExperience);
+        model.addAttribute("contentBoxesRelevantCoursework", relevantCoursework);
         return "about/aboutMe";
     }
     //--- Platforms
@@ -180,12 +194,12 @@ public class HomeController {
     public List<DtoOrder> getAllOrders() {
         List<DtoOrder> list = new ArrayList<>();
 //        orderRepository.findAll().forEach(list::add);
-//        orderRepository.findAll().forEach(order -> list.add(convertToDto(order)));
+        orderRepository.findAll().forEach(order -> list.add(convertToDto(order)));
 
-//        List<WholesaleOrder> wholesaleOrderList = wholesaleOrderService.getAllOrders();
-//        for(WholesaleOrder wholesaleOrder: wholesaleOrderList){
-//            list.add(convertToDto(wholesaleOrder));
-//        }
+        List<WholesaleOrder> wholesaleOrderList = wholesaleOrderService.getAllOrders();
+        for(WholesaleOrder wholesaleOrder: wholesaleOrderList){
+            list.add(convertToDto(wholesaleOrder));
+        }
         return list;
     }
 
