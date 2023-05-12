@@ -5,6 +5,17 @@
 <body>
 <div th:insert="fragments/_header :: header"></div>
 
+<style th:inline="css">
+    /*Page Overrides*/
+    .rounded-generated {
+        border: none;
+    }
+    .rounded-generated > .material-symbols-outlined {
+        transform: translateY(25%);
+    }
+
+</style>
+
 <div id="content">
     <h2>List of My Public Repositories (Pulled Via API at Server Initialisation)</h2>
 
@@ -23,7 +34,8 @@
 <!--            <span th:replace="|[[${content}]]|"></span>-->
 <!--        </th:block>-->
         <ul>
-            <li><a th:text="${repository.name}" th:href="${repository.htmlUrl}" target="_blank">Name w/ Link</a></li>
+<!--            <li><a th:text="${repository.name}" th:href="${repository.htmlUrl}" target="_blank">Name w/ Link</a> <span class="rounded-generated" th:if="${repository.stargazersCount != 0}"><span th:text="${#strings.toString(repository.stargazersCount)}"># of stars</span><span class="material-symbols-outlined" th:text="${repository.stargazersCount > 1} ? 'star' : 'hotel_class'">material star type icon</span></span></li>-->
+            <li><a th:text="${repository.name}" th:href="${repository.htmlUrl}" target="_blank">Name w/ Link</a> <span class="rounded-generated" th:if="${repository.stargazersCount != 0}"><span th:text="${#strings.toString(repository.stargazersCount)}"># of stars</span><span class="material-symbols-outlined" th:text="'star'">material star type icon</span></span></li>
             <!--        <li th:text="${repository.url}">URL</li>-->
             <li><span  class="indent">Last Pushed: <span class="date_conditional" th:classappend="${ageFormatter.daysToClassColor(ageFormatter.getFullDaysSince(repository.pushedAt))}">
                 <span th:text="${#temporals.format(repository.pushedAt, 'MMM dd, yyyy')}">

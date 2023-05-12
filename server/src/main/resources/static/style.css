@@ -23,7 +23,8 @@
     /*--testg: #C19A6B;*/
 
 
-    --content_backgorund: rgba(244, 244, 244, 0.5);
+    --content_background: rgba(244, 244, 244, 0.5); /*#F4F4F480;*/
+
     --clear_grey_overlay: #595959aa;
     --background_image_color: var(--primary_darkest);/*TODO: Change based on color mode*/
 
@@ -269,7 +270,7 @@ code {
 /*END HEADING W/IMAGE SECTION*/
 
 /*START DATE CONDITIONAL*/
-.date_conditional{
+.date_conditional, .rounded-generated{/*TODO: Come up with a better name than .rounded-generated*/
     --padding: 5px;
     border-radius: max(100vw, 100vh);
     border: thin solid var(--primary_darkest);
@@ -450,12 +451,11 @@ div > .updateBar {
     padding-bottom: 5px;
 }
 div > .updateBar:hover {
-    transition: transform .1s;
+    transition: transform .2s;
     transform: scale(1.1);
     box-shadow: 12px 12px 2px 1px var(--primary_darkest);
     background-color: var(--primary_dark);
     /*width: 94vw;*/
-    /*height: max(10vh, fit-content);*/
 }
 div > .updateBar:hover > *:not(a) {
 }
