@@ -9,19 +9,22 @@ public class Contact {
 	private final String showLink;
 	private final String copyStart;
 	private final String title;
+	private final String materialIcon;
 
 @JsonCreator
 public Contact(@JsonProperty("id") long id,
 			   @JsonProperty("description") String description,
 			   @JsonProperty("link") String showLink,
 			   @JsonProperty("copyStart") String copyStart,
-			   @JsonProperty("title") String title
+			   @JsonProperty("title") String title,
+			   @JsonProperty("materialIcon") String materialIcon
 		      ){
 		this.id = id;
 		this.description = description;
 		this.showLink = showLink;
 		this.copyStart = copyStart;
 		this.title = title;
+		this.materialIcon = materialIcon;
 	}
 
 	public Long getId() {
@@ -39,9 +42,12 @@ public Contact(@JsonProperty("id") long id,
 	public String getCopyStart() {
 		return copyStart;
 	}
-
 	public String getTitle() {
 		return title;
+	}
+
+	public String getMaterialIcon() {
+		return materialIcon;
 	}
 
 }

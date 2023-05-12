@@ -149,9 +149,38 @@ nav li a {
     padding: 20px;
     font-size: 24px;
 }
+@media (max-width: 768px) {
+    #content {
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1%;
+        padding-top: 3%;
+    }
+    #content table{
+        margin: 1% auto;
+        width: 60%;
+        overflow-wrap: break-word;
+    }
+    /*#content table th{*/
+    /*    width: 60%;*/
+    /*}*/
+    #content table td{
+        width: 20%;
+    }
+    #content table td:first-child{
+        /*white-space: pre-line;*/
+        /*display: inline;*/
+    }
+    body{
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
 /*CONTENT TABLES START*/
 #content table{
-    border-radius: 5%;
     /*border-collapse: collapse;*/
     margin: 0 auto;
     width: 80%;
@@ -165,6 +194,18 @@ nav li a {
 }
 #content tr:nth-child(even) td{
     background-color: var(--primary_light);
+}
+table > tbody > tr > td > span.material-symbols-outlined.type-icon-inside{
+    float: left;
+    margin-left: 5px;
+    padding-top: 2px;
+}
+@media (max-width: 1248px) {
+    table > tbody > tr > td > span.material-symbols-outlined.type-icon-inside {
+        float: none;
+        margin-left: 0;
+        padding-top: 0;
+    }
 }
 
 #content td > button.material-symbols-outlined{

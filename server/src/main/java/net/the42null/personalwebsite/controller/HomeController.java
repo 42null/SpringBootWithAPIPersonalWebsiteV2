@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 
 
 @Controller
-@CrossOrigin(origins="http://localhost:63342")
+//@CrossOrigin(origins="http://localhost:63342")
 public class HomeController {
 
     private String[] rules;

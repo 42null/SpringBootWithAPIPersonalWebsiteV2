@@ -2,24 +2,28 @@
   {
     "id": 0,
     "description": "Personal Email",
+    "materialIcon": "contact_mail",
     "showLink": "josephmemmel42null@duck.com",
     "copyStart": "mailto:",
     "title": "Email Me"
   },{
     "id": 1,
     "description": "Personal Email",
+    "materialIcon": "contact_mail",
     "showLink": "averyparanoiduser@gmail.com",
     "copyStart": "mailto:",
     "title": "Email Me"
   },{
     "id": 2,
     "description": "School Email",
+    "materialIcon": "contact_mail",
     "showLink": "jmemmel2@my.wctc.edu",
     "copyStart": "mailto:",
     "title": "Email Me"
   },{
     "id": 3,
     "description": "Cell Number",
+    "materialIcon": "contact_phone",
     "showLink": "+1(262)-226-9337",
     "copyStart": "mailto:",
     "title": "Call / Text Me"
