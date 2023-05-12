@@ -438,11 +438,16 @@ code {
 .recents {
     width: 50%;
     background-color: var(--primary_light_light);
+    padding: 3%;
+    transform: translateX(-3%);
 }
 div > .updateBar {
     width: 100%;
     background-color: var(--primary_dark);
-    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 div > .updateBar:hover {
     transition: transform .1s;

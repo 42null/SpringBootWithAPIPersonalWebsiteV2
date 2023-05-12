@@ -1,18 +1,8 @@
 [
   {
     "id": 0,
-    "title": "Github",
-    "url": "/platforms/github",
-    "status": "Mostly Completed!"
-  },{
-    "id": 1,
-    "title": "About Me",
-    "url": "/about",
-    "status": "Migrating"
-  },{
-    "id": 2,
-    "title": "Contact",
-    "url": "/contact",
-    "status": "Migrating"
+    "title": "Migration Status",
+    "url": "#",
+    "status": "Currently underway. I am working on transferring content to this new site and making it much more dynamic. Now accessible from a Raspberry Pi at nullified.mooo.com when active over a Spring Boot instance."
   }
 ]
