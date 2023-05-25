@@ -2,6 +2,7 @@
   {
     "id": 1001,
     "header": "Wisconsin-Dairyland Programming Competition",
+    "type": "accomplishment",
     "subtitle": "",
     "images": [
       {
@@ -19,46 +20,147 @@
     ],
     "text": "2021 was my first programming competition and I enjoyed it thoroughly. I participated for Kettle Moraine High under team \"<i>Error: \"Team name not found\"</i>\" we placed third in the blue division (Java) which was the highest position KM had in the six years participating up until that point. I was overjoyed to do it again and while as part of the team \"Byte My Bits\" in 2022 and while we didn't place in the top, it was nice to participate in person and see the campus. You can see the list of standings <a href=\"https://codeabac.us/blue/standings\" target=\"_blank\" style=\"color:var(--primary_dark);\">here</a>."
   },{
-      "id": 1002,
-      "header": "FIRST Robotics",
-      "subtitle": "",
-      "images": [
-        {
-          "src": "https://42null.github.io/Images/FIRST/Robotics_Logo_Cut-Out-01.svg",
-          "alt": "Team #2077 Laser robotics gear logo",
-          "title": "Team 2022 Logo",
-          "background": "transparent"
-        }
-      ],
-      "text": "TEST",
-      "text": "<h3>Organisation-wide</h3><ul class=\"square\"><li><a href=\"https://www.firstinspires.org/resource-library/frc/deans-list-winners\"target=\"_blank\">Dean's List</a> Nominee (2020)</li><li><a href=\"https://www.firstinspires.org/resource-library/frc/deans-list-winners\" target=\"_blank\">Dean's List</a> Nominee (2021)</li></ul><h3>Team-wide</h3>"
-    },{
-      "id": 1003,
-      "header": "HS Honors Diploma",
-      "subtitle": "",
-      "images": [
-        {
-          "src": "https://www.kmsd.edu/cms/lib/WI01919005/Centricity/Template/GlobalAssets/images///logos/shield.png",
-          "alt": "Kettle Moraine High School KM logo",
-          "title": "KM Logo",
-          "background": "transparent"
-        }
-      ],
-      "text": "I graduated with an honors diploma from KMHS as part of the class of 2022. During my time at KM I made the honers role every year and was a Dick Ohm recipient all 4 years at the High School. Over my time at KMHS I was on the Robotics Team, the Boys Cross Country team, the Chess club, the ECO club, and the Honors Society. I graduated with a weighted GPA of 4.117 (w/bonus points 4.542)."
-    },{
-      "id": 1004,
-      "header": "KMIT Internship",
-      "subtitle": "",
-      "images": [
-        {
-          "src": "https://42null.github.io/Images/Maker_Cog_Modified.png",
-          "alt": "KMIT Cog Logo",
-          "title": "KMIT's Logo",
-          "background": "var(--background_image_color)",
-          "radius": "50%",
-          "padding": "5%"
-        }
-      ],
-      "text": "The Kettle Moraine IT internship program is an opportunity to work the technology help desk at Kettle Moraine High and be deployed to classrooms if necessary. You can work on making guides for equipment and computers in the need of software or hardware repair are shipped in from the districts elementary and middle schools. It is a great way to get experience troubleshooting computer problems, filling out support tickets, replacing parts, and working with clients. I was in the program for four terms, one freshman, one junior, and two for my senior year."
-    }
+    "id": 1002,
+    "header": "FIRST Robotics",
+    "type": "accomplishment",
+    "subtitle": "",
+    "images": [
+      {
+        "src": "https://42null.github.io/Images/FIRST/Robotics_Logo_Cut-Out-01.svg",
+        "alt": "Team #2077 Laser robotics gear logo",
+        "title": "Team 2022 Logo",
+        "background": "transparent"
+      }
+    ],
+    "text": "<h3>Organisation-wide</h3><ul class=\"square\"><li><a href=\"https://www.firstinspires.org/resource-library/frc/deans-list-winners\"target=\"_blank\">Dean's List</a> Nominee (2020)</li><li><a href=\"https://www.firstinspires.org/resource-library/frc/deans-list-winners\" target=\"_blank\">Dean's List</a> Nominee (2021)</li></ul><h3>Team-wide</h3>"
+  },{
+    "id": 1006,
+    "header": "Software sDevelopment Specialist Diploma",
+    "type": "education",
+    "subtitle": "",
+    "images": [
+      {
+        "src": "https://www.wctc.edu/_resources/images/waukesha_logo.svg",
+        "alt": "WCTC's Logo",
+        "title": "WCTC is a technical college in Pewaukee, Wisconsin",
+        "background": "var(--primary_dark)",
+        "radius": "0%",
+        "padding": "5%"
+      }
+    ],
+    "text": "I earned my Software Development Specialist while working on my Web & Software Developer associate degree from WCTC. I was able to graduate it early by testing out and by transferring credits. I graduated my technical diploma with a perfect 4.0 GPA as a straight A student."
+  },{
+    "id": 1005,
+    "header": "IT - Web & Software Developer Associate Degree (Ongoing)",
+    "type": "education",
+    "subtitle": "",
+    "images": [
+      {
+        "src": "https://www.wctc.edu/_resources/images/waukesha_logo.svg",
+        "alt": "WCTC's Logo",
+        "title": "WCTC is a technical college in Pewaukee, Wisconsin",
+        "background": "var(--primary_dark)",
+        "radius": "0%",
+        "padding": "5%"
+      }
+    ],
+    "text": "I am pursuing my Web & Software Developer associate degree from WCTC. My current GPA is 4.0"
+  },{
+    "id": 1003,
+    "header": "HS Honors Diploma",
+    "type": "education",
+    "subtitle": "",
+    "images": [
+      {
+        "src": "https://www.kmsd.edu/cms/lib/WI01919005/Centricity/Template/GlobalAssets/images///logos/shield.png",
+        "alt": "Kettle Moraine High School KM logo",
+        "title": "KM Logo",
+        "background": "transparent"
+      }
+    ],
+    "text": "I graduated with an honors diploma from KMHS. During my time at KM I made the honers role every year and was a Dick Ohm recipient all 4 years at the High School. Over my time at KMHS I was on the Robotics Team, the Boys Cross Country team, the Chess club, the ECO club, and the Honors Society. I graduated with a weighted GPA of 4.117 (w/bonus points 4.542)."
+  },{
+    "id": 1004,
+    "header": "KMIT Internship",
+    "type": "work-experience",
+    "subtitle": "",
+    "images": [
+      {
+        "src": "https://42null.github.io/Images/Maker_Cog_Modified.png",
+        "alt": "KMIT Cog Logo",
+        "title": "KMIT's Logo",
+        "background": "var(--background_image_color)",
+        "radius": "50%",
+        "padding": "5%"
+      }
+    ],
+    "text": "The Kettle Moraine IT internship program is an opportunity to work the technology help desk at Kettle Moraine High and be deployed to classrooms if necessary. You can work on making guides for equipment and computers in the need of software or hardware repair are shipped in from the districts elementary and middle schools. It is a great way to get experience troubleshooting computer problems, filling out support tickets, replacing parts, and working with clients. I was in the program for four terms, one freshman, one junior, and two for my senior year."
+  },{
+    "id": 1007,
+    "header": "SEO Internship at iNET Web",
+    "type": "work-experience",
+    "subtitle": "",
+    "images": [
+      {
+        "src": "/img/pageImages/aboutMe/workExperience/iNET.svg",
+        "alt": "KMIT Cog Logo",
+        "title": "KMIT's Logo",
+        "background": "",
+        "radius": "0",
+        "padding": "0"
+      }
+    ],
+    "text": "During my winter interim I worked at iNET Web as a Search Engine Optimization Copywriter intern. I Automated a location and keyword selection project using spreadsheets and macros and helped migrate accounts from Universal Analytics to Google Analytics 4. I worked to optimized webpages for click-through rates on client websites by creating and adjusting text, metadata, and structure."
+  },{
+    "id": 1011,
+    "header": "Cisco Networking Academy - Cybersecurity Essentials",
+    "type": "certification",
+    "subtitle": "",
+    "images": [
+      {
+        "src": "/img/pageImages/aboutMe/certifications/AJMemmel-Spring 20_Cybers-certificate.jpg",
+        "alt": "Signed Certificate",
+        "title": "Click to see full-size",
+        "onClick": "/img/pageImages/aboutMe/certifications/AJMemmel-Spring 20_Cybers-certificate.pdf",
+        "background": "",
+        "radius": "0",
+        "padding": "0"
+      }
+    ],
+    "text": "Click certificate to view fullscreen"
+  },{
+    "id": 1010,
+    "header": "Amazon Web Services - AWS Academy Cloud Foundations",
+    "type": "certification",
+    "subtitle": "",
+    "images": [
+      {
+        "src": "",
+        "alt": "Signed Certificate",
+        "title": "Click to see full-size",
+        "onClick": "",
+        "background": "",
+        "radius": "0",
+        "padding": "0"
+      }
+    ],
+    "text": ""
+  },{
+    "id": 1009,
+    "header": "Google Analytics Academy - Google Analytics for Beginners",
+    "type": "certification",
+    "subtitle": "",
+    "images": [
+      {
+        "src": "/img/pageImages/aboutMe/certifications/Course_Certificate.jpg",
+        "alt": "Signed Certificate",
+        "title": "Click to see full-size",
+        "onClick": "/img/pageImages/aboutMe/certifications/Course_Certificate.pdf",
+        "background": "",
+        "radius": "0",
+        "padding": "0"
+      }
+    ],
+    "text": "Click certificate to view fullscreen"
+  }
 ]

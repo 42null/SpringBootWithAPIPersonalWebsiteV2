@@ -42,8 +42,6 @@ public class HomeController {
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 
-
-
         try {
             rules = mapper.readValue(Paths.get("server/src/main/resources/static/content/croquetRules.json").toFile(), String[].class);
         } catch (IOException e) {
@@ -106,18 +104,26 @@ public class HomeController {
 //        model.addAttribute("heroImgSrc", "https://avatars.githubusercontent.com/u/67847710");
 
 //        TODO: Optimise filtering
+        List<ItemContainer> education = aboutMeContainers.stream()
+                                                            .filter(a -> (a.getType() == ItemContainer.Type.EDUCATION))
+                                                            .sorted((a, b) -> b.getId().compareTo(a.getId()))
+                                                            .collect(Collectors.toList());
         List<ItemContainer> achievements = aboutMeContainers.stream()
-                                                            .filter(a -> (a.getId() >= 1000 && a.getId() < 2000))
+                                                            .filter(a -> (a.getType() == ItemContainer.Type.ACCOMPLISHMENTS))
+                                                            .sorted((a, b) -> b.getId().compareTo(a.getId()))
                                                             .collect(Collectors.toList());
         List<ItemContainer> workExperience = aboutMeContainers.stream()
-                                                            .filter(a -> (a.getId() >= 2000 && a.getId() < 3000))
+                                                            .filter(a -> (a.getType() == ItemContainer.Type.WORK_EXPERIENCE))
+                                                            .sorted((a, b) -> b.getId().compareTo(a.getId()))
                                                             .collect(Collectors.toList());
-        List<ItemContainer> relevantCoursework = aboutMeContainers.stream()
-                                                            .filter(a -> (a.getId() >= 2000 && a.getId() < 3000))
+        List<ItemContainer> certifications = aboutMeContainers.stream()
+                                                            .filter(a -> (a.getType() == ItemContainer.Type.CERTIFICATE))
+                                                            .sorted((a, b) -> b.getId().compareTo(a.getId()))
                                                             .collect(Collectors.toList());
+        model.addAttribute("contentBoxesEducation", education);
         model.addAttribute("contentBoxesAchievements", achievements);
         model.addAttribute("contentBoxesWorkExperience", workExperience);
-        model.addAttribute("contentBoxesRelevantCoursework", relevantCoursework);
+        model.addAttribute("contentBoxesCertifications", certifications);
         return "about/aboutMe";
     }
     //--- Platforms

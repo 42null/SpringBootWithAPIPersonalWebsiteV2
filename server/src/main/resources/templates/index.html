@@ -4,7 +4,11 @@
 <body>
 <div th:insert="fragments/_header :: header"></div>
 
-
+<style>
+        .recents{
+                padding-top: 2px;
+        }
+</style>
 
 <div class="image_banner" th:attr="style='background-image: url(' + ${heroImgSrc} + ')'">
         <!--    <div class="image_banner_text_email" id="image_banner_text" style="background-color: var(&#45;&#45;clearGreyImageOverlay);">-->
@@ -19,7 +23,7 @@
 </div>
 
 <div>
-        <h1 class="centered">Page Migration Status Updates</h1>
+        <h1 class="centered">Recent Notifications</h1>
         <div class="recents centered">
                 <div>
                         <div th:each="bar : ${updateBars}" class="updateBar">
