@@ -37,6 +37,6 @@
         "background": "transparent"
       }
     ],
-    "text": "This is a server I run from my house, I use a subdomain from FreeDNS. I use it for multiple projects such as as a remote camera, as a website host, and as a domain redirect. Depending on the SD card loaded, it may also work as a host for this project."
+    "text": "This is a server I run from my house, I use a subdomain on FreeDNS. I use it for multiple projects such as as a remote camera, a website host, and for domain redirection. Depending on the SD card loaded, it may also work as a host for this project."
   }
 ]

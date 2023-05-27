@@ -97,7 +97,7 @@
             <div class="centered">
                 <div class="jsonImage">
                     <img th:each="image : ${contentBox.images}"
-                         th:with="generatedId=|autogenId_${#strings.toLowerCase(#strings.replace(#strings.concat(contentBox.header, ' ', image.alt), ' ', ''))}|"
+                         th:with="generatedId=|autogenIdHoverAndClickExpand_${#strings.toLowerCase(#strings.replace(#strings.concat(contentBox.header, ' ', image.alt), ' ', ''))}|"
                          th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "
                          th:src="${image.src}"
                          th:alt="${image.alt}"

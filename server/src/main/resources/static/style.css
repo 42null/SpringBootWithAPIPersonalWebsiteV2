@@ -12,7 +12,11 @@
     --primary_dark: #5f9ea0;
     --primary_dark_dark: #004547;
     --primary_darkest: #002424;
+
     --white: #fff;
+    --pdf_background_color_from_container: #2a2a2a;
+
+    --popup_expand_image_bakground: var(--pdf_background_color_from_container);
 
     /*--testa: #800000;*/
     /*--testb: #CC6600;*/
@@ -522,7 +526,90 @@ div > .updateBar:hover > *:not(a) {
     z-index: 200;
     display: none;
 }
+/*Targets id that expand on click*/
+[id^=autogenIdHoverAndClickExpand_]:hover{/*Starts with*/
+    transition: transform .1s;
+    transform: scale(1.1);
+    box-shadow: 12px 12px 2px 1px var(--primary_darkest);
+    background-color: var(--primary_dark);
+    /*width: 94vw;*/
+}
 
+
+
+/*MENU'S (START)*/
+.panel {
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin: 20px auto;
+    background-color: #ffffff;
+    display: flex;
+}
+
+.section-tabs {
+    width: 20%;
+    background-color: #e6e6e6;
+}
+.section-tabs h3{
+    padding: 10px;
+    filter: brightness(20%);
+    text-align: center;
+}
+.section-tabs .tabs {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /*justify-content: center;*/
+    align-items: center;
+    padding: 10px;
+}
+
+.section-right-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: auto;
+    background-color: #e6e6e6;
+}
+
+.section-right-top .mode-selector {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.section-second-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.section-title {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: auto;
+    margin-top: 8%;
+}
+
+.section-content-holder {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-bottom: 5%;
+    width: 40%;
+}
+/*MENU'S (END)*/
 @media (max-width: 768px) {
     .item {
         width: 100%;

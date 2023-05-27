@@ -26,10 +26,10 @@ function expandImage(onClickContent, id) {
     const popup = document.getElementById('popup');
     overlay.style.display = 'block';
     popup.style.display = 'block';
+    disableScroll();
 
     if(onClickContent.includes(".pdf")){//TODO: Make more accurate
         const pdf = document.createElement("object");
-
 
         pdf.setAttribute('data', onClickContent);
         pdf.style.width = "100%";
@@ -59,4 +59,46 @@ function closeImagePopup() {
     popup.innerHTML = ''; // Remove the content inside the popup
     overlay.style.display = 'none';
     popup.style.display = 'none';
+    enableScroll();
 }
+
+//START DISABLE SCROLLING: Code used from (https://stackoverflow.com/a/4770179)
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }pps
+}
+
+// modern Chrome requires { passive: false } when adding event
+var supportsPassive = false;
+try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+        get: function () { supportsPassive = true; }
+    }));
+} catch(e) {}
+
+var wheelOpt = supportsPassive ? { passive: false } : false;
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+// call this to Disable
+function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+// call this to Enable
+function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+//END DISABLE SCROLLING

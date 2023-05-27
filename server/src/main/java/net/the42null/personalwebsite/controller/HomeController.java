@@ -36,7 +36,6 @@ public class HomeController {
     private List<ItemContainer> aboutMeContainers;
     private List<ItemContainer> websiteContainers;
 
-
     @PostConstruct
     private void initData() {
         ObjectMapper mapper = new ObjectMapper();
@@ -97,6 +96,11 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/test")
+    public String showTempTest(Model model){
+        return "quickTempTest";
+    }
+
     @GetMapping("/about")
     public String showAboutMe(Model model) {
         model.addAttribute("imageUrl", "/img/pageImages/OfMe/KMGraduation2.JPG");
@@ -144,6 +148,22 @@ public class HomeController {
 //        model.addAttribute("message", message);
         return "platforms/github";
     }
+
+    //--- Apps
+    @GetMapping("/apps")
+    public String showAppsHubPage(Model model) {
+        model.addAttribute("pageTitle", "Apps");
+//
+////        TODO: Optimise filtering & filter out labeled as examples or tests
+//        List<MenuPanel> apps = appContainers.stream()
+////                                                .filter(a -> (a.getType() == ItemContainer.Type.EDUCATION))
+////                                                .sorted((a, b) -> b.getId().compareTo(a.getId()))
+//                                                .collect(Collectors.toList());
+//        model.addAttribute("menuContainers", apps);
+
+        return "apps/appsHub";
+    }
+
     @GetMapping("/websites")
     public String showWebPage(Model model) {
         model.addAttribute("pageTitle", "Websites");

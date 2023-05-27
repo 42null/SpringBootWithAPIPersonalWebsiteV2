@@ -1,0 +1,28 @@
+[
+  {
+    "header": "ChalkBoard",
+    "type": "example",
+    "subtitle": "",
+    "modeName": "light/dark",
+    "modes": ["light", "dark"],
+    "pages": [
+      {
+        "name": "Home",
+        "images": [
+          {
+            "mode": "light",
+            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865639.png",
+            "alt": "Image Alt",
+            "title": "Phone Screenshot of ____"
+          },{
+            "mode": "dark",
+            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866048.png",
+            "alt": "Image Alt",
+            "title": "Phone Screenshot of ____"
+          }
+        ],
+        "text": "This is text content."
+      }
+    ]
+  }
+]

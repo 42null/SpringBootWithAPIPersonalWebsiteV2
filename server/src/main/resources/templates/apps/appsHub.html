@@ -1,0 +1,62 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="https://thymeleaf.org">-->
+<!--<head th:replace="fragments/_head :: head">-->
+<!--<body th:fragment="fragments/">-->
+<!--<div th:insert="fragments/_header :: header"></div>-->
+
+<!--<style>-->
+<!--/*   Page specific overrides   */-->
+<!--</style>-->
+
+
+<!--<div class="panel" th:each="contentBox : ${menuContainers}" >-->
+<!--    <div class="section-tabs">-->
+<!--        <div>-->
+<!--            <h3>Tabs</h3>-->
+<!--        </div>-->
+<!--        <div class="tabs">-->
+<!--            <div>Tab 1</div>-->
+<!--            <div>Tab 2</div>-->
+<!--            <div>Tab 3</div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="section-second-container">-->
+<!--        <div class="section-right-top">-->
+<!--            <div class="mode-selector">-->
+<!--                <input type="checkbox" id="mode-switch">-->
+<!--                <label for="mode-switch">Light/Dark Mode</label>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="section-title">-->
+<!--            <h1>Title</h1>-->
+<!--        </div>-->
+<!--        <div class="section-content-holder">-->
+<!--            <img src="https://via.placeholder.com/250x500.png" alt="Image">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash;    <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div th:each="contentBox : ${contentBoxesCertifications}" class="item centered">&lt;!&ndash; Centered is so that lone elements at the end are centered &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <h2 th:text="${contentBox.header}">Header</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="centered">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="jsonImage">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <img th:each="image : ${contentBox.images}"&ndash;&gt;-->
+<!--&lt;!&ndash;                         th:with="generatedId=|autogenIdHoverAndClickExpand_${#strings.toLowerCase(#strings.replace(#strings.concat(contentBox.header, ' ', image.alt), ' ', ''))}|"&ndash;&gt;-->
+<!--&lt;!&ndash;                         th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "&ndash;&gt;-->
+<!--&lt;!&ndash;                         th:src="${image.src}"&ndash;&gt;-->
+<!--&lt;!&ndash;                         th:alt="${image.alt}"&ndash;&gt;-->
+<!--&lt;!&ndash;                         th:title="${image.title}"&ndash;&gt;-->
+<!--&lt;!&ndash;                         th:id="${generatedId}"&ndash;&gt;-->
+<!--&lt;!&ndash;                         th:attr="onclick=|expandImage('${image.onClick}', '${generatedId}')|" />&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <hr>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p th:utext="${contentBox.text}" class="text"></p>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--</body>-->
+<!--</html>-->

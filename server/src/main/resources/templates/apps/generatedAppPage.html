@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head th:replace="fragments/_head :: head">
+<body th:fragment="fragments/">
+<div th:insert="fragments/_header :: header"></div>
+
+<style>
+  /*   Page specific overrides   */
+  .section-content-holder img{
+    width: 80%;
+    height: auto;
+  }
+</style>
+
+
+<div class="panel" th:each="contentBox : ${menuContainer}" ><!--NOTE: Can switch back to th:object to be singular, right now it always will be singular because of a single element list return-->
+  <div class="section-tabs">
+    <div>
+      <h3>Tabs</h3>
+    </div>
+    <ul class="tabs">
+      <li th:each="page : ${contentBox.pages}" th:text="${page.name}">Tab</li>
+    </ul>
+  </div>
+  <div class="section-second-container" th:with="page=${contentBox.pages[0]}">
+    <div class="section-right-top">
+      <div class="mode-selector">
+        <input type="checkbox" id="mode-switch">
+        <label for="mode-switch" th:text="${contentBox.modeName}">Mode Selector</label>
+      </div>
+    </div>
+    <div class="section-title">
+      <h1 th:text="${page.name}">Name</h1>
+    </div>
+    <div class="section-content-holder" th:with="image=${page.images[0]}">
+      <img th:src="${image.src}"
+           th:alt="${image.alt}"
+           th:title="${image.title}" />
+    </div>
+  </div>
+</div>
+
+
+<!--    <div class="container">-->
+<!--        <div th:each="contentBox : ${contentBoxesCertifications}" class="item centered">&lt;!&ndash; Centered is so that lone elements at the end are centered &ndash;&gt;-->
+<!--            <h2 th:text="${contentBox.header}">Header</h2>-->
+<!--            <div class="centered">-->
+<!--                <div class="jsonImage">-->
+<!--                    <img th:each="image : ${contentBox.images}"-->
+<!--                         th:with="generatedId=|autogenIdHoverAndClickExpand_${#strings.toLowerCase(#strings.replace(#strings.concat(contentBox.header, ' ', image.alt), ' ', ''))}|"-->
+<!--                         th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "-->
+<!--                         th:src="${image.src}"-->
+<!--                         th:alt="${image.alt}"-->
+<!--                         th:title="${image.title}"-->
+<!--                         th:id="${generatedId}"-->
+<!--                         th:attr="onclick=|expandImage('${image.onClick}', '${generatedId}')|" />-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <hr>-->
+<!--            <p th:utext="${contentBox.text}" class="text"></p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+</body>
+</html>
