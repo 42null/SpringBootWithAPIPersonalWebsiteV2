@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://thymeleaf.org">
 <head th:replace="fragments/_head :: head">
+</head>
 <body th:fragment="fragments/">
 <div th:insert="fragments/_header :: header"></div>
 
@@ -10,10 +11,66 @@
     width: 80%;
     height: auto;
   }
+
+
+  .prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 90px;
+  }
+
+  .prev-button {
+    left: var(--distance_to_side);
+  }
+  .next-button {
+    right: var(--distance_to_side);
+  }
+
+  .disabled {
+    pointer-events: none;
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
 </style>
 
+<div class="panel" th:each="contentBox : ${menuContainer}">
+  <script th:inline="javascript">
+    const pages = /*[[${contentBox.pages}]]*/ null;
+    let currentPageNumber = 0;
+    function updateCurrentContentBox(byAmount){
+      const newPageNumber = currentPageNumber + byAmount;
+      if(newPageNumber < 0 || newPageNumber >= pages.length){
+        console.log(pages.length);
+      }else{
+        // Give disabled look on buttons that would send index out of bounds
+        if(currentPageNumber === 0){
+          document.querySelector(".prev-button").classList.remove("disabled");
+        }else if(currentPageNumber === pages.length - 1){
+          document.querySelector(".next-button").classList.remove("disabled");
+        }
+        if(newPageNumber === 0){
+          document.querySelector(".prev-button").classList.add("disabled");
+        }if(newPageNumber === pages.length - 1){
+          document.querySelector(".next-button").classList.add("disabled");
+        }
 
-<div class="panel" th:each="contentBox : ${menuContainer}" ><!--NOTE: Can switch back to th:object to be singular, right now it always will be singular because of a single element list return-->
+        const contentImage = document.querySelector(".section-content-holder").querySelector("img");//TODO: Combine?
+        const contentHeader = document.querySelector(".section-title > h1");
+        contentHeader.innerText = pages[newPageNumber].name;
+        const newImage = pages[newPageNumber].images.find(image => image.mode === "light");//Uses find instead of filter to return immediately after finding the first element
+        contentImage.src   = newImage.src;
+        contentImage.alt   = newImage.alt
+        contentImage.title = newImage.title;
+        currentPageNumber = newPageNumber;
+      }
+    }
+  </script>
+  <!--NOTE: Can switch back to th:object to be singular, right now it always will be singular because of a single element list return-->
   <div class="section-tabs">
     <div>
       <h3>Tabs</h3>
@@ -33,34 +90,22 @@
       <h1 th:text="${page.name}">Name</h1>
     </div>
     <div class="section-content-holder" th:with="image=${page.images[0]}">
-      <img th:src="${image.src}"
-           th:alt="${image.alt}"
-           th:title="${image.title}" />
+      <button class="prev-button disabled">Previous</button>
+      <img th:src="${image.src}" th:alt="${image.alt}" th:title="${image.title}" />
+      <button class="next-button">Next</button>
     </div>
   </div>
 </div>
 
+<script>
+  document.querySelector(".prev-button").addEventListener("click", function(){
+    updateCurrentContentBox(-1);
+  });
+  document.querySelector(".next-button").addEventListener("click", function(){
+    updateCurrentContentBox(1);
+  });
+</script>
 
-<!--    <div class="container">-->
-<!--        <div th:each="contentBox : ${contentBoxesCertifications}" class="item centered">&lt;!&ndash; Centered is so that lone elements at the end are centered &ndash;&gt;-->
-<!--            <h2 th:text="${contentBox.header}">Header</h2>-->
-<!--            <div class="centered">-->
-<!--                <div class="jsonImage">-->
-<!--                    <img th:each="image : ${contentBox.images}"-->
-<!--                         th:with="generatedId=|autogenIdHoverAndClickExpand_${#strings.toLowerCase(#strings.replace(#strings.concat(contentBox.header, ' ', image.alt), ' ', ''))}|"-->
-<!--                         th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "-->
-<!--                         th:src="${image.src}"-->
-<!--                         th:alt="${image.alt}"-->
-<!--                         th:title="${image.title}"-->
-<!--                         th:id="${generatedId}"-->
-<!--                         th:attr="onclick=|expandImage('${image.onClick}', '${generatedId}')|" />-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <hr>-->
-<!--            <p th:utext="${contentBox.text}" class="text"></p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
 
 </body>
 </html>

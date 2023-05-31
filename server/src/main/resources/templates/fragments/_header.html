@@ -18,8 +18,12 @@
             </li>
 
             <li><a th:href="@{/games}">Games</a></li>
-            <li><a th:href="@{/apps}">Apps</a></li>
-<!--            <li class="dropdown-head"><a th:href="@{/extensions/extension}">Extensions</a>-->
+            <li class="dropdown-head"><a target="_blank" th:href="@{/apps}">Apps</a>
+                <ul class="dropdown-content">
+                    <li><a th:href="@{/apps/chalkboard}">ChalkBoard</a></li>
+                    <li><a th:href="@{/apps}">Ctrl+F Camera</a></li>
+                </ul>
+            </li>
             <li class="dropdown-head"><a target="_blank" th:href="@{https://addons.mozilla.org/en-US/firefox/user/17656763/}">Extensions</a>
                 <ul class="dropdown-content">
 <!--                    <li><a th:href="@{/extensions/return-youtube-ui}">Return YouTube UI</a></li>-->
