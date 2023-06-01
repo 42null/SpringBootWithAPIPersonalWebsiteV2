@@ -12,40 +12,38 @@
     height: auto;
   }
 
-
-  .prev-button, .next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 90px;
-  }
-
-  .prev-button {
-    left: var(--distance_to_side);
-  }
-  .next-button {
-    right: var(--distance_to_side);
-  }
-
-  .disabled {
-    pointer-events: none;
-    opacity: 0.3;
-    cursor: not-allowed;
-  }
-
 </style>
 
 <div class="panel" th:each="contentBox : ${menuContainer}">
   <script th:inline="javascript">
     const pages = /*[[${contentBox.pages}]]*/ null;
+    const modes = /*[[${contentBox.modes}]]*/ null;
     let currentPageNumber = 0;
+    let currentModeName = /*[[${contentBox.modes[0]}]]*/ null;
+
+    function updateCurrentContentMode(switchToModeName, id){
+      if(switchToModeName === currentModeName){
+      }else{
+        // TODO: Optimize
+          currentModeName = switchToModeName;
+          updateCurrentContentBox(0);
+          var currentmodes = document.getElementsByClassName("selectedMode");
+          while(currentmodes.length){
+              currentmodes[0].classList.remove("selectedMode");
+          }
+          document.querySelector("#"+id).classList.add("selectedMode");
+        // const selectIndex = modes.findIndex(mode => mode === switchToModeName);
+        // document.querySelector(".mode-selector").innerText = ;
+      }
+    }
+
+    function updateCurrentContentBoxByIndex(name, index){
+        updateCurrentContentBox(index-currentPageNumber);
+    }
     function updateCurrentContentBox(byAmount){
       const newPageNumber = currentPageNumber + byAmount;
+      console.log("newPageNumber = "+newPageNumber);
       if(newPageNumber < 0 || newPageNumber >= pages.length){
-        console.log(pages.length);
       }else{
         // Give disabled look on buttons that would send index out of bounds
         if(currentPageNumber === 0){
@@ -60,12 +58,15 @@
         }
 
         const contentImage = document.querySelector(".section-content-holder").querySelector("img");//TODO: Combine?
-        const contentHeader = document.querySelector(".section-title > h1");
-        contentHeader.innerText = pages[newPageNumber].name;
-        const newImage = pages[newPageNumber].images.find(image => image.mode === "light");//Uses find instead of filter to return immediately after finding the first element
+        const contentHeader = document.querySelector(".section-title > h1").innerText = pages[newPageNumber].name;
+        const newImage = pages[newPageNumber].images.find(image => image.mode.toLowerCase() === currentModeName.toLowerCase());//Uses find instead of filter to return immediately after finding the first element
         contentImage.src   = newImage.src;
         contentImage.alt   = newImage.alt
         contentImage.title = newImage.title;
+        for(let i = 0; i < tabs.length; i++){//Removes previous assignments (Goes over each to make sure TODO: make just one to be more performant?)
+            tabs[i].classList.remove("selectedPageTab");
+        }
+        tabs[newPageNumber].classList.add("selectedPageTab");
         currentPageNumber = newPageNumber;
       }
     }
@@ -73,7 +74,7 @@
   <!--NOTE: Can switch back to th:object to be singular, right now it always will be singular because of a single element list return-->
   <div class="section-tabs">
     <div>
-      <h3>Tabs</h3>
+      <h3 th:text="${contentBox.tabHeaderName}">Tabs</h3>
     </div>
     <ul class="tabs">
       <li th:each="page : ${contentBox.pages}" th:text="${page.name}">Tab</li>
@@ -82,8 +83,13 @@
   <div class="section-second-container" th:with="page=${contentBox.pages[0]}">
     <div class="section-right-top">
       <div class="mode-selector">
-        <input type="checkbox" id="mode-switch">
-        <label for="mode-switch" th:text="${contentBox.modeName}">Mode Selector</label>
+        <h3 th:text="${contentBox.modeName}">Modes:</h3>
+        <div th:each="mode : ${contentBox.modes}">
+<!--          <input type="checkbox" id="mode-switch">-->
+<!--          <label for="mode-switch" th:text="${mode}" id="|autogenIdClick${#strings.toLowerCase(#strings.replace(mode), ' ', '')}|">Mode Selector</label>-->
+            <button th:text="${mode}" th:id="'autogenIdMode_' + ${#strings.toLowerCase(#strings.replace(mode, ' ', ''))}">Mode Selector</button>
+
+        </div>
       </div>
     </div>
     <div class="section-title">
@@ -98,14 +104,34 @@
 </div>
 
 <script>
-  document.querySelector(".prev-button").addEventListener("click", function(){
-    updateCurrentContentBox(-1);
-  });
-  document.querySelector(".next-button").addEventListener("click", function(){
-    updateCurrentContentBox(1);
-  });
-</script>
+    const tabs = document.querySelector(".tabs").querySelectorAll("li");
+    tabs.forEach((tab, index) => {
+        <!-- Apply .selectedMode look to first mode option placed-->
+        if(index === 0){
+            tab.classList.add("selectedPageTab");
+        }
+        tab.addEventListener("click", function() {
+            updateCurrentContentBoxByIndex(tab.innerText, index);
+        })
+    });
 
+    document.querySelector(".prev-button").addEventListener("click", function(){
+        updateCurrentContentBox(-1);
+    });
+    document.querySelector(".next-button").addEventListener("click", function(){
+        updateCurrentContentBox(1);
+    });
+    const elements = document.querySelectorAll("[id^=autogenIdMode_]");
+    elements.forEach((element, index) => {
+      <!-- Apply .selectedMode look to first mode option placed-->
+        if(index === 0){
+            element.classList.add("selectedMode");
+        }
+        element.addEventListener("click", function() {
+          updateCurrentContentMode(element.innerText, element.id);
+        })
+    });
+</script>
 
 </body>
 </html>

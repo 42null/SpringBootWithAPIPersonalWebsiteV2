@@ -3,8 +3,9 @@
     "header": "ChalkBoard",
     "type": "example",
     "subtitle": "",
-    "modeName": "light/dark",
-    "modes": ["light", "dark"],
+    "tabHeaderName": "Pages",
+    "modeName": "Select Mode: ",
+    "modes": ["Light", "Dark"],
     "pages": [
       {
         "name": "Home",
@@ -12,13 +13,13 @@
           {
             "mode": "light",
             "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865639.png",
-            "alt": "Image Alt",
-            "title": "Phone Screenshot of ____"
+            "alt": "Chalkboard app fullscreen screenshot of homepage (Light mode)",
+            "title": "Light mode homepage view"
           },{
             "mode": "dark",
             "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866048.png",
-            "alt": "Image Alt",
-            "title": "Phone Screenshot of ____"
+            "alt": "Chalkboard app fullscreen screenshot of homepage (Dark mode)",
+            "title": "Dark mode homepage view"
           }
         ],
         "text": "This is text content. #1 (0)"
@@ -27,14 +28,14 @@
         "images": [
           {
             "mode": "light",
-            "src": "https://42null.memmojs.repl.co/Images/Apps/ChalkBoard/Screenshot_1622865648.png",
-            "alt": "Image Alt",
-            "title": "Phone Screenshot of ____"
+            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865648.png",
+            "alt": "Chalkboard app fullscreen screenshot of note storage area (Light mode)",
+            "title": "Light mode note view page"
           },{
             "mode": "dark",
-            "src": "https://42null.memmojs.repl.co/Images/Apps/ChalkBoard/Screenshot_1622866045.png",
-            "alt": "Image Alt",
-            "title": "Phone Screenshot of ____"
+            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866045.png",
+            "alt": "Chalkboard app fullscreen screenshot of note storage area (Dark mode)",
+            "title": "Dark mode note view page"
           }
         ],
         "text": "This is text content. #2"
@@ -43,14 +44,14 @@
         "images": [
           {
             "mode": "light",
-            "src": "https://42null.memmojs.repl.co/Images/Apps/ChalkBoard/Screenshot_1622865652.png",
-            "alt": "Image Alt",
-            "title": "Phone Screenshot of ____"
+            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865652.png",
+            "alt": "Chalkboard app fullscreen screenshot of note writing area (Light mode)",
+            "title": "Light mode note creator page"
           },{
             "mode": "dark",
-            "src": "https://42null.memmojs.repl.co/Images/Apps/ChalkBoard/Screenshot_1622866108.png",
-            "alt": "Image Alt",
-            "title": "Phone Screenshot of ____"
+            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866108.png",
+            "alt": "Chalkboard app fullscreen screenshot of note writing area (Dark mode)",
+            "title": "Dark mode note creator page"
           }
         ],
         "text": "This is text content. #2"

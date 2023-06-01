@@ -29,6 +29,7 @@
 
 
     --content_background: rgba(244, 244, 244, 0.5); /*#F4F4F480;*/
+    --info_gray: #e6e6e6;
 
     --clear_grey_overlay: #595959aa;
     --background_image_color: var(--primary_darkest);/*TODO: Change based on color mode*/
@@ -107,6 +108,13 @@ nav li {
     z-index: inherit;
 }
 
+.dropdown-content {
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
+    /*text-align: center;*/
+}
+
 nav .dropdown-head:hover .dropdown-content {
     display: block;
     z-index: inherit;
@@ -118,6 +126,7 @@ nav li .dropdown-content{
     background-color: inherit;
     filter: brightness(150%); /* make the child lighter than inherited */
     z-index: inherit;
+    /*transform: translateX(-25%);*/
 }
 
 nav li .dropdown-content li{
@@ -134,6 +143,7 @@ nav li:hover {
     color: var(--primary_light);
     background-color: var(--primary_dark_dark);
     z-index: inherit;
+    /*with: 100%;*/
 }
 
 nav li a {
@@ -143,7 +153,17 @@ nav li a {
     padding: 14px 26px;
     text-decoration: none;
     z-index: inherit;
+    trans
 }
+
+nav .dropdown-content li{
+    display: block;
+    z-index: inherit;
+    font-size: 1em;
+    clear: both;/*Takes care of horizontal nav list behavior*/
+    width: 100%;
+}
+
 /*END NAVIGATION*/
 
 
@@ -550,12 +570,16 @@ div > .updateBar:hover > *:not(a) {
 
 .section-tabs {
     width: 20%;
-    background-color: #e6e6e6;
+    background-color: var(--info_gray);
 }
 .section-tabs h3{
-    padding: 10px;
-    filter: brightness(20%);
+    padding-top: 12px;
+    padding-bottom: 10px;
+    width: 99%;
+    filter: brightness(120%);
     text-align: center;
+    border: 1px solid black;
+    background-color: var(--clear_grey_overlay);
 }
 .section-tabs .tabs {
     display: flex;
@@ -564,6 +588,14 @@ div > .updateBar:hover > *:not(a) {
     /*justify-content: center;*/
     align-items: center;
     padding: 10px;
+}
+ul.tabs > li{
+    filter: brightness(120%);
+    text-align: center;
+    border: 1px solid var(--clear_grey_overlay);
+    background-color: var(--clear_grey_overlay);
+    list-style-type: none;
+    width: 100%;
 }
 
 .section-right-top {
@@ -610,6 +642,44 @@ div > .updateBar:hover > *:not(a) {
     padding-bottom: 5%;
     width: 40%;
 }
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 90px;
+}
+
+.prev-button {
+    left: var(--distance_to_side);
+}
+.next-button {
+    right: var(--distance_to_side);
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+.selectedMode {
+    filter: brightness(80%);
+}
+.selectedPageTab {
+    filter: brightness(160%) !important;
+    font-weight: bold;
+}
+ul.tabs > li:hover{
+    filter: brightness(180%);
+    cursor: pointer;
+}
+.section-content-holder > img{
+    border-radius: 3vh;
+    border: 2px solid black;
+}
+
 /*MENU'S (END)*/
 @media (max-width: 768px) {
     .item {

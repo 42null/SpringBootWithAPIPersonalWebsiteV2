@@ -44,6 +44,27 @@
         }
     </style>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.getElementsByClassName('dropdown-head');
+
+            // Iterate over each dropdown element
+            Array.from(dropdowns).forEach(function(dropdown) {
+                dropdown.addEventListener('mouseenter', function() {
+                    const contentElement = this.querySelector(".dropdown-content");
+                    const header = this.offsetWidth;
+                    const content = contentElement.offsetWidth;
+                    const translateValue = (0-(content-header)/2);
+                    if(translateValue > 0){//If content is smaller than header
+                        contentElement.style.width = (header-1)+"px";
+                    }else{
+                        contentElement.style.transform = "translateX("+translateValue+"px)";
+                    }
+                });
+            });
+        });
+    </script>
+
 </header>
 </body>
 </html>

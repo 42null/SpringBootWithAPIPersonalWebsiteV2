@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MenuPanel {
 	private final String header;
+	private final String tabHeaderName;
 	private final Type type;
 	private final String subtitle;
 	private final String modeName;
@@ -79,6 +80,7 @@ public class MenuPanel {
 	}
 
 	public MenuPanel(@JsonProperty("header") String header,
+					 @JsonProperty("tabHeaderName") String tabHeaderName,
 					 @JsonProperty("type") Type type,
 					 @JsonProperty("subtitle") String subtitle,
 					 @JsonProperty("modeName") String modeName,
@@ -86,6 +88,7 @@ public class MenuPanel {
 					 @JsonProperty("pages") Page[] pages,
 					 @JsonProperty("text") String text) {
 		this.header = header;
+		this.tabHeaderName = tabHeaderName;
 		this.type = type;
 		this.subtitle = subtitle;
 		this.modeName = modeName;
@@ -96,6 +99,10 @@ public class MenuPanel {
 
 	public String getHeader() {
 		return header;
+	}
+
+	public String getTabHeaderName() {
+		return tabHeaderName;
 	}
 
 	public Type getType() {
