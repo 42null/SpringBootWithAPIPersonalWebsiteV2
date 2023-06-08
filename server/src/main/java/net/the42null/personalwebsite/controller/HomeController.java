@@ -181,7 +181,7 @@ public class HomeController {
     public String showWebPage(Model model) {
         model.addAttribute("pageTitle", "Websites");
         model.addAttribute("contentBoxes", websiteContainers);
-        return "/web/web";
+        return "web/web";
     }
 //NAV (END)
 
@@ -191,11 +191,11 @@ public class HomeController {
         model.addAttribute("pageTitle", "Contact Me");
         model.addAttribute("contacts", contacts);
 
-        return "/contact/contact";
+        return "contact/contact";
     }
     @GetMapping("/contactForm")
     public String showContactFormPage(Model model) {
-        return "/contact/contact";
+        return "contact/contact";
     }
     //generics
 

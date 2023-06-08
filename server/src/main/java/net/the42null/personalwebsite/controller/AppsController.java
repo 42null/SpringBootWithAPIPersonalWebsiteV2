@@ -57,6 +57,6 @@ public class AppsController {
 		model.addAttribute("menuContainer", app);
 
 
-		return "/apps/generatedAppPage";
+		return "apps/generatedAppPage";
 	}
 }
