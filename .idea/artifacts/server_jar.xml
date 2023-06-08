@@ -85,6 +85,8 @@
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-web/5.2.9.RELEASE/spring-web-5.2.9.RELEASE.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sun/istack/istack-commons-runtime/3.0.11/istack-commons-runtime-3.0.11.jar" path-in-jar="/" />
+      <element id="dir-copy" path="$PROJECT_DIR$/server/src/main/resources" />
+      <element id="dir-copy" path="$PROJECT_DIR$/server" />
     </root>
   </artifact>
 </component>

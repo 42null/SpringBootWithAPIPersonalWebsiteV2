@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * This controller controls generic pages that do not have their own html pages but instead are automatically generated
  */
 @Controller
-//@CrossOrigin(origins="http://localhost:63342")
+@CrossOrigin(origins="http://localhost:63342")
 public class GenericController {
 
 	@GetMapping("/generic")

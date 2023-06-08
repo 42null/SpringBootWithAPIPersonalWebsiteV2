@@ -1,17 +1,17 @@
 [
   {
-    "id": 0,
-    "header": "repl.it",
-    "subtitle": "Original Portfolio",
+    "id": 2,
+    "header": "Personally Hosted",
+    "subtitle": "Running from ",
     "images": [
       {
-        "src": "https://42null.github.io/Images/Replit/replit-logo-png-transparent.png",
-        "alt": "repl.it logo",
-        "title": "It's hosted on repl.it",
+        "src": "https://42null.github.io/Images/favicons/favicon-32x32.png",
+        "alt": "My logo",
+        "title": "I host it on a Raspberry Pi",
         "background": "transparent"
       }
     ],
-    "text": "This site has been deprecated. It was my first portfolio website and everything was built from scratch. I learned a lot but would definitely employ more dynamic construction now."
+    "text": "This is a server I run from my house, I use a subdomain on FreeDNS. I use it for multiple projects such as as a remote camera, a website host, and for domain redirection. Depending on the SD card loaded, it may also work as a host for this project."
   },{
     "id": 1,
     "header": "github.io",
@@ -26,17 +26,17 @@
     ],
     "text": "This mirror currently hosts the last pushed version of the repl.it portfolio site. It would like to change it to host this site once it is ready but GitHub.io does not do dynamic hosting. Until then, it may just redirect to nullified.moo.com or host a converted static copy."
   },{
-    "id": 2,
-    "header": "Personally Hosted",
-    "subtitle": "Running from ",
+    "id": 0,
+    "header": "repl.it",
+    "subtitle": "Original Portfolio",
     "images": [
       {
-        "src": "https://42null.github.io/Images/favicons/favicon-32x32.png",
-        "alt": "My logo",
-        "title": "I host it on a Raspberry Pi",
+        "src": "https://42null.github.io/Images/Replit/replit-logo-png-transparent.png",
+        "alt": "repl.it logo",
+        "title": "It's hosted on repl.it",
         "background": "transparent"
       }
     ],
-    "text": "This is a server I run from my house, I use a subdomain on FreeDNS. I use it for multiple projects such as as a remote camera, a website host, and for domain redirection. Depending on the SD card loaded, it may also work as a host for this project."
+    "text": "This site has been deprecated. It was my first portfolio website and everything was built from scratch. I learned a lot but I definitely employ more dynamic construction now."
   }
 ]

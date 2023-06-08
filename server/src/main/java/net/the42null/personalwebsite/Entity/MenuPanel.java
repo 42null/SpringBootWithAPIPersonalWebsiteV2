@@ -11,6 +11,7 @@ public class MenuPanel {
 	private final String modeName;
 	private final String[] modes;
 	private final Page[] pages;
+	private final AdditionalLink[] additionalLinks;
 	private final String text;
 
 	public enum Type {
@@ -43,6 +44,38 @@ public class MenuPanel {
 
 		public String getText() {
 			return text;
+		}
+	}
+	public static class AdditionalLink {
+		private final String url;
+		private final String name;
+		private final String title;
+		private final String description;
+
+		public AdditionalLink(@JsonProperty("url") String url,
+							  @JsonProperty("name") String name,
+							  @JsonProperty("title") String title,
+							  @JsonProperty("description") String description) {
+			this.url = url;
+			this.name = name;
+			this.title = title;
+			this.description = description;
+		}
+
+		public String getUrl() {
+			return url;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public String getTitle() {
+			return title;
+		}
+
+		public String getDescription() {
+			return description;
 		}
 	}
 
@@ -86,6 +119,7 @@ public class MenuPanel {
 					 @JsonProperty("modeName") String modeName,
 					 @JsonProperty("modes") String[] modes,
 					 @JsonProperty("pages") Page[] pages,
+					 @JsonProperty(value = "additionalLinks", defaultValue = "") AdditionalLink[] additionalLinks,//TODO: Make optional
 					 @JsonProperty("text") String text) {
 		this.header = header;
 		this.tabHeaderName = tabHeaderName;
@@ -94,6 +128,7 @@ public class MenuPanel {
 		this.modeName = modeName;
 		this.modes = modes;
 		this.pages = pages;
+		this.additionalLinks = additionalLinks;
 		this.text = text;
 	}
 
@@ -124,6 +159,8 @@ public class MenuPanel {
 	public Page[] getPages() {
 		return pages;
 	}
+
+	public AdditionalLink[] getAdditionalLinks(){return additionalLinks;}
 
 	public String getText() {
 		return text;

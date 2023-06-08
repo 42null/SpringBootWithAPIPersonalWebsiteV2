@@ -79,6 +79,14 @@
     <ul class="tabs">
       <li th:each="page : ${contentBox.pages}" th:text="${page.name}">Tab</li>
     </ul>
+    <div>
+      <h3><!--th:text="${contentBox.tabHeaderName}"-->Resources</h3>
+    </div>
+    <ul class="additionalInfo">
+      <li th:each="link : ${contentBox.additionalLinks}">
+          <a th:text="${link.name}" th:href="${link.url}" th:title="${link.title}" target="_blank">Link</a>
+      </li>
+    </ul>
   </div>
   <div class="section-second-container" th:with="page=${contentBox.pages[0]}">
     <div class="section-right-top">

@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.the42null.personalwebsite.Entity.ItemContainer;
 import net.the42null.personalwebsite.Entity.MenuPanel;
+import net.the42null.personalwebsite.Entity.PageUpdateBar;
+import net.the42null.personalwebsite.helpers.ContentPather;
 import net.the42null.personalwebsite.helpers.InputSanitizer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.PostConstruct;
 import java.awt.*;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,9 +35,11 @@ public class AppsController {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 
+//        Settings for content path generation //DUPLICATE CODE but used as movement of .json files could change
+		ContentPather cPather = new ContentPather();
 		/*Apps*/
 		try {
-			appContainers = List.of(mapper.readValue(Paths.get("server/src/main/resources/static/content/apps.json").toFile(), MenuPanel[].class));
+			appContainers = List.of(mapper.readValue(cPather.generateResourcePath("apps.json"), MenuPanel[].class));
 		} catch (IOException e) {
 			e.printStackTrace();
 			appContainers = List.of(new MenuPanel[0]);

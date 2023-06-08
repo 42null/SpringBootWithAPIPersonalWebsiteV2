@@ -6,6 +6,7 @@ import net.the42null.personalwebsite.Entity.*;
 import net.the42null.personalwebsite.Service.WholesaleOrderService;
 import net.the42null.personalwebsite.dto.DtoOrder;
 import net.the42null.personalwebsite.helpers.AgeFormatter;
+import net.the42null.personalwebsite.helpers.ContentPather;
 import net.the42null.personalwebsite.repo.WholesaleOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,15 +17,24 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 @Controller
-//@CrossOrigin(origins="http://localhost:63342")
+//@CrossOrigin(origins= {
+//        "http://localhost:63342",
+//        "http://nullified.mooo.com:63342",
+//        "http://nullified.mooo.com:80",
+//        "http://nullified.mooo.com:8080",
+//        "http://192.168.1.24:8080",
+//        "http://192.168.1.24:80",
+//        "http://192.168.1.24:63342"
+//})
 public class HomeController {
 
     private String[] rules;
@@ -39,15 +49,18 @@ public class HomeController {
     @PostConstruct
     private void initData() {
         ObjectMapper mapper = new ObjectMapper();
+//        Mapper settings
         mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+//        Settings for content path generation
+        ContentPather cPather = new ContentPather();
+
 
         try {
-            rules = mapper.readValue(Paths.get("server/src/main/resources/static/content/croquetRules.json").toFile(), String[].class);
+            rules = mapper.readValue(cPather.generateResourcePath("croquetRules.json"), String[].class);
         } catch (IOException e) {
             e.printStackTrace();
             rules = new String[0];
         }
-
 
         RestTemplate restTemplate = new RestTemplate();
         pageRepositories = restTemplate.getForObject("https://api.github.com/users/42null/repos", GithubRepository[].class);
@@ -56,28 +69,28 @@ public class HomeController {
 
 
         try {
-            aboutMeContainers = List.of(mapper.readValue(Paths.get("server/src/main/resources/static/content/aboutMes.json").toFile(), ItemContainer[].class));
+            aboutMeContainers = List.of(mapper.readValue(cPather.generateResourcePath("aboutMes.json"), ItemContainer[].class));
         } catch (IOException e) {
             e.printStackTrace();
             aboutMeContainers = List.of(new ItemContainer[0]);
         }
 
         try {
-            pageUpdateBars = mapper.readValue(Paths.get("server/src/main/resources/static/content/pageUpdateBars.json").toFile(), PageUpdateBar[].class);
+            pageUpdateBars = mapper.readValue(cPather.generateResourcePath("pageUpdateBars.json"), PageUpdateBar[].class);
         } catch (IOException e) {
             e.printStackTrace();
             pageUpdateBars = new PageUpdateBar[0];
         }
         /*Contacts*/
         try {
-            contacts = mapper.readValue(Paths.get("server/src/main/resources/static/content/contacts.json").toFile(), Contact[].class);
+            contacts = mapper.readValue(cPather.generateResourcePath("contacts.json"), Contact[].class);
         } catch (IOException e) {
             e.printStackTrace();
             contacts = new Contact[0];
         }
         /*Websites*/
         try {
-            websiteContainers = List.of(mapper.readValue(Paths.get("server/src/main/resources/static/content/websites.json").toFile(), ItemContainer[].class));
+            websiteContainers = List.of(mapper.readValue(cPather.generateResourcePath("websites.json"), ItemContainer[].class));
         } catch (IOException e) {
             e.printStackTrace();
             websiteContainers = List.of(new ItemContainer[0]);

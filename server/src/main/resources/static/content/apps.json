@@ -6,6 +6,14 @@
     "tabHeaderName": "Pages",
     "modeName": "Select Mode: ",
     "modes": ["Light", "Dark"],
+    "additionalLinks": [
+      {
+        "url": "https://42null.memmojs.repl.co/Downloads/ChalkBoard.apk",
+        "name": "APK download for Android",
+        "title": "Click to download .apk for Android",
+        "description": "Put description here"
+      }
+    ],
     "pages": [
       {
         "name": "Home",

@@ -22,13 +22,14 @@ function copyTextToClipboard(textToCopy) {
 //Gallery thumbnail popups
 function expandImage(onClickContent, id) {
     // const thumbnail = document.getElementById(id);
-    const overlay = document.getElementById('overlay');
-    const popup = document.getElementById('popup');
-    overlay.style.display = 'block';
-    popup.style.display = 'block';
-    disableScroll();
 
     if(onClickContent.includes(".pdf")){//TODO: Make more accurate
+        const overlay = document.getElementById('overlay');
+        const popup = document.getElementById('popup');
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+        disableScroll();
+
         const pdf = document.createElement("object");
 
         pdf.setAttribute('data', onClickContent);
@@ -36,7 +37,11 @@ function expandImage(onClickContent, id) {
         pdf.style.height = "100%";
         // thumbnail.parentElement.appendChild(pdf);
         popup.appendChild(pdf);
+
+    }else if(onClickContent.includes("www.credly.com")){
+        window.open(onClickContent);
     }
+
 }
 // Closes popup when Esc key is pressed
 document.addEventListener('keydown', function(event) {

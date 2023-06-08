@@ -14,6 +14,8 @@
     --primary_dark_dark: #004547;
     --primary_darkest: #002424;
 
+    --dependent_color_background: #0000;/*Set by light or dark mode*/
+
     --white: #fff;
     --pdf_background_color_from_container: #2a2a2a;
 
@@ -53,6 +55,16 @@
     --default_br_color: #808080;
 }
 
+@media (prefers-color-scheme:dark){
+    :root{
+        --dependent_color_background: var(--primary_darkest);
+    }
+}
+@media (prefers-color-scheme:light){
+    :root{
+        --dependent_color_background: var(--primary_light_light);
+    }
+}
 
 body {
     /*Background-image set though _header.html*/
@@ -412,7 +424,8 @@ code {
     /*padding: 20px;*/
 }
 .item p.text{
-    text-align: justify; /*TODO: Make center last line*/
+    text-align: justify;
+    text-align-last: center;
     padding-left: 25px;
     padding-right: 25px;
     padding-bottom: 20px;
@@ -584,7 +597,8 @@ div > .updateBar:hover > *:not(a) {
 .section-tabs .tabs {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 20%;
+    overflowY: scroll;
     /*justify-content: center;*/
     align-items: center;
     padding: 10px;
@@ -596,6 +610,14 @@ ul.tabs > li{
     background-color: var(--clear_grey_overlay);
     list-style-type: none;
     width: 100%;
+}
+ul.additionalInfo > li{
+    text-align: center;/*justify;*/
+    /*border: 1px solid var(--clear_grey_overlay);*/
+    /*background-color: var(--clear_grey_overlay);*/
+    list-style-type: none;
+    width: 100%;
+    margin-left: -20px;/*TODO: Make remove without, clear?*/
 }
 
 .section-right-top {

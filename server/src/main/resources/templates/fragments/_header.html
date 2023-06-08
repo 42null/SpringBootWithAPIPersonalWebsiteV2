@@ -11,17 +11,19 @@
             <li><a th:href="@{/}">Home</a></li>
             <li><a th:href="@{/about}">About Me</a></li>
             <li><a th:href="@{/contact}">Contact</a></li>
-            <li class="dropdown-head"><a th:href="@{/platforms}">Platforms</a>
+            <li class="dropdown-head"><a><!--th:href="@{/platforms}"-->Platforms</a>
                 <ul class="dropdown-content">
                     <li><a th:href="@{/platforms/github}">GitHub</a></li>
                 </ul>
             </li>
 
-            <li><a th:href="@{/games}">Games</a></li>
-            <li class="dropdown-head"><a target="_blank" th:href="@{/apps}">Apps</a>
+<!--            <li><a th:href="@{/games}">Games</a></li>-->
+            <li><a>Games</a></li>
+            <li class="dropdown-head"><a>Apps</a>
                 <ul class="dropdown-content">
                     <li><a th:href="@{/apps/chalkboard}">ChalkBoard</a></li>
-                    <li><a th:href="@{/apps}">Ctrl+F Camera</a></li>
+                    <li><a target="_blank" href="https://github.com/42null/CtrlFCamera_Android">Ctrl+F Camera</a></li>
+                    <li><a target="_blank" href="https://github.com/42null/Fitbit-Conways-Game-Of-Life">Fitbit: Conways Game of Life</a></li>
                 </ul>
             </li>
             <li class="dropdown-head"><a target="_blank" th:href="@{https://addons.mozilla.org/en-US/firefox/user/17656763/}">Extensions</a>
