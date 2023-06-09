@@ -1,7 +1,7 @@
 [
   {
     "header": "ChalkBoard",
-    "type": "example",
+    "type": "inuse",
     "subtitle": "",
     "tabHeaderName": "Pages",
     "modeName": "Select Mode: ",
@@ -63,6 +63,41 @@
           }
         ],
         "text": "This is text content. #2"
+      }
+    ]
+  },{
+    "header": "Sorry that app could not be found",
+    "type": "allApps",
+    "subtitle": "",
+    "tabHeaderName": "All Apps",
+    "modeName": "Select Mode: ",
+    "modes": ["Light", "Dark"],
+    "additionalLinks": [
+      {
+        "url": "chalkboard",
+        "name": "Android ChalkBoard App page",
+        "title": "Click here to see ChalkBoard's page",
+        "urlTargetType": "self",
+        "description": "An app aimed to be a local version of Google Keep, where you can store notes."
+      }
+    ],
+    "pages": [
+      {
+        "name": "ChalkBoard",
+        "images": [
+          {
+            "mode": "light",
+            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865639.png",
+            "alt": "Chalkboard app fullscreen screenshot of homepage (Light mode)",
+            "title": "Android ChalkBoard Home Screen"
+          },{
+            "mode": "dark",
+            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866048.png",
+            "alt": "Chalkboard app fullscreen screenshot of homepage (Dark mode)",
+            "title": "Dark mode homepage view"
+          }
+        ],
+        "text": "This is text content. #1 (0)"
       }
     ]
   }

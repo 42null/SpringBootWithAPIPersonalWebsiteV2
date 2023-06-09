@@ -17,8 +17,10 @@ public class MenuPanel {
 	public enum Type {
 		@JsonAlias("example")
 		EXAMPLE,
-		@JsonAlias("use")//TODO: Come up with a better name
-		USE
+		@JsonAlias("inuse")//TODO: Come up with a better name
+		INUSE,
+		@JsonAlias("allApps")
+		ALL
 	}
 
 	public static class Page {
@@ -47,7 +49,24 @@ public class MenuPanel {
 		}
 	}
 	public static class AdditionalLink {
+		public enum URLTargetType {
+			@JsonAlias({"blank","newTab"})
+			BLANK("_blank"),
+			@JsonAlias({"self","current"})
+			SELF("_self");
+
+			private final String value;
+
+			URLTargetType(String targetValue) {
+				this.value = targetValue;
+			}
+
+			public String getValue() {
+				return value;
+			}
+		}
 		private final String url;
+		private final URLTargetType targetType;
 		private final String name;
 		private final String title;
 		private final String description;
@@ -55,15 +74,20 @@ public class MenuPanel {
 		public AdditionalLink(@JsonProperty("url") String url,
 							  @JsonProperty("name") String name,
 							  @JsonProperty("title") String title,
+							  @JsonProperty(value = "urlTargetType", defaultValue = "newTab") URLTargetType targetType,
 							  @JsonProperty("description") String description) {
 			this.url = url;
 			this.name = name;
 			this.title = title;
+			this.targetType = (targetType != null) ? targetType : URLTargetType.BLANK;//TODO: Fix, should never need to be used as defaultvalue should prevent this.
 			this.description = description;
 		}
 
 		public String getUrl() {
 			return url;
+		}
+		public String getTarget() {
+			return targetType.getValue();
 		}
 
 		public String getName() {

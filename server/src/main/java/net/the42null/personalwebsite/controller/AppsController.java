@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import net.the42null.personalwebsite.Entity.ItemContainer;
 import net.the42null.personalwebsite.Entity.MenuPanel;
 import net.the42null.personalwebsite.Entity.PageUpdateBar;
+import net.the42null.personalwebsite.exception.ResourceNotFoundException;
 import net.the42null.personalwebsite.helpers.ContentPather;
 import net.the42null.personalwebsite.helpers.InputSanitizer;
 import org.springframework.stereotype.Controller;
@@ -54,9 +55,19 @@ public class AppsController {
 											  container.getHeader().toLowerCase().equals(appNameSerialized))
 											  .findFirst()
 											  .orElse(null);
+		if(app == null){
+			app = appContainers.stream().filter(container ->
+															  container.getType().equals(MenuPanel.Type.ALL))
+								.findFirst()
+								.orElse(null);
+			model.addAttribute("pageTitle", "App Not Found");
+			if(app == null){
+				throw new RuntimeException("'ALL' apps menuPanel not found");
+			}
+		}else{
+			model.addAttribute("pageTitle", Character.toUpperCase(appNameSerialized.charAt(0))+(appNameSerialized.length()>1? appNameSerialized.substring(1): ""));
+		}
 		model.addAttribute("menuContainer", app);
-
-
 		return "apps/generatedAppPage";
 	}
 }
