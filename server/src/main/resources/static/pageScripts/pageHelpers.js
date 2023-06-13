@@ -78,7 +78,7 @@ function preventDefaultForScrollKeys(e) {
     if (keys[e.keyCode]) {
         preventDefault(e);
         return false;
-    }pps
+    }
 }
 
 // modern Chrome requires { passive: false } when adding event

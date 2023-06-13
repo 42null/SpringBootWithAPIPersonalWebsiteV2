@@ -1,8 +1,8 @@
 [
   {
     "id": 2,
-    "header": "Personally Hosted",
-    "subtitle": "Running from ",
+    "header": "nullified.mooo.com",
+    "subtitle": "Personally Hosted (Raspberry Pi)",
     "images": [
       {
         "src": "https://42null.github.io/Images/favicons/favicon-32x32.png",
@@ -11,7 +11,7 @@
         "background": "transparent"
       }
     ],
-    "text": "This is a server I run from my house, I use a subdomain on FreeDNS. I use it for multiple projects such as as a remote camera, a website host, and for domain redirection. Depending on the SD card loaded, it may also work as a host for this project."
+    "text": "This is a server I run from my house, I use a subdomain on <a href='https://freedns.afraid.org/'>FreeDNS</a>. I use it for multiple projects such as as a remote camera, a website host, and for domain redirection. Depending on the SD card loaded, it may also work as a host for this project."
   },{
     "id": 1,
     "header": "github.io",

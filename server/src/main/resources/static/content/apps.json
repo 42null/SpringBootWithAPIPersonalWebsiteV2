@@ -1,6 +1,7 @@
 [
   {
     "header": "ChalkBoard",
+    "urlEnding": "chalkboard",
     "type": "inuse",
     "subtitle": "",
     "tabHeaderName": "Pages",
@@ -65,8 +66,121 @@
         "text": "This is text content. #2"
       }
     ]
-  },{
+  },
+  {
+    "header": "Ctrl+F Camera",
+    "urlEnding": "ctrlFCamera",
+    "type": "inuse",
+    "subtitle": "",
+    "tabHeaderName": "Pages",
+    "modeName": "Current Display Mode: ",
+    "modes": ["Default"],
+    "additionalLinks": [
+      {
+        "url": "https://github.com/42null/Ctrl-F-Camera-Android",
+        "name": "Visit GitHub Repository",
+        "title": "Click to view Ctrl+F Camera on GitHub",
+        "description": "Put description here"
+      }
+    ],
+    "pages": [
+      {
+        "name": "Camera View",
+        "images": [
+          {
+            "mode": "Default",
+            "src": "/img/selectable/apps/ctrlFCamera/ctrlFCamera-CameraView.jpeg",
+            "alt": "Ctrl+F Camera app fullscreen screenshot of camera page (Dark mode)",
+            "title": "Dark mode camera view"
+          }
+        ],
+        "text": "This is text content. #1 (0)"
+      }
+    ]
+  },
+  {
+    "header": "Custom Keyboard Demo",
+    "urlEnding": "customKeyboardDemo",
+    "type": "inuse",
+    "subtitle": "",
+    "tabHeaderName": "Permutations",
+    "modeName": "Options: ",
+    "modes": ["light", "dark"],
+    "additionalLinks": [
+      {
+      }
+    ],
+    "pages": [
+      {
+        "name": "Example Theme #1, Keyboard #0",
+        "images": [
+          {
+            "mode": "dark",
+            "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-009.jpeg",
+            "alt": "Fullscreen screenshot of example theme #1, keyboard 0 (Dark mode)",
+            "title": "Example theme #1, keyboard 0 in dark mode"
+          },{
+            "mode": "light",
+            "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-008.jpeg",
+            "alt": "Fullscreen screenshot of example theme #1, keyboard 0 (Light mode)",
+            "title": "Example theme #1, keyboard 0 in light mode"
+          }
+        ],
+        "text": ""
+      },{
+        "name": "Example Theme #1, Keyboard #1",
+        "images": [
+          {
+            "mode": "dark",
+            "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-006.jpeg",
+            "alt": "Fullscreen screenshot of example theme #1, keyboard 1 (Dark mode)",
+            "title": "Example theme #1, keyboard 1 in dark mode"
+          },{
+            "mode": "light",
+            "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-007.jpeg",
+            "alt": "Fullscreen screenshot of example theme #1, keyboard 1 (Light mode)",
+            "title": "Example theme #1, keyboard 1 in light mode"
+          }
+        ],
+        "text": ""
+      },{
+        "name": "Example Theme #2, Keyboard #2",
+        "images": [
+          {
+            "mode": "dark",
+            "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-005.jpeg",
+            "alt": "Fullscreen screenshot of example theme #2, keyboard 2 (Dark mode)",
+            "title": "Example theme #2, keyboard 2 in dark mode"
+          },{
+            "mode": "light",
+            "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-004.jpeg",
+            "alt": "Fullscreen screenshot of example theme #2, keyboard 2 (Light mode)",
+            "title": "Example theme #2, keyboard 2 in light mode"
+          }
+        ],
+        "text": ""
+      },{
+        "name": "Example Theme #3, Keyboard #3",
+        "images": [
+          {
+            "mode": "dark",
+            "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-002.jpeg",
+            "alt": "Fullscreen screenshot of example theme #3, keyboard 3 (Dark mode)",
+            "title": "Example theme #1, keyboard 1 in dark mode"
+          },{
+            "mode": "light",
+            "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-002.jpeg",
+            "alt": "Fullscreen screenshot of example theme #3, keyboard 3 (Light mode)",
+            "title": "Example theme #3, keyboard 1 in light mode"
+          }
+        ],
+        "text": ""
+      }
+    ]
+  },
+  {
     "header": "Sorry that app could not be found",
+    "urlEnding": "appsHub",
     "type": "allApps",
     "subtitle": "",
     "tabHeaderName": "All Apps",

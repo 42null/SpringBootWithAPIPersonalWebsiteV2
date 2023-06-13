@@ -46,26 +46,26 @@ public class AppsController {
 			appContainers = List.of(new MenuPanel[0]);
 		}
 	}
-	@GetMapping("/{appName:^[a-z0-9]{1,20}$}")//TODO: Make redirect instead?
+	@GetMapping("/{appName:^[a-zA-Z0-9]{1,20}$}")//TODO: Make redirect instead?
 	public String exampleController(@PathVariable("appName") String appName, Model model) {
-		String appNameSerialized = InputSanitizer.sanitizeInput(appName, InputSanitizer.DEFAULT_NUM_OF_CHARACTERS);
-		model.addAttribute("pageTitle", Character.toUpperCase(appNameSerialized.charAt(0))+(appNameSerialized.length()>1? appNameSerialized.substring(1): ""));
+		String appNameSterialized = InputSanitizer.sanitizeInput(appName, InputSanitizer.DEFAULT_NUM_OF_CHARACTERS);
+		model.addAttribute("pageTitle", Character.toUpperCase(appNameSterialized.charAt(0))+(appNameSterialized.length()>1? appNameSterialized.substring(1): ""));
 
 		MenuPanel app = appContainers.stream().filter(container ->
-											  container.getHeader().toLowerCase().equals(appNameSerialized))
+											  container.getUrlEnding().toLowerCase().equals(appNameSterialized))
 											  .findFirst()
 											  .orElse(null);
 		if(app == null){
 			app = appContainers.stream().filter(container ->
-															  container.getType().equals(MenuPanel.Type.ALL))
-								.findFirst()
-								.orElse(null);
+									    container.getType().equals(MenuPanel.Type.ALL))
+										.findFirst()
+										.orElse(null);
 			model.addAttribute("pageTitle", "App Not Found");
 			if(app == null){
 				throw new RuntimeException("'ALL' apps menuPanel not found");
 			}
 		}else{
-			model.addAttribute("pageTitle", Character.toUpperCase(appNameSerialized.charAt(0))+(appNameSerialized.length()>1? appNameSerialized.substring(1): ""));
+			model.addAttribute("pageTitle", Character.toUpperCase(appNameSterialized.charAt(0))+(appNameSterialized.length()>1? appNameSterialized.substring(1): ""));
 		}
 		model.addAttribute("menuContainer", app);
 		return "apps/generatedAppPage";

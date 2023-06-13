@@ -1,10 +1,12 @@
 package net.the42null.personalwebsite.Entity;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MenuPanel {
 	private final String header;
+	private final String urlEnding;
 	private final String tabHeaderName;
 	private final Type type;
 	private final String subtitle;
@@ -137,6 +139,7 @@ public class MenuPanel {
 	}
 
 	public MenuPanel(@JsonProperty("header") String header,
+					 @JsonProperty("urlEnding") String urlEnding,
 					 @JsonProperty("tabHeaderName") String tabHeaderName,
 					 @JsonProperty("type") Type type,
 					 @JsonProperty("subtitle") String subtitle,
@@ -146,6 +149,7 @@ public class MenuPanel {
 					 @JsonProperty(value = "additionalLinks", defaultValue = "") AdditionalLink[] additionalLinks,//TODO: Make optional
 					 @JsonProperty("text") String text) {
 		this.header = header;
+		this.urlEnding = urlEnding;
 		this.tabHeaderName = tabHeaderName;
 		this.type = type;
 		this.subtitle = subtitle;
@@ -158,6 +162,10 @@ public class MenuPanel {
 
 	public String getHeader() {
 		return header;
+	}
+
+	public String getUrlEnding() {
+		return urlEnding;
 	}
 
 	public String getTabHeaderName() {

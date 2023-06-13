@@ -46,7 +46,7 @@
         <div class="primary-container-section">
                 <div class="container">
                         <div th:each="contentBox : ${contentBoxes}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
-                                <h2 th:text="${contentBox.header}">Header</h2>
+                                <h2 th:text="${contentBox.header}" th:href="${@/contentBox.}">Header</h2>
                                 <h4 th:text="${contentBox.subtitle}" class="centered subtitle">Subtitle</h4>
                                 <div class="centered">
                                         <div class="jsonImage">

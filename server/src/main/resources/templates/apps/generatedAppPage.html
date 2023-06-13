@@ -46,15 +46,21 @@
       if(newPageNumber < 0 || newPageNumber >= pages.length){
       }else{
         // Give disabled look on buttons that would send index out of bounds
-        if(currentPageNumber === 0){
-          document.querySelector(".prev-button").classList.remove("disabled");
-        }else if(currentPageNumber === pages.length - 1){
+        if(currentPageNumber === 0) {
+            document.querySelector(".prev-button").classList.remove("disabled");
+        }
+        if(currentPageNumber === pages.length - 1){
           document.querySelector(".next-button").classList.remove("disabled");
         }
         if(newPageNumber === 0){
           document.querySelector(".prev-button").classList.add("disabled");
-        }if(newPageNumber === pages.length - 1){
+        }else{
+            document.querySelector(".prev-button").classList.remove("disabled");
+        }
+        if(newPageNumber === pages.length - 1){
           document.querySelector(".next-button").classList.add("disabled");
+        }else{
+            document.querySelector(".next-button").classList.remove("disabled");
         }
 
         const contentImage = document.querySelector(".section-content-holder").querySelector("img");//TODO: Combine?
@@ -106,7 +112,7 @@
     <div class="section-content-holder" th:with="image=${page.images[0]}">
       <button class="prev-button disabled">Previous</button>
       <img th:src="${image.src}" th:alt="${image.alt}" th:title="${image.title}" />
-      <button class="next-button">Next</button>
+      <button class="next-button disabled">Next</button>
     </div>
   </div>
 </div>
@@ -139,6 +145,7 @@
           updateCurrentContentMode(element.innerText, element.id);
         })
     });
+    updateCurrentContentBoxByIndex("", 0);//Takes care of setting disabled or un-disabled previous & next buttons
 </script>
 
 </body>
