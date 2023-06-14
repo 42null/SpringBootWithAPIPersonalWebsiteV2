@@ -185,6 +185,6 @@
         "background": "var(--dependent_color_background)"
       }
     ],
-    "text": "2019: Vatorbot\n2020: Stardestroyer\n2021: Stardestroyer / At home challenges\n2022: Ghost"
+    "text": "<h3>Competition robots I worked on</h3><ul style=\"width:35%; text-align: left;\" class=\"centered\"><li>2019: VaderBot</li><li>2020: Stardestroyer</li><li>2021: Stardestroyer</li><li>2022: Ghost</li></ul><h3><a href=\"https://www.firstinspires.org/robotics/frc\" target=\"_blank\">F.I.R.S.T. Robotics website</a></h3><h3><a href=\"https://laserrobotics.org\" target=\"_blank\">Team #2077 Website</a></h3>"
   }
 ]

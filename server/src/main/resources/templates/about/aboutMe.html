@@ -42,11 +42,11 @@
         <div class="centered">
             <div class="page-jump-selector">
                 <ul>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#accomplishments">Accomplishments</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#work-experience">Work Experience</a></li>
-<!--                    <li><a href="#relevant-coursework">Relevant Coursework</a></li>-->
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#accomplishments">Accomplishments</a></li>
+                    <!--                    <li><a href="#relevant-coursework">Relevant Coursework</a></li>-->
                 </ul>
             </div>
         </div>
@@ -55,6 +55,23 @@
 
 
 <div class="primary-container-section">
+    <h2 class="centered" id="work-experience">Work Experience</h2>
+    <div class="container">
+        <div th:each="contentBox : ${contentBoxesWorkExperience}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
+            <h2 th:text="${contentBox.header}">Header</h2>
+            <div class="centered">
+                <div class="jsonImage">
+                    <img th:each="image : ${contentBox.images}"
+                         th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "
+                         th:src="${image.src}"
+                         th:alt="${image.alt}"
+                         th:title="${image.title}" />
+                </div>
+            </div>
+            <hr>
+            <div th:utext="${contentBox.text}" class="text"></div>
+        </div>
+    </div>
     <h2 class="centered" id="education">Education</h2>
     <div class="container">
         <div th:each="contentBox : ${contentBoxesEducation}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
@@ -69,24 +86,7 @@
                 </div>
             </div>
             <hr>
-            <p th:utext="${contentBox.text}" class="text"></p>
-        </div>
-    </div>
-    <h2 class="centered" id="accomplishments">Accomplishments</h2>
-    <div class="container">
-        <div th:each="contentBox : ${contentBoxesAchievements}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
-            <h2 th:text="${contentBox.header}">Header</h2>
-            <div class="centered">
-                <div class="jsonImage">
-                    <img th:each="image : ${contentBox.images}"
-                         th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "
-                         th:src="${image.src}"
-                         th:alt="${image.alt}"
-                         th:title="${image.title}" />
-                </div>
-            </div>
-            <hr>
-            <p th:utext="${contentBox.text}" class="text"></p>
+            <div th:utext="${contentBox.text}" class="text"></div>
         </div>
     </div>
 
@@ -107,12 +107,13 @@
                 </div>
             </div>
             <hr>
-            <p th:utext="${contentBox.text}" class="text"></p>
+            <div th:utext="${contentBox.text}" class="text"></div>
         </div>
     </div>
-    <h2 class="centered" id="work-experience">Work Experience</h2>
+    
+    <h2 class="centered" id="accomplishments">Accomplishments</h2>
     <div class="container">
-        <div th:each="contentBox : ${contentBoxesWorkExperience}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
+        <div th:each="contentBox : ${contentBoxesAchievements}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
             <h2 th:text="${contentBox.header}">Header</h2>
             <div class="centered">
                 <div class="jsonImage">
@@ -124,9 +125,10 @@
                 </div>
             </div>
             <hr>
-            <p th:utext="${contentBox.text}" class="text"></p>
+            <div th:utext="${contentBox.text}" class="text"></div>
         </div>
     </div>
+
 </div>
 
 </body>

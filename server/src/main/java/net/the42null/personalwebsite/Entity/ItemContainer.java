@@ -9,6 +9,7 @@ import org.hibernate.annotations.NotFound;
 public class ItemContainer {
 	private final Long id;
 	private final String header;
+	private final String link;
 	private final Type type;
 	public enum Type {//TODO: Move away from enum so it is not tied to ItemContainer
 		@JsonAlias("education")
@@ -91,12 +92,14 @@ public class ItemContainer {
 @JsonCreator
 public ItemContainer(@JsonProperty("id") long id,
 					 @JsonProperty("header") String header,
+					 @JsonProperty(value = "link", defaultValue = "") String link,
 					 @JsonProperty("type") Type type,
 					 @JsonProperty("subtitle") String subtitle,
 					 @JsonProperty("images") Image[] images,
 					 @JsonProperty("text") String text){
 		this.id = id;
 		this.header = header;
+		this.link = link;
 		this.type = type;
 		this.subtitle = subtitle;
 		this.images = images;
@@ -110,6 +113,12 @@ public ItemContainer(@JsonProperty("id") long id,
 	public String getHeader() {
 		return header;
 	}
+
+	public String getLink() {
+		if(link==null){return "";}
+		return link;
+	}
+
 	public Type getType(){
 //		switch(type) {
 //			case EDUCATION:
@@ -137,8 +146,12 @@ public ItemContainer(@JsonProperty("id") long id,
 		return images;
 	}
 
-	public String getText() {
-		return text;
+	public String getText() {//Sets it up fpr th:utext="
+		if(text.startsWith("<")){
+			return text;
+		}else{
+			return "<p>"+text+"</p>";
+		}
 	}
 
 }

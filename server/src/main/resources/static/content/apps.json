@@ -20,12 +20,12 @@
         "name": "Home",
         "images": [
           {
-            "mode": "light",
+            "mode": "Light",
             "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865639.png",
             "alt": "Chalkboard app fullscreen screenshot of homepage (Light mode)",
             "title": "Light mode homepage view"
           },{
-            "mode": "dark",
+            "mode": "Dark",
             "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866048.png",
             "alt": "Chalkboard app fullscreen screenshot of homepage (Dark mode)",
             "title": "Dark mode homepage view"
@@ -36,12 +36,12 @@
         "name": "Board",
         "images": [
           {
-            "mode": "light",
+            "mode": "Light",
             "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865648.png",
             "alt": "Chalkboard app fullscreen screenshot of note storage area (Light mode)",
             "title": "Light mode note view page"
           },{
-            "mode": "dark",
+            "mode": "Dark",
             "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866045.png",
             "alt": "Chalkboard app fullscreen screenshot of note storage area (Dark mode)",
             "title": "Dark mode note view page"
@@ -52,12 +52,12 @@
         "name": "Stack",
         "images": [
           {
-            "mode": "light",
+            "mode": "Light",
             "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865652.png",
             "alt": "Chalkboard app fullscreen screenshot of note writing area (Light mode)",
             "title": "Light mode note creator page"
           },{
-            "mode": "dark",
+            "mode": "Dark",
             "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866108.png",
             "alt": "Chalkboard app fullscreen screenshot of note writing area (Dark mode)",
             "title": "Dark mode note creator page"
@@ -105,7 +105,7 @@
     "subtitle": "",
     "tabHeaderName": "Permutations",
     "modeName": "Options: ",
-    "modes": ["light", "dark"],
+    "modes": ["Light", "Dark"],
     "additionalLinks": [
       {
       }
@@ -115,15 +115,15 @@
         "name": "Example Theme #1, Keyboard #0",
         "images": [
           {
-            "mode": "dark",
+            "mode": "Dark",
             "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-009.jpeg",
             "alt": "Fullscreen screenshot of example theme #1, keyboard 0 (Dark mode)",
-            "title": "Example theme #1, keyboard 0 in dark mode"
+            "title": "Example theme #1, keyboard 0 in Dark mode"
           },{
-            "mode": "light",
+            "mode": "Light",
             "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-008.jpeg",
             "alt": "Fullscreen screenshot of example theme #1, keyboard 0 (Light mode)",
-            "title": "Example theme #1, keyboard 0 in light mode"
+            "title": "Example theme #1, keyboard 0 in Light mode"
           }
         ],
         "text": ""
@@ -131,15 +131,15 @@
         "name": "Example Theme #1, Keyboard #1",
         "images": [
           {
-            "mode": "dark",
+            "mode": "Dark",
             "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-006.jpeg",
             "alt": "Fullscreen screenshot of example theme #1, keyboard 1 (Dark mode)",
-            "title": "Example theme #1, keyboard 1 in dark mode"
+            "title": "Example theme #1, keyboard 1 in Dark mode"
           },{
-            "mode": "light",
+            "mode": "Light",
             "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-007.jpeg",
             "alt": "Fullscreen screenshot of example theme #1, keyboard 1 (Light mode)",
-            "title": "Example theme #1, keyboard 1 in light mode"
+            "title": "Example theme #1, keyboard 1 in Light mode"
           }
         ],
         "text": ""
@@ -147,15 +147,15 @@
         "name": "Example Theme #2, Keyboard #2",
         "images": [
           {
-            "mode": "dark",
+            "mode": "Dark",
             "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-005.jpeg",
             "alt": "Fullscreen screenshot of example theme #2, keyboard 2 (Dark mode)",
-            "title": "Example theme #2, keyboard 2 in dark mode"
+            "title": "Example theme #2, keyboard 2 in Dark mode"
           },{
-            "mode": "light",
+            "mode": "Light",
             "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-004.jpeg",
             "alt": "Fullscreen screenshot of example theme #2, keyboard 2 (Light mode)",
-            "title": "Example theme #2, keyboard 2 in light mode"
+            "title": "Example theme #2, keyboard 2 in Light mode"
           }
         ],
         "text": ""
@@ -163,15 +163,15 @@
         "name": "Example Theme #3, Keyboard #3",
         "images": [
           {
-            "mode": "dark",
+            "mode": "Dark",
             "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-002.jpeg",
             "alt": "Fullscreen screenshot of example theme #3, keyboard 3 (Dark mode)",
-            "title": "Example theme #1, keyboard 1 in dark mode"
+            "title": "Example theme #1, keyboard 1 in Dark mode"
           },{
-            "mode": "light",
-            "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-002.jpeg",
+            "mode": "Light",
+            "src": "/img/selectable/apps/customKeyboardDemo/customKeyboardDemoScreenshot-003.jpeg",
             "alt": "Fullscreen screenshot of example theme #3, keyboard 3 (Light mode)",
-            "title": "Example theme #3, keyboard 1 in light mode"
+            "title": "Example theme #3, keyboard 1 in Light mode"
           }
         ],
         "text": ""
@@ -200,12 +200,12 @@
         "name": "ChalkBoard",
         "images": [
           {
-            "mode": "light",
+            "mode": "Light",
             "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865639.png",
             "alt": "Chalkboard app fullscreen screenshot of homepage (Light mode)",
             "title": "Android ChalkBoard Home Screen"
           },{
-            "mode": "dark",
+            "mode": "Dark",
             "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866048.png",
             "alt": "Chalkboard app fullscreen screenshot of homepage (Dark mode)",
             "title": "Dark mode homepage view"

@@ -2,6 +2,7 @@
   {
     "id": 2,
     "header": "nullified.mooo.com",
+    "link": "http://nullified.mooo.com",
     "subtitle": "Personally Hosted (Raspberry Pi)",
     "images": [
       {
@@ -15,6 +16,7 @@
   },{
     "id": 1,
     "header": "github.io",
+    "link": "https://42null.github.io",
     "subtitle": "Portfolio Mirror Site",
     "images": [
       {
@@ -28,6 +30,7 @@
   },{
     "id": 0,
     "header": "repl.it",
+    "link": "https://42null.memmojs.repl.co/",
     "subtitle": "Original Portfolio",
     "images": [
       {
