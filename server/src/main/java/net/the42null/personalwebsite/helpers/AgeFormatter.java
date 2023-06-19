@@ -29,6 +29,8 @@ public final class AgeFormatter {
 		Function<ChronoUnit, Long> calculateDifference = unit -> unit.between(compareDate, now);
 		for (ChronoUnit unit : units) {
 			long difference = calculateDifference.apply(unit);
+			System.out.println("unit = "+unit);
+			System.out.println("difference = "+difference);
 			if (difference > 0) {
 				byte fancyUnitLength;
 				if(difference == 1){

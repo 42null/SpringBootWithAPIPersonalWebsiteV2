@@ -2,6 +2,7 @@ package net.the42null.personalwebsite.Entity;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import net.the42null.personalwebsite.exception.ResourceNotFoundException;
 import org.hibernate.annotations.NotFound;
@@ -9,6 +10,7 @@ import org.hibernate.annotations.NotFound;
 public class ItemContainer {
 	private final Long id;
 	private final String header;
+	@JsonIgnore
 	private final String link;
 	private final Type type;
 	public enum Type {//TODO: Move away from enum so it is not tied to ItemContainer
@@ -120,20 +122,6 @@ public ItemContainer(@JsonProperty("id") long id,
 	}
 
 	public Type getType(){
-//		switch(type) {
-//			case EDUCATION:
-////				return "education";
-//				return Type.EDUCATION;
-//			case ACCOMPLISHMENTS:
-////				return "accomplishments";
-//				return Type.ACCOMPLISHMENTS;
-//			case WORK_EXPERIENCE:
-////				return "experience";
-//				return Type.WORK_EXPERIENCE;
-//			case RELEVANT_COURSEWORK:
-////				return "coursework";
-//				return Type.RELEVANT_COURSEWORK;
-//		}
 		return type;
 //		throw new ResourceNotFoundException("ItemContainer", "type", type.name());
 	}

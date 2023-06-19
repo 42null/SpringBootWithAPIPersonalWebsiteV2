@@ -3,6 +3,6 @@
     "id": 0,
     "title": "Migration Status",
     "url": "#",
-    "status": "Currently underway. I am working on transferring content to this new site and making it much more dynamic. Now accessible from a Raspberry Pi at nullified.mooo.com when active over a Spring Boot instance."
+    "status": "I have built out this website from Spring Boot project and am still adding content and designing everything to be as programmatic as possible. Part of this includes transferring content to this new site from the old one and making it much more dynamic. It is presently accessible from a Raspberry Pi Server at nullified.mooo.com though as it is still in development, it may not web-accessible every part of the day."
   }
 ]
