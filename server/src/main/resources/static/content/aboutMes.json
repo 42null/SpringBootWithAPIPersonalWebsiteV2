@@ -40,15 +40,16 @@
     "subtitle": "",
     "images": [
       {
-        "src": "https://www.wctc.edu/_resources/images/waukesha_logo.svg",
-        "alt": "WCTC's Logo",
-        "title": "WCTC is a technical college in Pewaukee, Wisconsin",
-        "background": "var(--primary_dark)",
-        "radius": "0%",
-        "padding": "5%"
+        "src": "https://www.parchment.com/u/award/2f357fa87aa2c69b0bea8951204a8fc1/preview-lg.jpg",
+        "alt": "Joseph Memmel&apos;s Official IT Software Development Specialist Technical Diploma",
+        "title": "Earned at WCTC, a technical college in Pewaukee, Wisconsin",
+        "onClick": "https://www.parchment.com/u/award/2f357fa87aa2c69b0bea8951204a8fc1",
+        "background": "",
+        "radius": "0",
+        "padding": "0"
       }
     ],
-    "text": "I earned my Software Development Specialist while working on my Web & Software Developer associate degree from WCTC. I was able to graduate early by testing out and by transferring credits. I graduated my technical diploma with a perfect 4.0 GPA as a straight A student."
+    "text": "I earned my Software Development Specialist while working on my Web & Software Developer associate degree from WCTC. I was able to graduate early by testing out and by transferring credits. I graduated my technical diploma with a perfect 4.0 GPA as a straight A student. Click <a href=\"https://www.parchment.com/u/award/2f357fa87aa2c69b0bea8951204a8fc1\" title=\"Click to open official diploma in a new tab\" target=\"_blank\">here</a> to view official certificate on Parchment.com"
   },{
     "id": 1005,
     "header": "IT - Web & Software Developer Associate Degree (Ongoing)",

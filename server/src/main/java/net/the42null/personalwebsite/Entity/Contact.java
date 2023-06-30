@@ -40,6 +40,9 @@ public Contact(@JsonProperty("id") long id,
 	}
 
 	public String getCopyStart() {
+		if(copyStart.startsWith("http")){
+			return copyStart;
+		}
 		return copyStart;
 	}
 	public String getTitle() {

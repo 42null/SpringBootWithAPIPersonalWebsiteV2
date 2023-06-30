@@ -38,7 +38,7 @@ function expandImage(onClickContent, id) {
         // thumbnail.parentElement.appendChild(pdf);
         popup.appendChild(pdf);
 
-    }else if(onClickContent.includes("www.credly.com")){
+    }else if(onClickContent.startsWith("http")){
         window.open(onClickContent);
     }
 

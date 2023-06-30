@@ -27,5 +27,12 @@
     "showLink": "+1(262)-226-9337",
     "copyStart": "mailto:",
     "title": "Call / Text Me"
+  },{
+    "id": 4,
+    "description": "Linkedin",
+    "materialIcon": "",
+    "showLink": "joseph-memmel",
+    "copyStart": "https://www.linkedin.com/in/",
+    "title": "Connect with me on LinkedIn"
   }
 ]

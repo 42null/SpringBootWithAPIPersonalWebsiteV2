@@ -79,10 +79,13 @@
             <div class="centered">
                 <div class="jsonImage">
                     <img th:each="image : ${contentBox.images}"
+                         th:with="generatedId=|autogenIdHoverAndClickExpand_${#strings.toLowerCase(#strings.replace(#strings.concat(contentBox.header, ' ', image.alt), ' ', ''))}|"
                          th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "
                          th:src="${image.src}"
                          th:alt="${image.alt}"
-                         th:title="${image.title}" />
+                         th:title="${image.title}"
+                         th:id="${generatedId}"
+                         th:attr="onclick=|expandImage('${image.onClick}', '${generatedId}')|" />
                 </div>
             </div>
             <hr>
@@ -121,7 +124,10 @@
                          th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "
                          th:src="${image.src}"
                          th:alt="${image.alt}"
-                         th:title="${image.title}" />
+                         th:title="${image.title}"
+                         th:id="${generatedId}"/>
+<!--                    th:with="generatedId=|autogenIdHoverAndClickExpand_${#strings.toLowerCase(#strings.replace(#strings.concat(contentBox.header, ' ', image.alt), ' ', ''))}|"-->
+                         <!--th:attr="onclick=|expandImage('${image.onClick}', '${generatedId}')|" />-->
                 </div>
             </div>
             <hr>
