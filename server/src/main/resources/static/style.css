@@ -401,6 +401,10 @@ code {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.container .text{
+    margin-left: 15px;
+    margin-right: 15px;
+}
 
 .item {
     width: 32%;

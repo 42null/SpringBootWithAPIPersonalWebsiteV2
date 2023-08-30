@@ -6,7 +6,7 @@
     "subtitle": "Personally Hosted (Raspberry Pi)",
     "images": [
       {
-        "src": "https://42null.github.io/Images/favicons/favicon-32x32.png",
+        "src": "/img/favicons/favicon-32x32.png",
         "alt": "My logo",
         "title": "I host it on a Raspberry Pi",
         "background": "transparent"
@@ -20,7 +20,7 @@
     "subtitle": "Portfolio Mirror Site",
     "images": [
       {
-        "src": "https://42null.github.io/Images/Github/GitHub_Logo.png",
+        "src": "/img/pageImages/websiteLogos/GitHub_Logo.png",
         "alt": "Github's logo",
         "title": "It's hosted on GitHub",
         "background": "transparent"
@@ -34,7 +34,7 @@
     "subtitle": "Original Portfolio",
     "images": [
       {
-        "src": "https://42null.github.io/Images/Replit/replit-logo-png-transparent.png",
+        "src": "/img/pageImages/websiteLogos/replit-logo-png-transparent.png",
         "alt": "repl.it logo",
         "title": "It's hosted on repl.it",
         "background": "transparent"

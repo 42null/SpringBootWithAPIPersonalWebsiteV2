@@ -1,0 +1,5 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="companyLinks__logo" width="110" height="47"><defs><symbol id="inet" viewBox="0 0 93.57 40">
+			<title>iNET</title>
+			<path fill="currentColor" d="M0 9.478V40h17.952V13.791l18.922 26.192h32.278v-7.409H53.326V23.6h15.815v-7.374H53.309V7.5h23.565V40h8.557V7.5h8.139V0H36.561v26.313L17.639 0H9.465v9.478H0z"></path>
+			<path d="M.042.016h7.484v7.501H.042z"></path>
+		</symbol></defs><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#inet" fill="#FFFFFF"></use></svg>

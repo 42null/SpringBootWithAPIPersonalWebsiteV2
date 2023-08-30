@@ -21,12 +21,12 @@
         "images": [
           {
             "mode": "Light",
-            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865639.png",
+            "src": "/img/selectable/apps/chalkBoard/Screenshot_1622865639.png",
             "alt": "Chalkboard app fullscreen screenshot of homepage (Light mode)",
             "title": "Light mode homepage view"
           },{
             "mode": "Dark",
-            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866048.png",
+            "src": "/img/selectable/apps/chalkBoard/Screenshot_1622866048.png",
             "alt": "Chalkboard app fullscreen screenshot of homepage (Dark mode)",
             "title": "Dark mode homepage view"
           }
@@ -37,12 +37,12 @@
         "images": [
           {
             "mode": "Light",
-            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865648.png",
+            "src": "/img/selectable/apps/chalkBoard/Screenshot_1622865648.png",
             "alt": "Chalkboard app fullscreen screenshot of note storage area (Light mode)",
             "title": "Light mode note view page"
           },{
             "mode": "Dark",
-            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866045.png",
+            "src": "/img/selectable/apps/chalkBoard/Screenshot_1622866045.png",
             "alt": "Chalkboard app fullscreen screenshot of note storage area (Dark mode)",
             "title": "Dark mode note view page"
           }
@@ -53,12 +53,12 @@
         "images": [
           {
             "mode": "Light",
-            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865652.png",
+            "src": "/img/selectable/apps/chalkBoard/Screenshot_1622865652.png",
             "alt": "Chalkboard app fullscreen screenshot of note writing area (Light mode)",
             "title": "Light mode note creator page"
           },{
             "mode": "Dark",
-            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866108.png",
+            "src": "/img/selectable/apps/chalkBoard/Screenshot_1622866108.png",
             "alt": "Chalkboard app fullscreen screenshot of note writing area (Dark mode)",
             "title": "Dark mode note creator page"
           }
@@ -201,12 +201,12 @@
         "images": [
           {
             "mode": "Light",
-            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622865639.png",
+            "src": "/img/selectable/apps/chalkBoard/Screenshot_1622865639.png",
             "alt": "Chalkboard app fullscreen screenshot of homepage (Light mode)",
             "title": "Android ChalkBoard Home Screen"
           },{
             "mode": "Dark",
-            "src": "https://42null.github.io/Images/Apps/ChalkBoard/Screenshot_1622866048.png",
+            "src": "/img/selectable/apps/chalkBoard/Screenshot_1622866048.png",
             "alt": "Chalkboard app fullscreen screenshot of homepage (Dark mode)",
             "title": "Dark mode homepage view"
           }

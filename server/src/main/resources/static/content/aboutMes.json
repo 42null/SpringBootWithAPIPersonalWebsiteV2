@@ -6,13 +6,13 @@
     "subtitle": "",
     "images": [
       {
-        "src": "https://42null.github.io/Images/Marquette_ACM.png",
+        "src": "/img/pageImages/aboutMe/externalLogos/MARQUETTE_ACM.png",
         "alt": "Marquette ACM Logo",
         "title": "Marquette ACM",
         "background": ""
       },
       {
-        "src": "https://42null.github.io/Images/AboutMe/ProgrammingComp2021.jpg",
+        "src": "/img/pageImages/OfMe/ProgrammingComp2021.jpg",
         "alt": "",
         "title": "Our team, 2021",
         "background": "transparent"
@@ -26,7 +26,7 @@
     "subtitle": "",
     "images": [
       {
-        "src": "https://42null.github.io/Images/FIRST/Robotics_Logo_Cut-Out-01.svg",
+        "src": "/img/pageImages/aboutMe/externalLogos/LASERROBOTICS_Logo_Cut-Out-01.svg",
         "alt": "Team #2077 Laser robotics gear logo",
         "title": "Team 2022 Logo",
         "background": "transparent"
@@ -40,7 +40,7 @@
     "subtitle": "",
     "images": [
       {
-        "src": "https://www.parchment.com/u/award/2f357fa87aa2c69b0bea8951204a8fc1/preview-lg.jpg",
+        "src": "img/pageImages/aboutMe/certifications/WCTC_Technical_Diploma_Joseph_Memmel.jpg",
         "alt": "Joseph Memmel&apos;s Official IT Software Development Specialist Technical Diploma",
         "title": "Earned at WCTC, a technical college in Pewaukee, Wisconsin",
         "onClick": "https://www.parchment.com/u/award/2f357fa87aa2c69b0bea8951204a8fc1",
@@ -57,7 +57,7 @@
     "subtitle": "",
     "images": [
       {
-        "src": "https://www.wctc.edu/_resources/images/waukesha_logo.svg",
+        "src": "/img/pageImages/aboutMe/externalLogos/WCTC_Hands_on_Banner.svg",
         "alt": "WCTC's Logo",
         "title": "WCTC is a technical college in Pewaukee, Wisconsin",
         "background": "var(--primary_dark)",
@@ -73,7 +73,7 @@
     "subtitle": "",
     "images": [
       {
-        "src": "https://www.kmsd.edu/cms/lib/WI01919005/Centricity/Template/GlobalAssets/images///logos/shield.png",
+        "src": "/img/pageImages/aboutMe/externalLogos/KMSD_Shield.png",
         "alt": "Kettle Moraine High School KM logo",
         "title": "KM Logo",
         "background": "transparent"
@@ -87,7 +87,7 @@
     "subtitle": "",
     "images": [
       {
-        "src": "https://42null.github.io/Images/Maker_Cog_Modified.png",
+        "src": "/img/pageImages/aboutMe/externalLogos/KMSD_Maker_Cog_Modified.png",
         "alt": "KMIT Cog Logo",
         "title": "KMIT's Logo",
         "background": "var(--background_image_color)",
@@ -103,7 +103,7 @@
     "subtitle": "",
     "images": [
       {
-        "src": "/img/pageImages/aboutMe/workExperience/iNET.svg",
+        "src": "/img/pageImages/aboutMe/externalLogos/iNET.svg",
         "alt": "iNET Web Logo",
         "title": "iNET's Logo",
         "background": "",
@@ -170,17 +170,17 @@
     "subtitle": "",
     "images": [
       {
-        "src": "https://42null.github.io/Images/FIRST/deep-space.png",
+        "src": "/img/pageImages/aboutMe/externalLogos/FIRST_deep-space.png",
         "alt": "Deep space logo",
         "title": "FIRST Robotics Deep Space Theme",
         "background": "var(--dependent_color_background)"
       },{
-        "src": "https://42null.github.io/Images/FIRST/infinite-recharge.png",
+        "src": "/img/pageImages/aboutMe/externalLogos/FIRST_infinite-recharge.png",
         "alt": "Deep space logo",
         "title": "FIRST Robotics Infinite Recharge Theme",
         "background": "var(--dependent_color_background)"
       },{
-        "src": "https://www.firstinspires.org/sites/default/files/RR-logo.svg",
+        "src": "/img/pageImages/aboutMe/externalLogos/FIRST_rapid-react.svg",
         "alt": "Deep space logo",
         "title": "FIRST Robotics Rapid React Theme",
         "background": "var(--dependent_color_background)"
