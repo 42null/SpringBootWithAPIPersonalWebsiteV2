@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Management Tool</title>
+    <!-- TODO: COME UP WITH A BETTER NAME -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/resultCards.css">
+    <link rel="stylesheet" href="/css/icons.css">
+    <style>
+    </style>
+</head>
+<body>
+    <main>
+        <article class="">
+
+            <section id="types-menu">
+                <header>
+                    <h2>Company Database Access</h2>
+                </header>
+                <aside></aside>
+                <section>
+                    <ul>
+                    </ul>
+                </section>
+                <footer></footer>
+            </section>
+
+            <section>
+                <div id="filter-new" class="row">
+                    <div class="flex-2" id="filter-options-sidebar">
+
+                        <h2>Filter Options</h2>
+                        <h3>Types</h3>
+
+                        <form id="filter-fields">
+
+                            <section class="chipGroup">
+                                <button type="button" class="chip addRemove active" id="filter_select-type_employee" name="type_employee">
+                                    <span class="material-symbols-outlined">
+                                        badge
+                                    </span>
+                                    Employees
+                                    <span class="material-symbols-outlined">
+                                    </span>
+                                </button>
+
+                                <button type="button" class="chip addRemove active" id="filter_select-type_supplier" name="type_supplier">
+                                    <span class="material-symbols-outlined">
+                                        local_shipping
+                                    </span>
+                                    Suppliers
+                                    <span class="material-symbols-outlined">
+                                    </span>
+                                </button>
+
+                                <button type="button" class="chip addRemove active" id="filter_select-type_customer" name="type_customer">
+                                    <span class="material-symbols-outlined">
+                                        person
+                                    </span>
+                                    Customers
+                                    <span class="material-symbols-outlined">
+                                    </span>
+                                </button>
+                            </section>
+
+                            <h3>Field Search</h3>
+                            <section id="filtering-fields">
+
+                                <section class="options-by-type-holder employee-option supplier-option customer-option">
+                                    <label for="filter_form-only_active_roles">Only show Active Roles:</label>
+                                    <input type="checkbox" name="filter_form-only_active_roles" id="filter_form-only_active_roles">
+
+                                    <label for="filter_form-id">Id:</label>
+                                    <input type="number" name="employee-id" id="filter_form-id" min="0">
+
+                                    <label for="filter_form-email">Email:</label>
+                                    <!-- Is text as it doesn't need to be a full email -->
+                                    <input type="text" name="filter_form-email" id="filter_form-email" >
+
+                                    <label for="filter_form-first_name">First name:</label>
+                                    <input type="text" name="filter_form-forst_name" id="filter_form-first_name" >
+
+                                    <label for="filter_form__last_name">Last name:</label>
+                                    <input type="text" name="filter_form-last_name" id="customer_form-last_name" >
+                                </section>
+
+                                <section class="options-by-type-holder employee-option">
+                                    <label for="filter_form-department">Department:</label>
+                                    <select name="employee-department" id="filter_form-department" >
+                                        <option value="" selected>(Any)</option>
+                                        <option value="sales">Sales</option>
+                                        <option value="hr">HR</option>
+                                        <option value="manufacturing">Manufacturing</option>
+                                    </select>
+
+                                    <label for="filter_form-hire_date">Hire date:</label>
+                                    <input type="date" name="filter_form-hire_date" id="filter_form-hire_date" >
+
+                                    <label for="filter_form-termination_date">Termination date:</label>
+                                    <input type="date" name="filter_form-termination_date" id="filter_form-termination_date">
+                                </section>
+
+                                <section class="options-by-type-holder supplier-option">
+                                    <label for="filter_form-name">Supplier name:</label>
+                                    <input type="text" name="filter_form-name" id="supplier_form-name" >
+
+                                    <label for="filter_form-zip">Zip code:</label>
+                                    <input type="number" name="filter_form-zip" id="filter_form-zip" >
+
+                                    <label for="filter_form-last_delivery">Last delivery date:</label>
+                                    <input type="date" name="filter_form-last_delivery" id="filter_form-last_delivery" >
+
+                                    <!-- <label for="filter_form-active">Is active:</label>
+                                    <input type="checkbox" name="filter_form-active" id="filter_form-active" value="indeterminate"> -->
+                                </section>
+
+                                <section class="options-by-type-holder customer-option">
+                                    <label for="filter_form-phone_number">Phone number:</label>
+                                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel -->
+                                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="filter_form-phone_number" id="filter_form-phone_number" >
+
+                                    <label for="filter_form-mailing_list">Opted out of mailing:</label>
+                                    <input type="checkbox" name="filter_form-mailing_list" id="customer-filter_form-mailing_list">
+
+                                    <label for="filter_form-last_purchase">Last purchase:</label>
+                                    <input type="date" name="filter_form-last_purchase" id="filter_form-last_purchase" >
+
+                                    <div class="space_placehold"></div>
+                                </section>
+
+                                <input type="submit" value="Filter Results" id="filter-results">
+
+                            </section>
+                            <!-- <input type="submit" value="Filter Results"> -->
+                        </form>
+                    </div>
+
+
+                    <div class="flex-3 add-new">
+                        <h3>Add New...</h3>
+                        <div class="tabbed-area">
+                            <ul class="tabs">
+                                <li id="tabNewEmployee" name="add-employee-form" class="tab active">Employee</li>
+                                <li id="tabNewSupplier" name="add-supplier-form" class="tab">Supplier</li>
+                                <li id="tabNewCustomer" name="add-customer-form" class="tab">Customer</li>
+                                <li id="tabEmptyFill" class="helper-tab-bar-fill"></li>
+                            </ul>
+
+                            <section class="tab-content">
+
+                                <form id="add-employee-form" class="add-form">
+                                    <!-- <h3></h3> -->
+                                    <label for="employee-form__id">Id*:</label>
+                                    <input type="number" name="employee-id" id="employee-form__id" required min="0">
+
+                                    <label for="employee-form__first_name">First Name*:</label>
+                                    <input type="text" name="employee-first_name" id="employee-form__first_name" required>
+
+                                    <label for="employee-form__last_name">Last Name*:</label>
+                                    <input type="text" name="employee-last_name" id="employee-form__last_name" required>
+
+                                    <label for="employee-form__email">Email*:</label>
+                                    <input type="email" name="employee-email" id="employee-form__email" required>
+
+                                    <label for="employee-form__department">Department*:</label>
+                                    <select name="employee-department" id="employee-form__department" required>
+                                        <option value="" selected disabled>Choose department</option>
+                                        <option value="sales">Sales</option>
+                                        <option value="hr">HR</option>
+                                        <option value="manufacturing">Manufacturing</option>
+                                    </select>
+
+                                    <label for="employee-form__hire-date">Hire Date*:</label>
+                                    <input type="date" name="employee-hire-date" id="employee-form__hire-date" required>
+
+                                    <label for="employee-form__termination-date">Termination Date:</label>
+                                    <input type="date" name="employee-termination-date" id="employee-form__termination-date">
+
+                                    <input type="submit" value="Add Employee">
+                                </form>
+
+                                <form id="add-supplier-form" class="add-form hidden">
+                                    <!-- <h3></h3> -->
+                                    <label for="supplier-form__id">Id*:</label>
+                                    <input type="text" name="supplier-id" id="supplier-form__id" required min="0">
+
+                                    <label for="supplier-form__name">Supplier Name*:</label>
+                                    <input type="text" name="supplier-name" id="supplier-form__name" required>
+
+                                    <label for="supplier-form__zip">Zip Code*:</label>
+                                    <input type="number" name="supplier-zip" id="supplier-form__zip" required>
+
+<!-- CONTACT LABEL HERE -->
+
+                                    <label for="supplier-form__contact-first_name">First Name*:</label>
+                                    <input type="text" name="supplier-contact-first_name" id="supplier-form__contact-first_name" required>
+
+                                    <label for="supplier-form__contact-last_name">Last Name*:</label>
+                                    <input type="text" name="supplier-contact-last_name" id="supplier-form__contact-last_name" required>
+
+                                    <label for="supplier-form__contact-email">Email*:</label>
+                                    <input type="email" name="supplier-contact-email" id="supplier-form__contact-email" required>
+
+                                    <label for="supplier-form__last-delivery-date">Last Delivery Date*:</label>
+                                    <input type="date" name="supplier-last-delivery-date" id="supplier-form__last-delivery-date" required>
+
+                                    <label for="supplier-form__is-active">Is Active:</label>
+                                    <input type="checkbox" name="supplier-is-active" id="supplier-form__is-active">
+
+                                    <input type="submit" value="Add Supplier">
+                                </form>
+
+                                <form id="add-customer-form" class="add-form hidden">
+                                    <!-- <h3></h3> -->
+                                    <label for="customer-form__id">Id*:</label>
+                                    <input type="number" name="customer-id" id="customer-form__id" required min="0">
+
+                                    <label for="customer-form__first_name">First Name*:</label>
+                                    <input type="text" name="customer-first_name" id="customer-form__first_name" required>
+
+                                    <label for="customer-form__last_name">Last Name*:</label>
+                                    <input type="text" name="customer-last_name" id="customer-form__last_name" required>
+
+                                    <label for="customer-form__email">Email*:</label>
+                                    <input type="email" name="customer-email" id="customer-form__email" required>
+
+                                    <label for="customer-form__phone">Phone Number*:</label>
+                                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel -->
+                                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="customer-phone" id="customer-form__phone" required>
+                                    <!-- <label for="customer-form__opted-out">Opted Out of Mailing List:</label>
+                                    <input type="checkbox" name="customer-opted-out" id="customer-form__opted-out"> -->
+
+                                    <label for="customer-form__last-purchase">Last Purchase*:</label>
+                                    <input type="date" name="customer-last-purchase-date" id="customer-form__last-purchase-date" required>
+
+                                    <input type="submit" value="Add Customer">
+                                </form>
+
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="filtered-results">
+                <!-- JS Puts Cards Here in these -->
+
+                <ul id="results-employees">
+                    <h3>Employees</h3>
+                </ul>
+                <ul id="results-suppliers">
+                    <h3>Suppliers</h3>
+                </ul>
+                <ul id="results-customers">
+                    <h3>Customers</h3>
+                </ul>
+            </section>
+
+        </article>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

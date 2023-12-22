@@ -48,15 +48,17 @@
                 <div class="container">
                         <div th:each="contentBox : ${contentBoxes}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
                                 <h2><a th:text="${contentBox.header}" th:href="${contentBox.link}" target="_blank">Header</a></h2>
+
+
+<!--                                <embed type="text/html" th:src="@{portfolioSiteCompanyDatabase}" width="30%" height="auto">-->
+
+
                                 <h4 th:text="${contentBox.subtitle}" class="centered subtitle">Subtitle</h4>
                                 <div class="centered">
-                                        <div class="jsonImage">
-                                                <img th:each="image : ${contentBox.images}"
-                                                     th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "
-                                                     th:src="${image.src}"
-                                                     th:alt="${image.alt}"
-                                                     th:title="${image.title}" />
-                                        </div>
+<!--                                        <div class="jsonImage">-->
+<!--                                                <embed type="text/html" th:src="@{portfolioSiteCompanyDatabase}" width="100%" height="200%">-->
+<!--                                        </div>-->
+                                        <embed type="text/html" th:src="@{portfolioSiteCompanyDatabase}" width="100%" height="60vh">
                                 </div>
                                 <br>
                                 <hr>

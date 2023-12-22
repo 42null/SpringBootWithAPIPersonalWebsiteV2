@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "header": "nullified.mooo.com",
+    "link": "/portfolioSiteCompanyDatabase",
+    "subtitle": "Personally Hosted (Raspberry Pi)",
+    "images": [
+      {
+        "src": "/img/favicons/favicon-32x32.png",
+        "alt": "My logo",
+        "title": "I host it on a Raspberry Pi",
+        "background": "transparent"
+      }
+    ],
+    "text": "This is a server I run from my house, I use a subdomain on <a href='https://freedns.afraid.org/'>FreeDNS</a>. I use it for multiple projects such as as a remote camera, a website host, and for domain redirection. Depending on the SD card loaded, it may also work as a host for this project."
+  }
+]

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+/* Icons used from Material Symbols and Icons at https://fonts.google.com/icons */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 20;
+  vertical-align: middle;
+}
+
+.chip.addRemove {
+    border-width: 1px;
+    border-color: var(--color-on-primary-text);
+    border-style: solid;
+}
+
+.chip.addRemove span.material-symbols-outlined:last-child::before {
+    content: "add";
+}
+.chip.addRemove span.material-symbols-outlined {
+    pointer-events: none;
+}
+
+.chip.addRemove.active {
+    background-color: var(--color-accent-shade);
+    /* background-color: var(--background-color); */
+}
+
+.chip.addRemove.active span.material-symbols-outlined:last-child::before {
+    content: "remove"; /*check*/
+}
+
+.chip.addRemove.active span.material-symbols-outline {
+    /* https://stackoverflow.com/a/3538639 */
+    pointer-events: none;
+}

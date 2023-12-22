@@ -1,0 +1,156 @@
+/* GitHub Copilot was used to assist creation of parts of this css document */
+
+:root {
+    --color-light: #f7e3af;
+    --color-dark: #4b3423;
+    --color-accent: #c9854e;
+    --color-link: #a16136;
+    --color-link-dark: #6d3e1f;
+
+    --color-light-tint: #FBF2DA;
+    --color-disabled: #ae9a8b;
+    --color-disabled-area: #ba9170;
+    --color-disabled-text: #82634a;
+
+    --card-footer-color: #eed09c;/*var(--color-light);*/
+
+    --sales_color: var(--card-footer-color);
+    --manufacturing_color: var(--card-footer-color);
+    --hr_color: var(--card-footer-color);
+}
+
+#filtered-results>ul{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    background-color: var(--color-light-tint);
+    margin-top: 1em;
+    border: 2px solid var(--color-dark);
+}
+
+section#filtered-results>ul>li{
+    /* width: max-content; */
+    width: 240px;
+    /* height: 230px; */
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--color-accent);
+}
+
+section#filtered-results>ul>h3{
+    width: 100%;
+}
+
+li.card header, li.card section {
+    padding: 0.5em 0.1em 0 0.1em;
+}
+/* li.card > section {
+    padding-bottom: 0;
+} */
+
+li.card {
+    color: var(--color-dark);
+}
+
+li.card h5 {
+    font-size: 1.2em;
+}
+
+/* li.card footer {
+    bottom: 0;
+} */
+
+/* li.card .card-color-bar { */
+li.card footer>p {
+    height: 2.5em;
+    width: 100%;
+    font-size: 0.8;
+    font-weight: 800;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-color-bar.sales{
+    background-color: var(--sales_color);
+}
+.card-color-bar.sales::after{
+    content: "Sales";
+}
+.card-color-bar.sales > span::after{
+    content: "attach_money";
+}
+
+.card-color-bar.hr{
+    background-color: var(--hr_color);
+}
+.card-color-bar.hr::after{
+    content: "HR";
+}
+.card-color-bar.hr > span::after{
+    content: "groups";
+}
+
+.card-color-bar.manufacturing{
+    background-color: var(--manufacturing_color);
+}
+.card-color-bar.manufacturing::after{
+    content: "Manufacturing";
+}
+.card-color-bar.manufacturing > span::after{
+    content: "precision_manufacturing";
+}
+
+/*Default is not active*/
+.card-color-bar{
+    background-color: #f8ba8f;
+}
+/* .card-color-bar.not-active::before{ /* Puts them on diffrent lines on this
+    content: "Not";
+} */
+.card-color-bar.is-active{
+    background-color: #cad18f;
+}
+
+.card-color-bar.is-active::after{
+    content: "Active";
+}
+
+.card-color-bar.not-active::after{
+    content: "Not Active";
+}
+
+.card-color-bar.on-mailing{
+    background-color: #cad18f;
+}
+.card-color-bar.on-mailing::after{
+    content: "On Mailing List";
+}
+.card-color-bar.on-mailing > span::after{
+    content: "notification_multiple";
+}
+
+.card-color-bar.opted-out::after{
+    content: "Not on Mailing List";
+}
+.card-color-bar.opted-out > span::after{
+    content: "mail_lock";
+}
+
+.card-email a{
+    color: var(--color-link-dark);
+    font-weight: bold;;
+}
+
+.card-email a:hover{
+    color: var(--color-light);
+}
+

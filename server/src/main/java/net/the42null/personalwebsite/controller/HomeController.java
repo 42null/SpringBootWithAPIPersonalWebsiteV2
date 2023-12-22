@@ -5,23 +5,24 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import net.the42null.personalwebsite.Entity.*;
 import net.the42null.personalwebsite.Service.WholesaleOrderService;
 import net.the42null.personalwebsite.dto.DtoOrder;
+import net.the42null.personalwebsite.exception.ResourceNotFoundException;
 import net.the42null.personalwebsite.helpers.AgeFormatter;
 import net.the42null.personalwebsite.helpers.ContentPather;
 import net.the42null.personalwebsite.repo.WholesaleOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
+import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,7 +45,8 @@ public class HomeController {
 
 /*Containers*/
     private List<ItemContainer> aboutMeContainers;
-    private List<ItemContainer> websiteContainers;
+    private List<ItemContainer> personalWebsiteContainers;
+    private List<ItemContainer> portfolioWebsiteContainers;
 
     @PostConstruct
     private void initData() {
@@ -67,7 +69,6 @@ public class HomeController {
         assert pageRepositories != null;
         Arrays.sort(pageRepositories, (r1, r2) -> r2.getPushedAt().compareTo(r1.getPushedAt()));
 
-
         try {
             aboutMeContainers = List.of(mapper.readValue(cPather.generateResourcePath("aboutMes.json"), ItemContainer[].class));
         } catch (IOException e) {
@@ -88,12 +89,19 @@ public class HomeController {
             e.printStackTrace();
             contacts = new Contact[0];
         }
-        /*Websites*/
+        /*Personal Websites*/
         try {
-            websiteContainers = List.of(mapper.readValue(cPather.generateResourcePath("websites.json"), ItemContainer[].class));
+            personalWebsiteContainers = List.of(mapper.readValue(cPather.generateResourcePath("websites.json"), ItemContainer[].class));
         } catch (IOException e) {
             e.printStackTrace();
-            websiteContainers = List.of(new ItemContainer[0]);
+            personalWebsiteContainers = List.of(new ItemContainer[0]);
+        }
+        /*Portfolio Websites*/
+        try {
+            portfolioWebsiteContainers = List.of(mapper.readValue(cPather.generateResourcePath("portfolioSites.json"), ItemContainer[].class));
+        } catch (IOException e) {
+            e.printStackTrace();
+            portfolioWebsiteContainers = List.of(new ItemContainer[0]);
         }
     }
 
@@ -177,12 +185,33 @@ public class HomeController {
         return "apps/appsHub";
     }
 
-    @GetMapping("/websites")
-    public String showWebPage(Model model) {
-        model.addAttribute("pageTitle", "Websites");
-        model.addAttribute("contentBoxes", websiteContainers);
+    @GetMapping("/personalSite")
+    public String showPersonalSite(Model model) {
+        model.addAttribute("pageTitle", "Personal Website Copies");
+        model.addAttribute("contentBoxes", personalWebsiteContainers);
+        model.addAttribute("noticeHeader", "Recent Website Portfolio");
+        model.addAttribute("noticeMessage", "I host a copy of this website in multiple locations for practice, version deployment, and accessibility. Because I push updates regularly, the functionality of some of these installations may be hampered, nullified.mooo.com will host the most stable version.");
         return "web/web";
     }
+    @GetMapping("/portfolioSites")
+    public String showWebPage(Model model){
+        model.addAttribute("pageTitle", "Portfolio Sites");
+        model.addAttribute("contentBoxes", portfolioWebsiteContainers);
+        model.addAttribute("noticeHeader", "Portfolio Sites");
+        model.addAttribute("noticeMessage", "These are standalone websites that I have worked on for demonstrations in either my free time or for a class project. They are seperated from this site");
+        return "web/webCardsWithEmbed";
+    }
+
+    //PORTFOLIO SITES (START)
+    @GetMapping("/portfolioSiteCompanyDatabase")
+    public String showPortfolioCompanyDatabase(Model model){
+        model.addAttribute("pageTitle", "Portfolio Sites");
+        model.addAttribute("contentBoxes", portfolioWebsiteContainers);
+        model.addAttribute("noticeHeader", "Portfolio Sites");
+        model.addAttribute("noticeMessage", "These are standalone websites that I have worked on for demonstrations in either my free time or for a class project. They are seperated from this site");
+        return "standalonePortfolioSites/MemmelModule4Assignment/index";
+    }
+    //PORTFOLIO SITES (END)
 //NAV (END)
 
 //CONTACT (START)

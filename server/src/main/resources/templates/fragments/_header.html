@@ -35,8 +35,12 @@
                     <li><a th:href="@{https://github.com/42null/Simplified-example-website-modifier-extension-template}" target="_blank">Website Modifier Template</a></li>
                 </ul>
             </li>
-            <li><a th:href="@{/websites}">Web</a></li>
-
+            <li class="dropdown-head"><a>Web</a>
+                <ul class="dropdown-content">
+                    <li><a th:href="@{/personalSite}" target="_self">Personal Website</a></li>
+                    <li><a th:href="@{/portfolioSites}" target="_self">Portfolio Sites</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 <!--    STYLING    -->
