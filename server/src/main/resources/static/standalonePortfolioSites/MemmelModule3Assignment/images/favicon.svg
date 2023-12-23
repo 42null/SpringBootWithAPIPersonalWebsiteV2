@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<desc>Created with Fabric.js 5.2.4</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+<g transform="matrix(1 0 0 1 540 540)" id="09efd038-250c-4b79-9cf3-29b30e59de5d"  >
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="b6d669dc-989e-42f6-aed8-d2e4db63b9f8"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
+</g>
+<g transform="matrix(15.18 0 0 15.18 540.09 540.09)" id="24ab341b-7bbe-4fe4-8fb5-956edb9777fe"  >
+<circle style="stroke: rgb(0,0,0); stroke-opacity: 0; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  cx="0" cy="0" r="35" />
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="99769b5e-744d-4cee-99f7-33a564760a80"  >
+<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-483.05, 481.91)" d="M 195.478 -136.348 L 136.826 -195 L 531.261 -589.435 Q 511.739 -636.587 528.793 -683.304 Q 545.848 -730.0219999999999 580.891 -764.0649999999999 Q 625.413 -807.587 685.663 -820.141 Q 745.913 -832.6959999999999 790.544 -791.0649999999999 Q 835.174 -747.435 821.62 -686.185 Q 808.065 -624.935 763.544 -580.4129999999999 Q 729.5 -546.3699999999999 683.283 -529.8149999999999 Q 637.065 -513.261 589.913 -530.7819999999999 L 539.37 -480 L 824.37 -195 L 765.478 -136.348 L 480.47799999999995 -421.348 L 195.47799999999995 -136.348 Z M 304.456 -459.848 L 189.891 -573.413 Q 135.065 -626.239 137.21699999999998 -698.891 Q 139.36999999999998 -771.544 193.47799999999998 -823.6519999999999 L 431.109 -586.5 L 304.456 -459.848 Z" stroke-linecap="round" />
+</g>
+</svg>

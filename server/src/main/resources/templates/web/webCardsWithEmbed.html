@@ -32,6 +32,11 @@
                 background-color: var(--primary_dark);
                 filter: brightness(1.1);
         }
+
+        .item {
+                width: unset;
+        }
+
 </style>
 
 <div class="image_banner" th:attr="style='background-image: url(' + ${heroImgSrc} + ')'">
@@ -46,19 +51,12 @@
 <div id="content">
         <div class="primary-container-section">
                 <div class="container">
-                        <div th:each="contentBox : ${contentBoxes}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
-                                <h2><a th:text="${contentBox.header}" th:href="${contentBox.link}" target="_blank">Header</a></h2>
-
-
-<!--                                <embed type="text/html" th:src="@{portfolioSiteCompanyDatabase}" width="30%" height="auto">-->
-
+                        <div th:each="contentBox : ${contentBoxes}" th:style="'border-radius: ' + ${cardRadius} + ';width:' + ${cardViewWidth} + ';'" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
+                                <h2 th:style="'border-radius: calc( ' + ${cardRadius} + ' * 1.1 );'"><a th:text="${contentBox.header}" th:href="${contentBox.link}" target="_blank">Header</a></h2>
 
                                 <h4 th:text="${contentBox.subtitle}" class="centered subtitle">Subtitle</h4>
                                 <div class="centered">
-<!--                                        <div class="jsonImage">-->
-<!--                                                <embed type="text/html" th:src="@{portfolioSiteCompanyDatabase}" width="100%" height="200%">-->
-<!--                                        </div>-->
-                                        <embed type="text/html" th:src="@{portfolioSiteCompanyDatabase}" width="100%" height="60vh">
+                                        <embed type="text/html" th:src="${contentBox.link}" width="100%" th:height="${cardViewHeight}">
                                 </div>
                                 <br>
                                 <hr>

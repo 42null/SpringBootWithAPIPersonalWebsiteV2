@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Commented out as added after submission -->
+    <!-- <title>Restaurant Filter</title> -->
+    <title>Restaurant Filter</title>
+    <!-- Favicon is material design with added white background (https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Arestaurant_menu%3AFILL%400%3Bwght%40500%3BGRAD%400%3Bopsz%4020) edited with (https://mediamodifier.com/svg-editor#) -->
+    <link rel="icon" type="image/x-icon" th:href="@{/standalonePortfolioSites/MemmelModule3Assignment/images/favicon.svg}">
+    <link rel="stylesheet" th:href="@{/standalonePortfolioSites/MemmelModule3Assignment/css/icons.css}">
+    <link rel="stylesheet" th:href="@{/standalonePortfolioSites/MemmelModule3Assignment/css/styles.css}">
+
+    <style>
+    </style>
+</head>
+    <body>
+        <main>
+            <article id="restaurant_filter_application" class="container">
+
+                <form class="form-container left-side-menu" id="restaurant_filter_selector">
+
+                    <header>
+                        <h2>Filter Options</h2>
+                    </header>
+
+                    <section>
+                        <label for="restaurant_input_filter__name">Name:</label>
+                        <input type="text" id="restaurant_input_filter__name">
+
+                        <label for="restaurant_input_filter__address">Address:</label>
+                        <input type="text" id="restaurant_input_filter__address">
+
+                        <div class="pill-button addRemove" id="filter_select__gluten_free">
+                            Offers Gluten-Free Options
+                            <span class="material-symbols-outlined">
+                            </span>
+                        </div>
+
+                        <div class="pill-button addRemove" id="filter_select__vegan">
+                            Offers Vegan Options
+                            <span class="material-symbols-outlined">
+                            </span>
+                        </div>
+
+                        <div class="pill-button addRemove" id="filter_select__local">
+                            Local
+                            <span class="material-symbols-outlined">
+                            </span>
+                        </div>
+
+                        <section class="bottom">
+                            <div class="run-filter">
+                                <button type="submit">Apply Filter</button>
+                            </div>
+                        </section>
+                    </section>
+                </form>
+
+                <div class="results-container">
+                    <header>
+                        <!-- Commented out as added after submission -->
+                        <!-- <h1>RFF: Your <span class="underline">R</span>estaurant <span class="underline">F</span>ilter <span class="underline">F</span>inder</h1> -->
+                        <h1>Restaurant Filter</h1>
+                    </header>
+                    <ul class="card-icons">
+                        <li>
+                            <img th:src="@{/standalonePortfolioSites/MemmelModule3Assignment/images/distance.svg}" alt="Restaurant is Local" title="Restaurant is local">
+                            Local
+                        </li>
+                        <li>
+                            <img th:src="@{/standalonePortfolioSites/MemmelModule3Assignment/images/vegan.svg}" alt="Vegan Options Available" title="Restaurant has vegan options available">
+                            Vegan Options Available
+                        </li>
+                        <li>
+                            <img src="https://img.icons8.com/ios/60/no-gluten.png" class="gluten-free-icon" alt="Gluten-free Options Available" title="Restaurant has gluten-free options available">
+                            Gluten-Free Options Available
+                        </li>
+                    </ul>
+
+                    <ul id="results">
+                        <li id="no-results" class="hidden">
+                            <h3>Sorry, but there are no restaurants that match your filter, try lowering your criteria.</h3>
+                            <p>:(</p>
+                        </li>
+                    </ul>
+
+                </div>
+                <footer>
+                </footer>
+            </article>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script th:src="@{/standalonePortfolioSites/MemmelModule3Assignment/js/index.js}"></script>
+    </body>
+</html>

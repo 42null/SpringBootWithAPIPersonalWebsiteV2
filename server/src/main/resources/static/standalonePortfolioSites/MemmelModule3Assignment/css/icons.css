@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+/* Icons used from Material Symbols and Icons at https://fonts.google.com/icons */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 20;
+  vertical-align: middle;
+}
+
+.pill-button.addRemove {
+    border-width: 1px;
+    border-color: var(--color-on-primary-text);
+    border-style: solid;
+}
+
+/* Used GitHub Copilot to add the ::before */
+.pill-button.addRemove span.material-symbols-outlined::before {
+    content: "add";
+}
+.pill-button.addRemove span.material-symbols-outlined {
+    pointer-events: none;
+}
+
+.pill-button.addRemove.selected {
+    background-color: var(--color-accent-shade);
+    /* background-color: var(--background-color); */
+}
+
+.pill-button.addRemove.selected span.material-symbols-outlined::before {
+    content: "remove"; /*check*/
+}
+
+.pill-button.addRemove.selected span.material-symbols-outlined {
+    /* https://stackoverflow.com/a/3538639 */
+    pointer-events: none;
+}

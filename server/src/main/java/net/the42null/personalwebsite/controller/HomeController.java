@@ -199,18 +199,18 @@ public class HomeController {
         model.addAttribute("contentBoxes", portfolioWebsiteContainers);
         model.addAttribute("noticeHeader", "Portfolio Sites");
         model.addAttribute("noticeMessage", "These are standalone websites that I have worked on for demonstrations in either my free time or for a class project. They are seperated from this site");
+
+        model.addAttribute("cardRadius","20px");
+        model.addAttribute("cardViewWidth","48%");
+        model.addAttribute("cardViewHeight","300vh");
         return "web/webCardsWithEmbed";
     }
 
     //PORTFOLIO SITES (START)
-    @GetMapping("/portfolioSiteCompanyDatabase")
-    public String showPortfolioCompanyDatabase(Model model){
-        model.addAttribute("pageTitle", "Portfolio Sites");
-        model.addAttribute("contentBoxes", portfolioWebsiteContainers);
-        model.addAttribute("noticeHeader", "Portfolio Sites");
-        model.addAttribute("noticeMessage", "These are standalone websites that I have worked on for demonstrations in either my free time or for a class project. They are seperated from this site");
-        return "standalonePortfolioSites/MemmelModule4Assignment/index";
-    }
+    @GetMapping("/portfolioSites/companyDatabase")
+    public String showPortfolioCompanyDatabase(Model model){ return "standalonePortfolioSites/MemmelModule4Assignment/index"; }
+    @GetMapping("/portfolioSites/restaurantFilter")
+    public String showPortfolioRestaurantFilter(Model model){ return "standalonePortfolioSites/MemmelModule3Assignment/index"; }
     //PORTFOLIO SITES (END)
 //NAV (END)
 
