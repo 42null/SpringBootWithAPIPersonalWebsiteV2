@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/standalonePortfolioSites/MemmelModule5Assignment/images/favicon.svg}">
+    <link rel="stylesheet" th:href="@{/standalonePortfolioSites/MemmelModule5Assignment/css/main.css}">
+    <link rel="stylesheet" th:href="@{/standalonePortfolioSites/MemmelModule5Assignment/css/resultCards.css}">
+    <link rel="stylesheet" th:href="@{/standalonePortfolioSites/MemmelModule5Assignment/css/icons.css}">
+    <style>
+    </style>
+</head>
+<body>
+    <main>
+
+        <article>
+
+            <header class="horizontal-bar level1" id="level1header">
+                <h1>Grocery List</h1>
+            </header>
+
+            <section class="horizontal-bar level1" id="filters-area">
+                <h2>Filter List</h2>
+                <section id="filter-options">
+
+                    <section class="chipGroup">
+
+                        <button type="button" class="chip addRemove active" id="filter_select-category-produce" name="produce">
+                            <span class="material-symbols-outlined produce">
+                            </span>
+                            Produce
+                            <span class="material-symbols-outlined">
+                            </span>
+                        </button>
+
+                        <button type="button" class="chip addRemove active" id="filter_select-category-dairy" name="dairy">
+                            <span class="material-symbols-outlined dairy">
+                            </span>
+                            Dairy
+                            <span class="material-symbols-outlined">
+                            </span>
+                        </button>
+
+                        <button type="button" class="chip addRemove active" id="filter_select-category-baking" name="baking">
+                            <span class="material-symbols-outlined baking">
+                            </span>
+                            Baking
+                            <span class="material-symbols-outlined">
+                            </span>
+                        </button>
+
+                        <button type="button" class="chip addRemove active" id="filter_select-category-grains" name="grains">
+                            <span class="material-symbols-outlined grains">
+                            </span>
+                            Grains
+                            <span class="material-symbols-outlined">
+                            </span>
+                        </button>
+
+                        <button type="button" class="chip addRemove active" id="filter_select-category-meat" name="meat">
+                            <span class="material-symbols-outlined meat">
+                            </span>
+                            Meat
+                            <span class="material-symbols-outlined">
+                            </span>
+                        </button>
+
+                        <button type="button" class="chip addRemove active" id="filter_select-category-other" name="other">
+                            <span class="material-symbols-outlined other">
+                            </span>
+                            Other
+                            <span class="material-symbols-outlined">
+                            </span>
+                        </button>
+
+                    </section>
+                    <section id="filter-non-chips">
+                        <section id="text-filter">
+                            <label for="filter-input-text" class="filter-label">Search:</label>
+                            <input type="text" id="filter-input-text" placeholder="Start typing...">
+                        </section>
+                        <section id="checked-off-filter">
+                            <label for="filter-checked" class="filter-checked`">Hide Checked Off:</label>
+                            <input type="checkbox" id="filter-checked">
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+
+            <section id="lists-of-content">
+                <section class="items-list" id="produce-content">
+                    <header>
+                        <h3>Produce <span class="material-symbols-outlined produce"></span></h3>
+                    </header>
+                    <ul class="results-list">
+                        <!-- JS will put cards here -->
+                    </ul>
+                </section>
+
+                <section class="items-list" id="dairy-content">
+                    <header>
+                        <h3>Dairy <span class="material-symbols-outlined dairy"></span></h3>
+                    </header>
+                    <ul class="results-list">
+                        <!-- JS will put cards here -->
+                    </ul>
+                </section>
+
+                <section class="items-list" id="baking-content">
+                    <header>
+                        <h3>Baking <span class="material-symbols-outlined baking"></span></h3>
+                    </header>
+                    <ul class="results-list">
+                        <!-- JS will put cards here -->
+                    </ul>
+                </section>
+
+                <section class="items-list" id="grains-content">
+                    <header>
+                        <h3>Grains <span class="material-symbols-outlined grains"></span></h3>
+                    </header>
+                    <ul class="results-list">
+                        <!-- JS will put cards here -->
+                    </ul>
+                </section>
+
+                <section class="items-list" id="meat-content">
+                    <header>
+                        <h3>Meat <span class="material-symbols-outlined meat"></span></h3>
+                    </header>
+                    <ul class="results-list">
+                        <!-- JS will put cards here -->
+                    </ul>
+                </section>
+
+                <section class="items-list" id="other-content">
+                    <header>
+                        <h3>Other <span class="material-symbols-outlined other"></span></h3>
+                    </header>
+                    <ul class="results-list">
+                        <!-- JS will put cards here -->
+                    </ul>
+                </section>
+
+            </section>
+            <section id="emptyMessage">
+                <h5>Looks like your list is empty :(</h5>
+                <p>Don't froget to make your list before you head to the store!</p>
+            </section>
+
+
+            <!-- Popup adder bar -->
+            <aside id="adder-menu">
+                <!-- <header id="">
+                </header> -->
+                <section id="adder-options" class="hidden">
+                    <button type="button" name="produce">
+                        <span class="material-symbols-outlined produce"></span>
+                    </button>
+                    <button type="button" name="dairy">
+                        <span class="material-symbols-outlined dairy"></span>
+                    </button>
+                    <button type="button" name="baking">
+                        <span class="material-symbols-outlined baking"></span>
+                    </button>
+                    <button type="button" name="grains">
+                        <span class="material-symbols-outlined grains"></span>
+                    </button>
+                    <button type="button" name="meat">
+                        <span class="material-symbols-outlined meat"></span>
+                    </button>
+                    <button type="button" name="other">
+                        <span class="material-symbols-outlined other"></span>
+                    </button>
+                </section>
+
+                <footer id="adder-fab">
+                    <!-- <input type="button" id="fab-open" value="+"> -->
+                    <button type="button" id="fab-open">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                </footer>
+            </aside>
+
+            <section id="adder-dialog" class="hidden">
+                <header>
+                    <span class="material-symbols-outlined" id="category-icon-display"></span>
+                    <h2>Add <span id="add-category-name"></span> item</h2>
+                </header>
+
+                <section id="adder-dialog-fields">
+                    <form>
+                        <label for="dialog-form-name">Item Name:</label>
+                        <input type="text" id="dialog-form-name" required minlength="1">
+
+                        <label for="dialog-form-quantity">Quantity:</label>
+                        <input type="number" id="dialog-form-quantity" required min="1">
+
+                        <input type="submit" value="Add To List">
+                    </form>
+                </section>
+            </section>
+
+
+
+
+            <footer></footer>
+
+        </article>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script rel="stylesheet" th:src="@{/standalonePortfolioSites/MemmelModule5Assignment/js/main.js}"></script>
+
+</body>
+</html>

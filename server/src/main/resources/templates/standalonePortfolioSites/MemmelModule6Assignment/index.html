@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Member Application</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/standalonePortfolioSites/MemmelModule6Assignment/images/favicon.svg}">
+    <link rel="stylesheet" th:href="@{/standalonePortfolioSites/MemmelModule6Assignment/css/main.css}">
+    <link rel="stylesheet" th:href="@{/standalonePortfolioSites/MemmelModule6Assignment/css/resultCards.css}">
+    <link rel="stylesheet" th:href="@{/standalonePortfolioSites/MemmelModule6Assignment/css/icons.css}">
+    <style>
+    </style>
+</head>
+<body>
+    <main>
+        <article>
+
+            <section id="types-menu">
+                <header>
+                    <h2>Gym Member Control</h2>
+                </header>
+                <aside></aside>
+                <section>
+                    <ul>
+                    </ul>
+                </section>
+                <footer></footer>
+            </section>
+
+            <section>
+                <div id="filter-new" class="row">
+
+
+                    <div class="flex-3 add-new">
+                        <h3>Add New Member</h3>
+                        <div class="tabbed-area">
+                            <ul class="tabs">
+                                <!-- <li id="tabNewMember" name="add-member-form" class="tab active">Member</li> -->
+                                <li id="tabEmptyFill" class="helper-tab-bar-fill"></li>
+                            </ul>
+
+                            <section class="tab-content">
+
+                                <form id="add-member-form" class="add-form">
+                                    <!-- <h3></h3> -->
+                                    <label for="member-form__id">Id*:</label>
+                                    <input type="number" name="id" id="member-new_id" required min="0" placeholder="######">
+
+                                    <label for="member-form__id">User Name*:</label>
+                                    <input type="text" name="userName" id="member-new_userName" required placeholder="##azaz(az)">
+
+                                    <label for="member-form__id">First Name*:</label>
+                                    <input type="text" name="firstName" id="member-new_firstName" required>
+
+                                    <label for="member-form__id">Last Name*:</label>
+                                    <input type="text" name="lastName" id="member-new_lastName" required>
+
+                                    <label for="member-form__id">Enrollment Date*:</label>
+                                    <input type="date" name="enrollmentDate" id="member-new_enrollmentDate" required>
+
+                                    <label for="member-form__id">Cancellation Date:</label>
+                                    <input type="date" name="cancellationDate" id="member-new_cancellationDate" required>
+
+                                    <label for="member-form__id">Has Pool Access:</label>
+                                    <input type="checkbox" name="poolAccess" id="member-new_poolAccess" required>
+
+                                    <label for="member-form__id">Has Spa Access:</label>
+                                    <input type="checkbox" name="spaAccess" id="member-new_spaAccess" required>
+
+                                    <div class="grid-space-taker"></div>
+
+                                    <input type="submit" id="addNew" value="Add Member">
+
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="filtered-results">
+
+                <h3>Member Search: Filter and Sort</h3>
+                <table id="results-members">
+                    <thead>
+                        <tr>
+                            <th id="filter_id"><input type="number" placeholder="######" min="-1"></th>
+                            <th id="filter_userName"><input type="text" placeholder="0-9, Aa-Zz"></th>
+                            <th id="filter_firstName"><input type="text" placeholder="0-9, Aa-Zz"></th>
+                            <th id="filter_lastName"><input type="text" placeholder="0-9, Aa-Zz"></th>
+                            <th id="filter_enrollmentDate"><input type="date"></th>
+                            <th id="filter_cancellationDate"><input type="date"></th>
+                            <th id="filter_poolAccess"><input type="checkbox" class="indeterminate"></th>
+                            <th id="filter_spaAccess"><input type="checkbox" class="indeterminate"></th>
+                        </tr>
+                        <tr id="sorting">
+                            <th name="sort_id" class="sort-accending">ID<span class="material-symbols-outlined"></span></th>
+                            <th name="sort_userName">User Name<span class="material-symbols-outlined"></span></th>
+                            <th name="sort_firstName">First Name<span class="material-symbols-outlined"></span></th>
+                            <th name="sort_lastName">Last Name<span class="material-symbols-outlined"></span></th>
+                            <th name="sort_enrollmentDate">Enrollment Date<span class="material-symbols-outlined"></span></th>
+                            <th name="sort_cancellationDate">Cancellation Date<span class="material-symbols-outlined"></span></th>
+                            <th name="sort_poolAccess">Pool Access<span class="material-symbols-outlined"></span></th>
+                            <th name="sort_spaAccess">Spa Access<span class="material-symbols-outlined"></span></th>
+                            <th name="" class="action">Remove<span class="material-symbols-outlined"></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- JS puts cards here -->
+                    </tbody>
+                </table>
+
+            </section>
+
+        </article>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script th:src="@{/standalonePortfolioSites/MemmelModule6Assignment/js/main.js}"></script>
+
+</body>
+</html>

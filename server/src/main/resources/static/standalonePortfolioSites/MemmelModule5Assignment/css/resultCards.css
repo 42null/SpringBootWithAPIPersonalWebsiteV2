@@ -1,0 +1,128 @@
+/* GitHub Copilot was used to assist creation of parts of this css document */
+
+:root {
+}
+
+#filtered-results>ul{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    /* background-color: var(--color-light-tint); */
+    margin-top: 1em;
+    border: 2px solid var(--color-dark);
+}
+
+section#filtered-results>ul>li{
+    /* width: max-content; */
+    width: 240px;
+    /* height: 230px; */
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--color-accent);
+}
+
+
+li.card {
+    background-color: var(--color-light-shade);
+    display: grid;
+    grid-template-columns: 5em 1fr calc( 2.5em + 4em ) 4em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+li.card > button[name="delete"] {
+    background-color: var(--color-link-dark);
+    border: 0;
+}
+
+li.card > section{
+    padding: 0 0.1em;
+    display: flex;
+    align-items: center;
+}
+
+/* The icons on the card/row elements */
+li.card span.material-symbols-outlined, input[type='checkbox'] {
+    width: 100%;
+    font-size: 300%;
+}
+li.card .quantity, li.card input[type='number']{
+    height: 100%;
+    font-size: 130%;
+}
+li.card .quantity input[type='number']{
+    display: block;
+    width: 2.5em;
+    font-size: 130%;
+    background-color: var(--color-light-shade);
+    border: 0;
+    text-align: right;
+}
+li.card .quantity input[type='number']:focus{
+    outline-color: none;
+    outline-style: solid;
+    outline-width: 0;
+}
+
+li.card.checked-off, li.card.checked-off input[type='number']{
+    text-decoration: line-through;
+    background-color: var(--color-accent-shade);
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+/*Default is not active*/
+.card-color-bar{
+    background-color: #f8ba8f;
+}
+/* .card-color-bar.not-active::before{ /* Puts them on diffrent lines on this
+    content: "Not";
+} */
+.card-color-bar.is-active{
+    background-color: #cad18f;
+}
+
+.card-color-bar.is-active::after{
+    content: "Active";
+}
+
+.card-color-bar.not-active::after{
+    content: "Not Active";
+}
+
+.card-color-bar.on-mailing{
+    background-color: #cad18f;
+}
+.card-color-bar.on-mailing::after{
+    content: "On Mailing List";
+}
+.card-color-bar.on-mailing > span::after{
+    content: "notification_multiple";
+}
+
+.card-color-bar.opted-out::after{
+    content: "Not on Mailing List";
+}
+.card-color-bar.opted-out > span::after{
+    content: "mail_lock";
+}
+
+.card-email a{
+    color: var(--color-link-dark);
+    font-weight: bold;;
+}
+
+.card-email a:hover{
+    color: var(--color-light);
+}
+

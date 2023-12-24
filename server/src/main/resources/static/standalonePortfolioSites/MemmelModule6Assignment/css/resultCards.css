@@ -1,0 +1,60 @@
+/* GitHub Copilot was used to assist creation of parts of this css document */
+
+:root {
+}
+
+#filtered-results{
+    width: 100%;
+    margin: 0 auto;
+    /* grid-template-columns: repeat(8, minmax(min-content, 100%)); */
+    /* gap: 0.1em; */
+    /* padding: 1em; */
+    background-color: var(--color-light-tint);
+    margin-top: 0.5em;
+    border: 2px solid var(--color-dark);
+}
+
+#filtered-results thead > tr{
+    background-color: var(--color-accent);
+    /* border: 2px solid var(--color-dark); */
+}
+#results-members thead tr:nth-child(1) th input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+li.card header, li.card section {
+    padding: 0.5em 0.1em 0 0.1em;
+}
+
+#results-members {
+    width: 100%;
+}
+#results-members>thead>tr input[type="date"] {
+    width: 100%;
+}
+#results-members>tbody>tr.card, #results-members>thead>tr input {
+    text-align: right;
+}
+#results-members>tbody>tr.card:nth-child(2n) {
+    background-color: var(--color-light);
+}
+
+#results-members>thead>tr>th.action>span::before {
+    content: "delete" !important; /*Important to override default of up/down arrows*/
+}
+#results-members>tbody>tr.card>td>span.delete::before {
+    content: "delete";
+}
+#results-members>tbody>tr.card>td.action {
+    text-align: center;
+}
+
+.card-email a{
+    color: var(--color-link-dark);
+    font-weight: bold;
+}
+
+.card-email a:hover{
+    color: var(--color-light);
+}

@@ -1,0 +1,70 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200'); */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+/* Icons used from Material Symbols and Icons at https://fonts.google.com/icons */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 20;
+  vertical-align: middle;
+}
+
+.chip.addRemove {
+    border-width: 1px;
+    border-color: var(--color-on-primary-text);
+    border-style: solid;
+}
+
+.chip.addRemove span.material-symbols-outlined:last-child::before {
+    content: "add";
+}
+.chip.addRemove span.material-symbols-outlined {
+    pointer-events: none;
+}
+
+.chip.addRemove.active {
+    background-color: var(--color-accent-shade);
+    /* background-color: var(--background-color); */
+}
+
+.chip.addRemove.active span.material-symbols-outlined:last-child::before {
+    content: "remove"; /*Strike*/
+}
+
+span.material-symbols-outlined.allowed::before {
+    content: "check"; /*"check_circle";*/
+}
+
+span.material-symbols-outlined.allowed {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+
+#results-members>thead>tr>th {
+    user-select: none;
+}
+
+#results-members>thead>tr>th span.material-symbols-outlined {
+    pointer-events: none;
+}
+
+#results-members>thead>tr>th span.material-symbols-outlined::before {
+    content: "swap_vert"; /*Double arrow, default without extra classes*/
+}
+#results-members>thead>tr>th.sort-accending span.material-symbols-outlined::before {
+    content: "arrow_upward"; /*Up arrow*/
+}
+#results-members>thead>tr>th.sort-decending span.material-symbols-outlined::before {
+    content: "arrow_downward"; /*Down arrow*/
+}
+
+
+
+
+.chip.addRemove.active span.material-symbols-outline {
+    pointer-events: none;
+}

@@ -211,6 +211,10 @@ public class HomeController {
     public String showPortfolioCompanyDatabase(Model model){ return "standalonePortfolioSites/MemmelModule4Assignment/index"; }
     @GetMapping("/portfolioSites/restaurantFilter")
     public String showPortfolioRestaurantFilter(Model model){ return "standalonePortfolioSites/MemmelModule3Assignment/index"; }
+    @GetMapping("/portfolioSites/gymMemberControl")
+    public String showPortfolioGymMemberControl(Model model){ return "standalonePortfolioSites/MemmelModule6Assignment/index"; }
+    @GetMapping("/portfolioSites/groceryList")
+    public String showPortfolioGroceryList(Model model){ return "standalonePortfolioSites/MemmelModule5Assignment/index"; }
     //PORTFOLIO SITES (END)
 //NAV (END)
 

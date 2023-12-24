@@ -1,0 +1,339 @@
+/* GitHub Copilot was used to assist creation of parts of this css document */
+:root {
+    --color-light: #F2D7EE;
+    --color-dark: #682a61;
+    --color-accent: #f6beb3;
+    --color-accent-shade: #F2A291;
+    --color-link: #ab64ae;
+        
+    --color-light-tint: #fcd3f4;
+    --color-light-shade: #e180cc;
+
+    --transition-time-default: .4s;
+
+
+    --border-row: 2px solid var(--color-dark);
+
+    --fab-width: 5em;
+}
+
+
+/* Encompassing primaries*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+    color: var(--color-dark);
+}
+
+body {
+    background-color: var(--color-light-tint);
+}
+
+article{
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+/* Holders */
+
+.horizontal-bar {
+    width: 98%;
+    height: fit-content;
+    background-color: var(--color-light);
+    margin: 0 auto;
+    border: var(--border-row);
+}
+
+#filter-non-chips {
+    display: flex;
+    font-size: 2em;
+}
+#filter-input-text{
+    height: auto;
+    font-size: 0.6em;
+}
+
+#lists-of-content .items-list .level1 {
+    font-size: 1.5em;
+    color: var(--color-dark);
+    text-align: center;
+}
+
+#filter-checked{
+    height: 0.3em;
+}
+
+.level1 {
+    text-align: center;
+}
+
+/* Elements without extras (for overriding) */
+
+article > header, #level1header{
+    background-color: var(--color-accent);
+}
+
+#filters-area{
+    background-color: var(--color-accent);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: var(--color-dark);
+    margin: 0.25em 0
+}
+
+
+/* FAB AREA w/menu */
+
+#adder-menu{
+    width: var(--fab-width);
+    height: var(--fab-width);
+    /* background-color: red; */
+
+    height: fit-content;
+    width: var(--fab-width);
+    
+    bottom: 1em;
+    right: 1em;
+
+    position: fixed;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="submit"] {
+    margin: 0 auto;
+    grid-column: span 2;
+    padding: 0.8em;
+    background-color: var(--color-link);
+    border-radius: 1em;
+    font-size: 1.1em;
+}
+
+#adder-options{
+    margin: 0 auto;
+    background-color: var(--color-accent-shade);
+    padding-bottom: calc( var(--fab-width) / 2);
+    margin-bottom: -2.5em;
+    padding-top: 5px;
+    border-radius: 5px 5px 0 0;
+}
+
+#adder-options > button{
+    width: var(--fab-width);
+    height: var(--fab-width);
+    border-radius: 15%;
+    margin: 0 auto;
+    margin: 0.25em 0.5em;
+    background-color: var(--color-link);
+}
+
+#adder-options > button > span{
+    font-size: 3em;
+}
+#adder-options > button > span:hover{
+    transform: rotate(20deg);
+}
+
+#fab-open{
+    background-color: var(--color-link);
+    color: var(--color-light);
+    border-radius: 50%;
+    width: var(--fab-width);
+    height: var(--fab-width);
+    bottom: 0;
+    /* font-size: calc( var(--fab-width) / 2 ); */
+    font-size: 1em;
+    z-index: 200;
+}
+
+#adder-dialog {
+    width: clamp(20em, 80%, 40em);
+    height: fit-content;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: var(--color-light);
+    background-color: var(--color-light-shade);
+    border: var(--border-row);
+    z-index: 100;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+#adder-dialog > * {
+    position: relative;
+}
+
+#adder-dialog > header > #category-icon-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;    
+}
+
+#adder-dialog h2{
+    text-align: center;
+    font-size: 2em;
+}
+
+#adder-dialog > #adder-dialog-fields > form {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap: 1em;
+}
+
+#text-filter{
+    flex: 1;
+    text-align: center;
+    height: 2em;
+    margin: 0 auto;
+}
+#text-filter > label{
+    height: 100%;
+    /* font-size: 130%; */
+}
+#checked-off-filter{
+    flex: 1;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#emptyMessage{
+    height: fit-content;
+    background-color: var(--color-dark);
+    margin: 0 auto;
+    color: var(--color-light-shade);
+    margin: 2em;
+    padding: 2em;
+}
+#emptyMessage > h5{
+    color: var(--color-light-shade)  !important;
+    text-align: center;
+    font-size: 5em;
+    padding-bottom: 1em;
+}
+#emptyMessage > p{
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--color-light-shade);
+}
+
+
+/* Animations */
+.open #fab-open{
+    transform: rotate(45deg);
+}
+
+#fab-open span {
+    font-size: 4em;
+}
+
+
+/* STATUSES */
+.active {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+}
+.disabled.options-by-category-holder {
+    background-color: var(--color-disabled-area);
+    color: var(--color-disabled-text);
+    pointer-events: none; /* Disables clicking in he grayed out areas to disable editing */
+}
+.disabled input, .disabled select{
+    background-color: var(--color-disabled);
+    color: var(--color-disabled-text);
+}
+
+.chip {
+    background-color: var(--color-accent-shade) !important;
+    color: var(--color-dark) !important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    margin: 0 auto !important;
+}
+.chip.active {
+    background-color: var(--color-link) !important;
+    color: var(--color-light) !important;
+}
+.hidden {
+    display: none !important;
+}
+.requiredTextStar {
+    color: red;
+}
+/* END STATUSES */
+
+
+
+
+
+.chipGroup {
+    display: inline-flex;
+    margin: 0 auto;
+}
+
+.chip {
+    flex: 1;
+    /* display: inline-block; */
+    padding: 6px 18px;
+    margin: 2px;
+    margin-right: 10px;
+    background-color: var(--color-accent-tint);
+    border-radius: 8px;
+    cursor: pointer;
+    width: 30%;
+    width: 30%;
+}
+
+/* END USER INPUTS */
+
+
+/* RESPONSIVE */
+
+@media (min-width: 800px) {
+    article {
+        padding: 1em 0.5em;
+    }
+}
+
+@media (max-width: 1120px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+
+    .chipGroup {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    section#filtered-results>ul>h3{
+        text-align: center;
+    }
+
+    .add-new h3{
+        text-align: center;
+    }
+}
+
+@media (max-width: 800px) {
+    #filtering-fields{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    .space_placehold{
+        height: 0;
+    }
+}
