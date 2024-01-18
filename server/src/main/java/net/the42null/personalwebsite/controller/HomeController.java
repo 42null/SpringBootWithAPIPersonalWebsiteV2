@@ -249,9 +249,7 @@ public class HomeController {
         model.addAttribute("contentBoxes", battlesnakeContainers);
         model.addAttribute("noticeHeader", "Battlesnake");
         model.addAttribute("noticeMessage", "Battlesnake is a competitive version of the classic game snake, but where you write the code to control your snake. Game data is feed from a API and leaderboards are updated every 24 hours. You can use any language you wish and some users even employ machine learning in their snakes.");
-
-//        https://play.battlesnake.com/profile/42null
-        return "/games/battlesnake/battlesnake";
+        return "games/battlesnake/battlesnake";
     }
 
 //GAMES (END)
