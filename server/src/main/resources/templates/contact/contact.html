@@ -40,7 +40,7 @@
                                 </tr>
                                 <tr th:each="contact : ${contacts}" class="">
                                         <td><span class="material-symbols-outlined type-icon-inside" th:text="@{${contact.materialIcon}}">[Contact icon]</span><span th:text="@{${contact.description}}"> Type</span></td>
-                                        <td><a th:text="${contact.showLink}" th:href="@{${contact.copyStart} + ${contact.showLink}}" th:title="${contact.title}" >Clickable Link</a></td>
+                                        <td><a th:text="${contact.showLink}" th:href="@{${contact.copyStart} + ${contact.showLink}}" th:title="${contact.title}" target="_blank">Clickable Link</a></td>
                                         <td th:attr="onclick=|copyTextToClipboard('${contact.showLink}')|" class="material-symbols-outlined"><span class="clipboard-wrap"><span class="material-icons clipboard-copy"></span></span></td>
                                 </tr>
                         </table>

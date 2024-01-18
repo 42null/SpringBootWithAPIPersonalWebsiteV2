@@ -14,6 +14,8 @@
     --primary_dark_dark: #004547;
     --primary_darkest: #002424;
 
+    --color_link: var(--primary_light);
+
     --dependent_color_background: #0000;/*Set by light or dark mode*/
 
     --white: #fff;
@@ -76,6 +78,10 @@ body {
     background-attachment: fixed;
     font-family: 'Roboto', sans-serif;
     color: #333;
+}
+
+a:hover {
+    color: var(--color_link);
 }
 
 .centered{

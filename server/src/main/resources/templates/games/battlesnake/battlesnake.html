@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head th:replace="fragments/_head :: head">
+<body>
+<div th:insert="fragments/_header :: header"></div>
+
+<style th:inline="css">
+    /*Page Overrides*/
+    .image_banner{
+        height: 30vh;/*No image set*/
+        margin-bottom: 5%;
+    }
+    .image_banner_message_section {
+    }
+    .image_banner_message_section{
+        width: 70%;
+    }
+    #content{
+        /*clear: both;*/
+        width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #00000000;
+        /*padding-bottom: 0;*/
+    }
+    .primary-container-section{
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .jsonImage{
+        background-color: var(--primary_dark);
+        filter: brightness(1.1);
+    }
+
+    #profile_screenshot{
+        width: 60%;
+    }
+</style>
+
+<div class="image_banner" th:attr="style='background-image: url(' + ${heroImgSrc} + ')'">
+    <div class="image_banner_message_section">
+        <h1 th:text="${noticeHeader}"></h1>
+
+        <p><i th:text="${noticeMessage}"></i></p>
+    </div>
+</div>
+
+<a href="https://play.battlesnake.com/profile/42null" target="_blank" title="Open profile in new tab" alt="Battlesnake Profile for 42null taken 01-18-2024"><img id="profile_screenshot" class="centered" src="/img/sceenshotedProfiles/battlesnakeProfile_01-18-2024.png"></a>
+
+<div id="content">
+    <div class="primary-container-section">
+        <div class="container">
+            <div th:each="contentBox : ${contentBoxes}" class="item centered"><!-- Centered is so that lone elements at the end are centered -->
+                <h2><a th:text="${contentBox.header}" th:href="${contentBox.link}" target="_blank">Header</a></h2>
+                <h4 th:text="${contentBox.subtitle}" class="centered subtitle">Subtitle</h4>
+                <div class="centered">
+                    <div class="jsonImage">
+                        <img th:each="image : ${contentBox.images}"
+                             th:style="'background:' + ${image.background} + ';border-radius:' + ${image.radius} + ';padding:' + ${image.padding} + ';' "
+                             th:src="${image.src}"
+                             th:alt="${image.alt}"
+                             th:title="${image.title}" />
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <p th:utext="${contentBox.text}" class="text"></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

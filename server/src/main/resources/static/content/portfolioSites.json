@@ -3,40 +3,28 @@
     "id": 0,
     "header": "Company Database Access",
     "link": "/portfolioSites/companyDatabase",
-    "subtitle": "JQuery with UI",
-    "images": [
-      {
-      }
-    ],
+    "subtitle": "JQuery",
+
     "text": "<Description here>"
   },{
     "id": 1,
     "header": "Restaurant Filter",
     "link": "/portfolioSites/restaurantFilter",
-    "subtitle": "Subtitle",
-    "images": [
-      {
-      }
-    ],
+    "subtitle": "Vanilla JS",
+
     "text": "<Description here>"
   },{
     "id": 2,
     "header": "Gym Member Control",
     "link": "/portfolioSites/gymMemberControl",
-    "subtitle": "Subtitle",
-    "images": [
-      {
-      }
-    ],
+    "subtitle": "Data Representation",
+
     "text": "<Description here>"
   },{
     "id": 3,
     "header": "Grocery List",
     "link": "/portfolioSites/groceryList",
-    "subtitle": "Subtitle",
-    "images": [
-      {
-      }
-    ],
+    "subtitle": "Jquery with $.animate()",
+
     "text": "<Description here>"
   }]

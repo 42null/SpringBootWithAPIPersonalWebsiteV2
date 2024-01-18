@@ -1,0 +1,31 @@
+[
+  {
+    "id": 0,
+    "header": "Transferred Vercel Attempt",
+    "link": "https://github.com/42null/battlesnake-starter-vercel-attempt",
+    "subtitle": "Javascript snake hosted on Vercel service",
+    "images": [
+      {
+        "src": "https://exporter.battlesnake.com/avatars/head:nr-rocket/tail:bolt/color:%232e77ff/80x25.svg",
+        "alt": "Transferred Vercel Attempt's Snake Logo",
+        "title": "Running on the Vercel service",
+        "background": "transparent"
+      }
+    ],
+    "text": "This is my current competitor battlesnake, it uses a next.js endpoint and runs the latest push of the git repository <a href=\"https://github.com/42null/battlesnake-starter-vercel-attempt\"> battlesnake-starter-vercel-attempt\n</a>. Still under work, it uses a recursive flood-fill algorithm to decide it's next move while also accounting possible future moves of opponents."
+  },{
+    "id": 1,
+    "header": "Self Host Mac Testing",
+    "link": "https://github.com/42null/battlesnake-starter-vercel-attempt",
+    "subtitle": "Private testing copy of Transferred Vercel running on local hardware",
+    "images": [
+      {
+        "src": "https://exporter.battlesnake.com/avatars/head:default/tail:default/color:%23000000/80x25.svg",
+        "alt": "Self Host Mac Testing's Snake Logo",
+        "title": "Local testing copy",
+        "background": "transparent"
+      }
+    ],
+    "text": "This is a local, unpublished copy of Transferred Vercel Attempt that I use for testing out different strategies and ensuring operation before publishing to the competition version. It runs off a self-hosted device and is not available for public competitions."
+  }
+]

@@ -17,8 +17,14 @@
                 </ul>
             </li>
 
-<!--            <li><a th:href="@{/games}">Games</a></li>-->
-            <li class="unavailable-hover-bared"><a>Games</a></li>
+<!--            <li class="unavailable-hover-bared"><a>Games</a></li>-->
+            <li class="dropdown-head"><a>Games</a>
+                <ul class="dropdown-content">
+                    <li><a th:href="@{/games/battlesnake}">Battlesnake</a></li>
+                    <li><a href="https://github.com/42null/Approacheth">Approacheth</a></li>
+<!--                    <li><a href="https://github.com/42null/battlesnake-starter-vercel-attempt">Battlesnake</a></li>-->
+                </ul>
+            </li>
             <li class="dropdown-head"><a>Apps</a>
                 <ul class="dropdown-content">
                     <li><a th:href="@{/apps/chalkboard}">ChalkBoard</a></li>
@@ -37,8 +43,8 @@
             </li>
             <li class="dropdown-head"><a>Web</a>
                 <ul class="dropdown-content">
-                    <li><a th:href="@{/personalSite}" target="_self">Personal Website</a></li>
                     <li><a th:href="@{/portfolioSites}" target="_self">Portfolio Sites</a></li>
+                    <li><a th:href="@{/personalSite}" target="_self">Personal Website</a></li>
                 </ul>
             </li>
         </ul>

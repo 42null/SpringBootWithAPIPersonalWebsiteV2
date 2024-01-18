@@ -47,6 +47,7 @@ public class HomeController {
     private List<ItemContainer> aboutMeContainers;
     private List<ItemContainer> personalWebsiteContainers;
     private List<ItemContainer> portfolioWebsiteContainers;
+    private List<ItemContainer> battlesnakeContainers;
 
     @PostConstruct
     private void initData() {
@@ -102,6 +103,13 @@ public class HomeController {
         } catch (IOException e) {
             e.printStackTrace();
             portfolioWebsiteContainers = List.of(new ItemContainer[0]);
+        }
+        /*Battlesnake Pages*/
+        try {
+            battlesnakeContainers = List.of(mapper.readValue(cPather.generateResourcePath("battlesnakes.json"), ItemContainer[].class));
+        } catch (IOException e) {
+            e.printStackTrace();
+            battlesnakeContainers = List.of(new ItemContainer[0]);
         }
     }
 
@@ -189,7 +197,7 @@ public class HomeController {
     public String showPersonalSite(Model model) {
         model.addAttribute("pageTitle", "Personal Website Copies");
         model.addAttribute("contentBoxes", personalWebsiteContainers);
-        model.addAttribute("noticeHeader", "Recent Website Portfolio");
+        model.addAttribute("noticeHeader", "Website Portfolio");
         model.addAttribute("noticeMessage", "I host a copy of this website in multiple locations for practice, version deployment, and accessibility. Because I push updates regularly, the functionality of some of these installations may be hampered, nullified.mooo.com will host the most stable version.");
         return "web/web";
     }
@@ -198,7 +206,7 @@ public class HomeController {
         model.addAttribute("pageTitle", "Portfolio Sites");
         model.addAttribute("contentBoxes", portfolioWebsiteContainers);
         model.addAttribute("noticeHeader", "Portfolio Sites");
-        model.addAttribute("noticeMessage", "These are standalone websites that I have worked on for demonstrations in either my free time or for a class project. They are seperated from this site");
+        model.addAttribute("noticeMessage", "These are standalone websites that I have worked on for demonstrations in either my free time or for class projects. They all can exist by themselves and upon click, will open in a new tab.");
 
         model.addAttribute("cardRadius","20px");
         model.addAttribute("cardViewWidth","48%");
@@ -233,6 +241,20 @@ public class HomeController {
     //generics
 
 //CONTACT (END)
+
+//GAMES (START)
+    @GetMapping("/games/battlesnake")
+    public String showBattlesnakePage(Model model) {
+        model.addAttribute("pageTitle", "Battlesnake");
+        model.addAttribute("contentBoxes", battlesnakeContainers);
+        model.addAttribute("noticeHeader", "Battlesnake");
+        model.addAttribute("noticeMessage", "Battlesnake is a competitive version of the classic game snake, but where you write the code to control your snake. Game data is feed from a API and leaderboards are updated every 24 hours. You can use any language you wish and some users even employ machine learning in their snakes.");
+
+//        https://play.battlesnake.com/profile/42null
+        return "/games/battlesnake/battlesnake";
+    }
+
+//GAMES (END)
 
     @Autowired
     private WholesaleOrderService wholesaleOrderService;
